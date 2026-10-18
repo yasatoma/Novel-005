@@ -1,8 +1,8 @@
-const FACE_BODY_HEIGHT_DESKTOP_VH = 170;
-const FACE_BODY_HEIGHT_MOBILE_VH = 155;
+const FACE_BODY_HEIGHT_DESKTOP_VH = 300;
+const FACE_BODY_HEIGHT_MOBILE_VH = 250;
 const FACE_CENTER_RATIO = 0.14;
-const FACE_CENTER_DESKTOP_VH = 34;
-const FACE_CENTER_MOBILE_VH = 30;
+const FACE_CENTER_DESKTOP_VH = 55;
+const FACE_CENTER_MOBILE_VH = 55;
 
 export function calculateFaceCropPresentation(
   bounds,
