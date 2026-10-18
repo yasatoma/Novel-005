@@ -56,3 +56,15 @@ export function measureAlphaBounds(image, sampleSize = 256, threshold = 8) {
     height: (maxY - minY + 1) / height
   };
 }
+
+export function calculateCharacterPositionOffset(bounds, position) {
+  const left = Number(bounds?.left ?? 0);
+  const width = Number(bounds?.width ?? 1);
+  const safeLeft = Number.isFinite(left) ? Math.max(0, Math.min(1, left)) : 0;
+  const safeWidth = Number.isFinite(width) && width > 0 ? Math.min(1 - safeLeft, width) : 1 - safeLeft;
+  const right = Math.max(0, 1 - safeLeft - safeWidth);
+  if (position === "left") return -safeLeft * 100;
+  if (position === "right") return right * 100;
+  if (position === "center") return (0.5 - (safeLeft + safeWidth / 2)) * 100;
+  return 0;
+}
