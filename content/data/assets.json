@@ -2,147 +2,147 @@
   "backgrounds": {
     "BG_001": {
       "variants": {
-        "base": "BG_001_base.png"
+        "base": "BG_001_base.webp"
       }
     },
     "BG_002": {
       "variants": {
-        "base": "BG_002_base.png"
+        "base": "BG_002_base.webp"
       }
     },
     "BG_003": {
       "variants": {
-        "base": "BG_003_base.png"
+        "base": "BG_003_base.webp"
       }
     },
     "BG_004": {
       "variants": {
-        "base": "BG_004_base.png"
+        "base": "BG_004_base.webp"
       }
     },
     "BG_005": {
       "variants": {
-        "base": "BG_005_base.png"
+        "base": "BG_005_base.webp"
       }
     },
     "BG_006": {
       "variants": {
-        "base": "BG_006_base.png"
+        "base": "BG_006_base.webp"
       }
     },
     "BG_007": {
       "variants": {
-        "base": "BG_007_base.png",
-        "blocked": "BG_007_blocked.png"
+        "base": "BG_007_base.webp",
+        "blocked": "BG_007_blocked.webp"
       }
     },
     "BG_008": {
       "variants": {
-        "base": "BG_008_base.png"
+        "base": "BG_008_base.webp"
       }
     },
     "BG_010": {
       "variants": {
-        "base": "BG_010_base.png"
+        "base": "BG_010_base.webp"
       }
     },
     "BG_015": {
       "variants": {
-        "base": "BG_015_base.png"
+        "base": "BG_015_base.webp"
       }
     },
     "BG_016": {
       "variants": {
-        "base": "BG_016_base.png"
+        "base": "BG_016_base.webp"
       }
     },
     "BG_017": {
       "variants": {
-        "base": "BG_017_base.png",
-        "records": "BG_017_records.png",
-        "side": "BG_017_side.png"
+        "base": "BG_017_base.webp",
+        "records": "BG_017_records.webp",
+        "side": "BG_017_side.webp"
       }
     },
     "BG_018": {
       "variants": {
-        "base": "BG_018_base.png"
+        "base": "BG_018_base.webp"
       }
     },
     "BG_019": {
       "variants": {
-        "base": "BG_019_base.png"
+        "base": "BG_019_base.webp"
       }
     },
     "BG_022": {
       "variants": {
-        "after": "BG_022_after.png",
-        "before": "BG_022_before.png"
+        "after": "BG_022_after.webp",
+        "before": "BG_022_before.webp"
       }
     },
     "BG_025": {
       "variants": {
-        "base": "BG_025_base.png",
-        "rubble": "BG_025_rubble.png"
+        "base": "BG_025_base.webp",
+        "rubble": "BG_025_rubble.webp"
       }
     },
     "BG_026": {
       "variants": {
-        "base": "BG_026_base.png"
+        "base": "BG_026_base.webp"
       }
     },
     "BG_029": {
       "variants": {
-        "base": "BG_029_base.png",
-        "high": "BG_029_high.png",
-        "low": "BG_029_low.png"
+        "base": "BG_029_base.webp",
+        "high": "BG_029_high.webp",
+        "low": "BG_029_low.webp"
       }
     },
     "BG_030": {
       "variants": {
-        "base": "BG_030_base.png"
+        "base": "BG_030_base.webp"
       }
     },
     "BG_031": {
       "variants": {
-        "base": "BG_031_base.png",
-        "partial": "BG_031_partial.png",
-        "relieved": "BG_031_relieved.png"
+        "base": "BG_031_base.webp",
+        "partial": "BG_031_partial.webp",
+        "relieved": "BG_031_relieved.webp"
       }
     },
     "BG_033": {
       "variants": {
-        "base": "BG_033_base.png",
-        "open": "BG_033_open.png"
+        "base": "BG_033_base.webp",
+        "open": "BG_033_open.webp"
       }
     },
     "BG_034": {
       "variants": {
-        "base": "BG_034_base.png"
+        "base": "BG_034_base.webp"
       }
     },
     "BG_035": {
       "variants": {
-        "base": "BG_035_base.png"
+        "base": "BG_035_base.webp"
       }
     },
     "BG_036": {
       "variants": {
-        "base": "BG_036_base.png"
+        "base": "BG_036_base.webp"
       }
     },
     "BG_037": {
       "variants": {
-        "base": "BG_037_base.png"
+        "base": "BG_037_base.webp"
       }
     },
     "BG_038": {
       "variants": {
-        "base": "BG_038_base.png"
+        "base": "BG_038_base.webp"
       }
     },
     "BG_039": {
       "variants": {
-        "base": "BG_039_base.png"
+        "base": "BG_039_base.webp"
       }
     }
   },
@@ -156,64 +156,64 @@
       "name": "菜月",
       "color": "#db8796",
       "expressions": {
-        "normal": "CH_001_基本.png",
-        "shy": "CH_001_照れ.png",
-        "smile": "CH_001_笑顔.png",
-        "tears": "CH_001_涙.png",
-        "angry": "CH_001_怒り.png",
-        "uneasy": "CH_001_不安.png"
+        "normal": "CH_001_基本.webp",
+        "shy": "CH_001_照れ.webp",
+        "smile": "CH_001_笑顔.webp",
+        "tears": "CH_001_涙.webp",
+        "angry": "CH_001_怒り.webp",
+        "uneasy": "CH_001_不安.webp"
       }
     },
     "CH_002": {
       "name": "佐知子",
       "color": "#bba4ac",
       "expressions": {
-        "normal": "CH_002_基本.png",
-        "tense": "CH_002_緊張.png",
-        "anguish": "CH_002_苦悩.png"
+        "normal": "CH_002_基本.webp",
+        "tense": "CH_002_緊張.webp",
+        "anguish": "CH_002_苦悩.webp"
       }
     },
     "CH_003": {
       "name": "野々村",
       "color": "#c7ad76",
       "expressions": {
-        "normal": "CH_003_基本.png",
-        "smile": "CH_003_笑顔.png"
+        "normal": "CH_003_基本.webp",
+        "smile": "CH_003_笑顔.webp"
       }
     },
     "CH_004": {
       "name": "ダリオ",
       "color": "#c39a73",
       "expressions": {
-        "normal": "CH_004_基本.png"
+        "normal": "CH_004_基本.webp"
       }
     },
     "CH_005": {
       "name": "達也",
       "color": "#a9b4c7",
       "expressions": {
-        "normal": "CH_005_基本.png"
+        "normal": "CH_005_基本.webp"
       }
     },
     "CH_006": {
       "name": "藤川",
       "color": "#b5a98d",
       "expressions": {
-        "normal": "CH_006_基本.png"
+        "normal": "CH_006_基本.webp"
       }
     },
     "CH_007": {
       "name": "エレナ",
       "color": "#b29c7d",
       "expressions": {
-        "normal": "CH_007_基本.png"
+        "normal": "CH_007_基本.webp"
       }
     },
     "CH_008": {
       "name": "ニコ",
       "color": "#b89e78",
       "expressions": {
-        "normal": "CH_008_基本.png"
+        "normal": "CH_008_基本.webp"
       }
     }
   },

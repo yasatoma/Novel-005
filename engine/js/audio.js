@@ -7,6 +7,7 @@ const CNEA_FORMATS = new Map([
   [0x03, "audio/wav"]
 ]);
 const CNEA_HEADER_SIZE = 6;
+export const UI_SOUNDS = Object.freeze({ start: "U001.dat", confirm: "U002.dat", cancel: "U003.dat" });
 
 export function decodeCnea(buffer) {
   const bytes = new Uint8Array(buffer);
@@ -109,6 +110,26 @@ export class AudioManager {
 
   async playSe(file) {
     const audio = new Audio(await this.resolvePlayable("se", file));
+    audio.volume = this.volume("se");
+    this.se.add(audio);
+    audio.addEventListener("ended", () => this.se.delete(audio), { once: true });
+    await safePlay(audio);
+  }
+
+  async resolveUiPlayable(file) {
+    const source = new URL(`../audio/ui/${file}`, import.meta.url).href;
+    if (this.cneaUrls.has(source)) return this.cneaUrls.get(source);
+    const response = await fetch(source);
+    if (!response.ok) throw new Error(`${source}: HTTP ${response.status}`);
+    const { mimeType, payload } = decodeCnea(await response.arrayBuffer());
+    const url = URL.createObjectURL(new Blob([payload], { type: mimeType }));
+    this.cneaUrls.set(source, url);
+    return url;
+  }
+
+  async playUi(action = "confirm") {
+    const file = UI_SOUNDS[action] ?? UI_SOUNDS.confirm;
+    const audio = new Audio(await this.resolveUiPlayable(file));
     audio.volume = this.volume("se");
     this.se.add(audio);
     audio.addEventListener("ended", () => this.se.delete(audio), { once: true });
