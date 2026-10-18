@@ -21,7 +21,16 @@ test("bust crop uses the tuned large presentation on desktop and mobile",async()
 
 test("character positions apply alpha-bound horizontal compensation",async()=>{
   const css=await readFile(new URL("../engine/css/main.css",import.meta.url),"utf8");
-  assert.match(css,/data-position="left"\]\{left:3%;transform:translateX\(var\(--char-position-offset-x,0%\)\)/);
+  assert.match(css,/data-position="left"\]\{left:10%;transform:translateX\(var\(--char-position-offset-x,0%\)\)/);
   assert.match(css,/data-position="center"\]\{left:50%;transform:translateX\(calc\(-50% \+ var\(--char-position-offset-x,0%\)\)\)/);
-  assert.match(css,/data-position="right"\]\{right:3%;transform:translateX\(var\(--char-position-offset-x,0%\)\)/);
+  assert.match(css,/data-position="right"\]\{right:10%;transform:translateX\(var\(--char-position-offset-x,0%\)\)/);
+});
+
+test("mobile character side margins remain compact",async()=>{
+  const css=await readFile(new URL("../engine/css/main.css",import.meta.url),"utf8");
+  const media=css.indexOf("@media(max-width:700px)");
+  assert.notEqual(media,-1);
+  const mobile=css.slice(media,css.indexOf("}",css.indexOf("}",media)+1)+1);
+  assert.match(mobile,/data-position="left"\]\{left:3%\}/);
+  assert.match(mobile,/data-position="right"\]\{right:3%\}/);
 });
