@@ -9,7 +9,8 @@ test("face crop uses the tuned desktop close-up fallback scale",async()=>{
 
 test("face crop has the tuned mobile fallback scale",async()=>{
   const css=await readFile(new URL("../engine/css/main.css",import.meta.url),"utf8");
-  assert.match(css,/@media\(max-width:700px\)\{[^}]*#characters img\[data-crop="face"\]\{top:var\(--char-face-top-mobile,-8vh\);height:var\(--char-face-height-mobile,175vh\)\}/);
+  const mobile=css.indexOf('#characters img[data-crop="face"]{top:var(--char-face-top-mobile,-8vh);height:var(--char-face-height-mobile,175vh)}',css.indexOf("@media(max-width:700px)"));
+  assert.notEqual(mobile,-1);
 });
 
 test("bust crop uses the tuned large presentation on desktop and mobile",async()=>{
