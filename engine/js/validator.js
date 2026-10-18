@@ -5,7 +5,7 @@ const COMMANDS = {
   bg: { show: { required: ["id"] }, hide: { required: [] } },
   compare: { show: { required: ["left_id", "right_id"] }, hide: { required: [] } },
   char: {
-    show: { required: ["id", "expression", "position"] },
+    show: { required: ["id", "expression"] },
     change: { required: ["id", "expression"] },
     hide: { required: ["id"] }
   },
@@ -157,6 +157,7 @@ function validateValues(command) {
     if(a.transition&&!["cut","fade","dissolve","blackfade"].includes(a.transition)) fail(command,`未定義bg.transition: ${a.transition}`);
     if(a.effect&&!["none","mist_weak","steam_weak","steam_medium","dust_weak","dust_medium"].includes(a.effect)) fail(command,`未定義bg.effect: ${a.effect}`);
   }
+  if(command.type==="char"&&["show","change"].includes(command.action)&&a.position&&!["left","center","right"].includes(a.position)) fail(command,`未定義char.position: ${a.position}`);
   if(command.type==="char"&&["show","change"].includes(command.action)&&a.crop&&!["bust","face"].includes(a.crop)) fail(command,`未定義char.crop: ${a.crop}`);
   if(command.type==="wait"&&a.mode!==undefined&&!["always","auto_only"].includes(a.mode)) fail(command,`未定義wait.mode: ${a.mode}`);
   if(command.type==="effect"&&!["shake","flash","fade","mist","blackfade"].includes(a.id)) fail(command,`未定義effect.id: ${a.id}`);
