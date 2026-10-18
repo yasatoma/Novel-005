@@ -5,5 +5,8 @@
   "entryScenario": "scenario/main.txt",
   "titleImage": "title.png",
   "titleLayout": "right",
-  "saveKey": "novel005.v1"
+  "saveKey": "novel005.v1",
+  "presentation": {
+    "defaultCharacterPosition": "right"
+  }
 }
