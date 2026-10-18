@@ -1,5 +1,5 @@
 import { resolveContentUrl } from "./content-url.js";
-import { calculateFaceCropPresentation, measureAlphaBounds } from "./character-crop.js";
+import { calculateCharacterPositionOffset, calculateFaceCropPresentation, measureAlphaBounds } from "./character-crop.js";
 export function rubySegments(text,map={},seen=new Set()){
   let segments=[{text:String(text),reading:null}];
   for(const [word,reading] of Object.entries(map).sort((a,b)=>b[0].length-a[0].length)){
@@ -132,7 +132,7 @@ export class Renderer {
     this.background.dataset.view = "full";
     for (const slot of this.characterSlots.values()) {
       slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
-      for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile"]) slot.style.removeProperty(name);
+      for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile","--char-position-offset-x"]) slot.style.removeProperty(name);
     }
   }
 
@@ -330,10 +330,12 @@ export class Renderer {
   }
 
   prepareCharacterCrop(slot, source) {
-    for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile"]) slot.style.removeProperty(name);
-    if (slot.dataset.crop !== "face") return;
+    for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile","--char-position-offset-x"]) slot.style.removeProperty(name);
     const apply = bounds => {
-      if (!bounds || slot.dataset.crop !== "face" || slot.src !== source) return;
+      if (!bounds || slot.src !== source) return;
+      const offset = calculateCharacterPositionOffset(bounds, slot.dataset.position);
+      slot.style.setProperty("--char-position-offset-x", `${offset}%`);
+      if (slot.dataset.crop !== "face") return;
       const presentation = calculateFaceCropPresentation(bounds);
       slot.style.setProperty("--char-face-height", `${presentation.desktop.imageHeightVh}vh`);
       slot.style.setProperty("--char-face-top", `${presentation.desktop.imageTopVh}vh`);
@@ -343,7 +345,7 @@ export class Renderer {
     const cached = this.characterAlphaBounds.get(source);
     if (cached) { apply(cached); return; }
     const measure = () => {
-      if (slot.dataset.crop !== "face" || slot.src !== source) return;
+      if (slot.src !== source) return;
       try {
         const bounds = measureAlphaBounds(slot);
         if (!bounds) return;
