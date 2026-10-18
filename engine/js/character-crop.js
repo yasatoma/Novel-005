@@ -1,16 +1,31 @@
-export function calculateFaceCropPresentation(bounds, desktopVisibleVh = 220, mobileVisibleVh = 180) {
+const FACE_BODY_HEIGHT_DESKTOP_VH = 170;
+const FACE_BODY_HEIGHT_MOBILE_VH = 155;
+const FACE_CENTER_RATIO = 0.14;
+const FACE_CENTER_DESKTOP_VH = 34;
+const FACE_CENTER_MOBILE_VH = 30;
+
+export function calculateFaceCropPresentation(
+  bounds,
+  desktopVisibleVh = FACE_BODY_HEIGHT_DESKTOP_VH,
+  mobileVisibleVh = FACE_BODY_HEIGHT_MOBILE_VH,
+  faceCenterRatio = FACE_CENTER_RATIO,
+  desktopFaceCenterVh = FACE_CENTER_DESKTOP_VH,
+  mobileFaceCenterVh = FACE_CENTER_MOBILE_VH
+) {
   const top = Number(bounds?.top ?? 0);
   const height = Number(bounds?.height ?? 1);
   const safeHeight = Number.isFinite(height) && height > 0 ? Math.min(1, height) : 1;
   const safeTop = Number.isFinite(top) ? Math.max(0, Math.min(1 - safeHeight, top)) : 0;
-  const build = (visibleVh, visibleTopVh) => {
+  const safeFaceRatio = Number.isFinite(faceCenterRatio) ? Math.max(0, Math.min(1, faceCenterRatio)) : FACE_CENTER_RATIO;
+  const build = (visibleVh, faceCenterVh) => {
     const imageHeightVh = visibleVh / safeHeight;
+    const visibleTopVh = faceCenterVh - visibleVh * safeFaceRatio;
     const imageTopVh = visibleTopVh - safeTop * imageHeightVh;
     return { imageHeightVh, imageTopVh };
   };
   return {
-    desktop: build(desktopVisibleVh, 2),
-    mobile: build(mobileVisibleVh, 4)
+    desktop: build(desktopVisibleVh, desktopFaceCenterVh),
+    mobile: build(mobileVisibleVh, mobileFaceCenterVh)
   };
 }
 
