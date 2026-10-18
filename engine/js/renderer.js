@@ -52,8 +52,9 @@ export function resolveBackgroundAsset(assets, id, variant = "base") {
 }
 
 export class Renderer {
-  constructor(workRoot = "../content/") {
+  constructor(workRoot = "../content/", options = {}) {
     this.workRoot = workRoot;
+    this.defaultCharacterPosition = options.defaultCharacterPosition ?? "right";
     this.rubySeen = new Map();
     this.currentChapterId = null;
     this.transitionTimers = [];
@@ -304,7 +305,7 @@ export class Renderer {
       }
       return;
     }
-    const position = command.args.position ?? this.findCharacterPosition(command.args.id);
+    const position = command.args.position ?? (command.action === "show" ? this.defaultCharacterPosition : this.findCharacterPosition(command.args.id));
     const slot = this.characterSlots.get(position);
     if (!slot) throw new Error(`unknown character position: ${position}`);
     const character = assets.characters?.[command.args.id];
