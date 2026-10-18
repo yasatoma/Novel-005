@@ -78,3 +78,5 @@
   .settings-grid .setting-wide{grid-column:auto}
   .settings-footer{align-items:flex-end}
 }
+
+/* Desktop character side staging: 10%; mobile override: 3%. */
