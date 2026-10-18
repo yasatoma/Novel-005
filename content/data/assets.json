@@ -1,0 +1,244 @@
+{
+  "backgrounds": {
+    "BG_001": {
+      "variants": {
+        "base": "BG_001_base.png"
+      }
+    },
+    "BG_002": {
+      "variants": {
+        "base": "BG_002_base.png"
+      }
+    },
+    "BG_003": {
+      "variants": {
+        "base": "BG_003_base.png"
+      }
+    },
+    "BG_004": {
+      "variants": {
+        "base": "BG_004_base.png"
+      }
+    },
+    "BG_005": {
+      "variants": {
+        "base": "BG_005_base.png"
+      }
+    },
+    "BG_006": {
+      "variants": {
+        "base": "BG_006_base.png"
+      }
+    },
+    "BG_007": {
+      "variants": {
+        "base": "BG_007_base.png",
+        "blocked": "BG_007_blocked.png"
+      }
+    },
+    "BG_008": {
+      "variants": {
+        "base": "BG_008_base.png"
+      }
+    },
+    "BG_010": {
+      "variants": {
+        "base": "BG_010_base.png"
+      }
+    },
+    "BG_015": {
+      "variants": {
+        "base": "BG_015_base.png"
+      }
+    },
+    "BG_016": {
+      "variants": {
+        "base": "BG_016_base.png"
+      }
+    },
+    "BG_017": {
+      "variants": {
+        "base": "BG_017_base.png",
+        "records": "BG_017_records.png",
+        "side": "BG_017_side.png"
+      }
+    },
+    "BG_018": {
+      "variants": {
+        "base": "BG_018_base.png"
+      }
+    },
+    "BG_019": {
+      "variants": {
+        "base": "BG_019_base.png"
+      }
+    },
+    "BG_022": {
+      "variants": {
+        "after": "BG_022_after.png",
+        "before": "BG_022_before.png"
+      }
+    },
+    "BG_025": {
+      "variants": {
+        "base": "BG_025_base.png",
+        "rubble": "BG_025_rubble.png"
+      }
+    },
+    "BG_026": {
+      "variants": {
+        "base": "BG_026_base.png"
+      }
+    },
+    "BG_029": {
+      "variants": {
+        "base": "BG_029_base.png",
+        "high": "BG_029_high.png",
+        "low": "BG_029_low.png"
+      }
+    },
+    "BG_030": {
+      "variants": {
+        "base": "BG_030_base.png"
+      }
+    },
+    "BG_031": {
+      "variants": {
+        "base": "BG_031_base.png",
+        "partial": "BG_031_partial.png",
+        "relieved": "BG_031_relieved.png"
+      }
+    },
+    "BG_033": {
+      "variants": {
+        "base": "BG_033_base.png",
+        "open": "BG_033_open.png"
+      }
+    },
+    "BG_034": {
+      "variants": {
+        "base": "BG_034_base.png"
+      }
+    },
+    "BG_035": {
+      "variants": {
+        "base": "BG_035_base.png"
+      }
+    },
+    "BG_036": {
+      "variants": {
+        "base": "BG_036_base.png"
+      }
+    },
+    "BG_037": {
+      "variants": {
+        "base": "BG_037_base.png"
+      }
+    },
+    "BG_038": {
+      "variants": {
+        "base": "BG_038_base.png"
+      }
+    },
+    "BG_039": {
+      "variants": {
+        "base": "BG_039_base.png"
+      }
+    }
+  },
+  "characters": {
+    "NAOTO": {
+      "name": "直人",
+      "color": "#d6cfbe",
+      "expressions": {}
+    },
+    "CH_001": {
+      "name": "菜月",
+      "color": "#db8796",
+      "expressions": {
+        "normal": "CH_001_基本.png",
+        "shy": "CH_001_照れ.png",
+        "smile": "CH_001_笑顔.png",
+        "tears": "CH_001_涙.png",
+        "angry": "CH_001_怒り.png",
+        "uneasy": "CH_001_不安.png"
+      }
+    },
+    "CH_002": {
+      "name": "佐知子",
+      "color": "#bba4ac",
+      "expressions": {
+        "normal": "CH_002_基本.png",
+        "tense": "CH_002_緊張.png",
+        "anguish": "CH_002_苦悩.png"
+      }
+    },
+    "CH_003": {
+      "name": "野々村",
+      "color": "#c7ad76",
+      "expressions": {
+        "normal": "CH_003_基本.png",
+        "smile": "CH_003_笑顔.png"
+      }
+    },
+    "CH_004": {
+      "name": "ダリオ",
+      "color": "#c39a73",
+      "expressions": {
+        "normal": "CH_004_基本.png"
+      }
+    },
+    "CH_005": {
+      "name": "達也",
+      "color": "#a9b4c7",
+      "expressions": {
+        "normal": "CH_005_基本.png"
+      }
+    },
+    "CH_006": {
+      "name": "藤川",
+      "color": "#b5a98d",
+      "expressions": {
+        "normal": "CH_006_基本.png"
+      }
+    },
+    "CH_007": {
+      "name": "エレナ",
+      "color": "#b29c7d",
+      "expressions": {
+        "normal": "CH_007_基本.png"
+      }
+    },
+    "CH_008": {
+      "name": "ニコ",
+      "color": "#b89e78",
+      "expressions": {
+        "normal": "CH_008_基本.png"
+      }
+    }
+  },
+  "audio": {
+    "bgm": [
+      "B001.dat",
+      "B002.dat",
+      "B003.dat",
+      "B004.dat",
+      "B005.dat",
+      "B006.dat",
+      "B007.dat",
+      "B008.dat",
+      "B009.dat",
+      "B010.dat",
+      "B011.dat",
+      "B012.dat",
+      "B013.dat",
+      "B014.dat",
+      "B015.dat",
+      "B016.dat"
+    ],
+    "ambient": [],
+    "se": [
+      "S001.dat"
+    ]
+  }
+}

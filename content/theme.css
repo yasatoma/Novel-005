@@ -1,0 +1,8 @@
+:root {
+  --gold: #d8c59b;
+  --menu-bg: #17242bec;
+  --button-bg: #17242bc9;
+}
+#title::before {
+  background: linear-gradient(270deg, #081722dc, #08172245 58%, transparent 82%);
+}

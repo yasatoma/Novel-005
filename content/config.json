@@ -1,0 +1,9 @@
+{
+  "workId": "novel005",
+  "title": "大地の碑文",
+  "engineVersion": "1.0",
+  "entryScenario": "scenario/main.txt",
+  "titleImage": "title.png",
+  "titleLayout": "right",
+  "saveKey": "novel005.v1"
+}
