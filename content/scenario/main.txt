@@ -7,7 +7,7 @@
 機内の窓は、思っていたよりも小さかった。
 @text show id=TX00_001_0002 speaker=narration
 そこに額が触れそうになるたび、僕は少しだけ背中を戻した。雲の切れ目を探す。何も見えない。それでも、また顔を寄せる。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX00_001_0003 speaker=CH_001
 さっきから、何回目？
 @char hide id=CH_001 duration_ms=150
@@ -19,7 +19,7 @@
 窓。そんなに見ても、まだ海だと思うよ
 @text show id=TX00_001_0007 speaker=NAOTO
 海の向こうには山がある
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX00_001_0008 speaker=CH_001
 その前に乗り継ぎがある
 @char hide id=CH_001 duration_ms=150
@@ -37,7 +37,7 @@
 まだ何か見つかる？
 @text show id=TX00_001_0015 speaker=NAOTO
 ここ。この列、外壁にしては少し内側に寄ってるんだよ
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX00_001_0016 speaker=CH_001
 昨日も言ってた
 @text show id=TX00_001_0017 speaker=NAOTO
@@ -119,7 +119,7 @@
 上の方から来て、途中でなくなってる
 @text show id=TX00_001_0055 speaker=NAOTO
 土に埋まったのかも。現地で追えるといいんだけど
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX00_001_0056 speaker=CH_001
 だったら、私もそこ見たい
 @char hide id=CH_001 duration_ms=150
@@ -191,7 +191,7 @@
 目、開いてる
 @text show id=TX00_001_0089 speaker=NAOTO
 楽しみで眠れないって言ったら、子供みたいかな
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal crop=face duration_ms=200
 @text show id=TX00_001_0090 speaker=CH_001
 別に。私もちょっとそうだし
 @char hide id=CH_001 duration_ms=150
@@ -296,7 +296,7 @@ A国に着いてから、移動と準備に数日を使った。
 斜面に沿って、何段もの石積みが重なっている。
 @text show id=TX01_001_0020 speaker=narration
 その上に建物があるのではなかった。山の一部を、石で組み直したような遺跡だった。
-@char show id=CH_007 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX01_001_0021 speaker=CH_007
 地上で確認されている範囲は、上の段までです。周辺には小さな石組みもありますが、同じ時期のものかは分かっていません
 @char hide id=CH_007 duration_ms=150
@@ -306,7 +306,7 @@ A国に着いてから、移動と準備に数日を使った。
 公的な調査の立会人、という最初の説明から、僕はもっと距離のある人物を想像していた。
 @text show id=TX01_001_0024 speaker=narration
 けれど石積みを見る時の目は、僕たちと変わらない。
-@char show id=CH_003 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=smile duration_ms=200
 @text show id=TX01_001_0025 speaker=CH_003
 上へ行けるのかね
 @text show id=TX01_001_0026 speaker=CH_007
@@ -327,7 +327,7 @@ A国に着いてから、移動と準備に数日を使った。
 物資用の大きな天幕と、寝泊まりする小さなテント。水の容器は日陰にまとめられ、調査用の箱には番号が振られている。
 @text show id=TX01_001_0033 speaker=narration
 その間を、細身の男が忙しく歩き回っていた。
-@char show id=CH_008 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX01_001_0034 speaker=CH_008
 着いたのか。そっちの荷物、こっちへ
 @char hide id=CH_008 duration_ms=150
@@ -347,7 +347,7 @@ A国に着いてから、移動と準備に数日を使った。
 藤川智也さんが笑いながら、箱の留め具を確認した。
 @text show id=TX01_001_0042 speaker=narration
 僕はこの人の声を聞くと、研究室へ戻ったような気になる。機材の使い方を間違えても、まず理由から聞いてくれる人だった。
-@char show id=CH_006 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX01_001_0043 speaker=CH_006
 直人。そっち、精密機器って書いてあるだろ。張り切って落とすなよ
 @text show id=TX01_001_0044 speaker=NAOTO
@@ -375,7 +375,7 @@ A国に着いてから、移動と準備に数日を使った。
 遺跡の中では単独行動をしない。新しい場所へ入る時は先に報告する。採取や移動を伴う調査は記録を残す。帰着時刻を守る。
 @text show id=TX01_001_0055 speaker=narration
 ダリオが指を折って確認する。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX01_001_0056 speaker=CH_004
 山の天気は見ている。だが石の壁の向こうまでは、俺にも分からん。知らない穴は、まず知らない穴だと思ってくれ
 @text show id=TX01_001_0057 speaker=CH_003
@@ -393,7 +393,7 @@ A国に着いてから、移動と準備に数日を使った。
 顎の下で切り揃えた黒髪が、風に少し動く。
 @text show id=TX01_001_0063 speaker=narration
 地質と地熱の専門家。今回の調査では、地形や岩盤の状態を確かめる役目も担う。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX01_001_0064 speaker=CH_002
 地表の噴気について、最近変わった点はありますか
 @text show id=TX01_001_0065 speaker=CH_004
@@ -419,7 +419,7 @@ A国に着いてから、移動と準備に数日を使った。
 石と石の境目が、細い影になっていた。
 @text show id=TX01_001_0074 speaker=NAOTO
 目地がほとんど見えない
-@char show id=CH_005 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX01_001_0075 speaker=CH_005
 全部が同じ積み方ではないよ。そちらの角を見てごらん
 @char hide id=CH_005 duration_ms=150
@@ -466,7 +466,7 @@ A国に着いてから、移動と準備に数日を使った。
 床の石に細い筋が掘られ、広場の中央へ向かっている。僕が飛行機で見ていた線の、ほんの一部だった。
 @text show id=TX01_001_0096 speaker=NAOTO
 水路ですね
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX01_001_0097 speaker=CH_003
 水を通したものには違いない。だが、上から流れてきたとは限らないぞ
 @char hide id=CH_003 duration_ms=150
@@ -486,7 +486,7 @@ A国に着いてから、移動と準備に数日を使った。
 佐知子さんが、少し離れた溝の底を見ていた。
 @text show id=TX01_001_0105 speaker=narration
 白っぽい筋に照明を当て、観察する。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX01_001_0106 speaker=CH_002
 析出物があります。水の成分を調べれば、供給源の手がかりになるかもしれません
 @text show id=TX01_001_0107 speaker=CH_003
@@ -504,7 +504,7 @@ A国に着いてから、移動と準備に数日を使った。
 @bgm play file=B003.dat volume=0.3 fade_ms=1200 continue_if_same=true
 @text show id=TX01_001_0112 speaker=narration
 キャンプへ戻ると、ニコが湯を用意していた。乾いた喉に、温かい飲み物が染み込む。
-@char show id=CH_008 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX01_001_0113 speaker=CH_008
 どうだった。金の像でもあったか？
 @text show id=TX01_001_0114 speaker=CH_007
@@ -568,7 +568,7 @@ A国に着いてから、移動と準備に数日を使った。
 テーブルのそばでは、エレナさんが写真の一覧を見ていた。
 @text show id=TX01_001_0143 speaker=narration
 僕に気づくと、空いた椅子を示した。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX01_001_0144 speaker=CH_007
 今日の水路の写真、確認してもいいですか
 @text show id=TX01_001_0145 speaker=NAOTO
@@ -596,7 +596,7 @@ A国に着いてから、移動と準備に数日を使った。
 ええ。遺跡が造られたあとも、人はこの山を使ってきました。古いものだけを残そうとして、その後の痕跡を片づけてしまうことがあります
 @text show id=TX01_001_0156 speaker=narration
 彼女は画面から顔を上げた。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX01_001_0157 speaker=CH_007
 今回は、それをしたくありません
 @char hide id=CH_007 duration_ms=150
@@ -666,7 +666,7 @@ A国に着いてから、移動と準備に数日を使った。
 佐知子さんは数値を説明したあと、僕が作っている一覧を見た。
 @text show id=TX01_001_0190 speaker=narration
 撮影時刻と、位置の欄を確かめている。
-@char show id=CH_002 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX01_001_0191 speaker=CH_002
 観察した時刻も残してください。水や温度は、場所だけでなく時間でも変わります
 @text show id=TX01_001_0192 speaker=NAOTO
@@ -684,7 +684,7 @@ A国に着いてから、移動と準備に数日を使った。
 今日だけで、書く場所が増えていくね
 @text show id=TX01_001_0198 speaker=NAOTO
 明日には足りなくなるかも
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX01_001_0199 speaker=CH_001
 じゃあ、今のうちに余白を残そう
 @char hide id=CH_001 duration_ms=150
@@ -711,7 +711,7 @@ A国に着いてから、移動と準備に数日を使った。
 机の端に、僕の撮影した溝の写真がある。
 @text show id=TX01_001_0210 speaker=narration
 教授が指を置いたので、僕は思わず背筋を伸ばした。
-@char show id=CH_003 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX01_001_0211 speaker=CH_003
 よく撮れている
 @text show id=TX01_001_0212 speaker=NAOTO
@@ -735,7 +735,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕は記録用紙の端に書き足した。
 @text show id=TX01_001_0221 speaker=narration
 その横へ、菜月が広場の略図を置いた。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX01_001_0222 speaker=CH_001
 これ、使える？
 @char hide id=CH_001 duration_ms=150
@@ -821,7 +821,7 @@ A国に着いてから、移動と準備に数日を使った。
 正確には、教授が壁の向こうを指し、達也先生が時計を指している。
 @text show id=TX02_001_0007 speaker=narration
 まだ機材の準備が終わっていないのだ。
-@char show id=CH_001 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX02_001_0008 speaker=CH_001
 今日も元気だね
 @text show id=TX02_001_0009 speaker=NAOTO
@@ -880,7 +880,7 @@ A国に着いてから、移動と準備に数日を使った。
 短い紙片を近づけると、端が揺れた。
 @text show id=TX02_001_0035 speaker=narration
 教授の顔が、少年のようになった。
-@char show id=CH_003 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=smile duration_ms=200
 @text show id=TX02_001_0036 speaker=CH_003
 空間があるな
 @text show id=TX02_001_0037 speaker=CH_002
@@ -899,7 +899,7 @@ A国に着いてから、移動と準備に数日を使った。
 その端に、肩を屈めれば入れそうな窪みがあった。
 @text show id=TX02_001_0043 speaker=narration
 内側から流れてくる空気は、確かに冷たかった。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX02_001_0044 speaker=CH_004
 ここだ。だが今日は、この先へは入らない
 @text show id=TX02_001_0045 speaker=CH_003
@@ -960,7 +960,7 @@ A国に着いてから、移動と準備に数日を使った。
 夕方、テーブルには新しい荷物の一覧が広げられた。
 @text show id=TX02_001_0071 speaker=narration
 予備の照明、電池、飲料水、救急用品。環境測定の機器と、位置を残すための目印。通路を傷つけない置き方についても、話し合った。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX02_001_0072 speaker=CH_007
 明日は少人数で到達範囲を確認します。帰着予定をこちらから連絡しておきます。予定を延ばす時は、外へ戻ってから
 @text show id=TX02_001_0073 speaker=CH_003
@@ -990,7 +990,7 @@ A国に着いてから、移動と準備に数日を使った。
 二度数えても同じだったのに、もう一度数えた。
 @text show id=TX02_001_0085 speaker=narration
 菜月が向かいから見ている。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX02_001_0086 speaker=CH_001
 今度は何回目？
 @text show id=TX02_001_0087 speaker=NAOTO
@@ -1025,7 +1025,7 @@ A国に着いてから、移動と準備に数日を使った。
 入口の前に集まると、昨日より穴が暗く見える。
 @text show id=TX02_001_0101 speaker=narration
 ニコは物資を入口近くまで運び、必要なものを僕たちへ渡した。最初の短い確認には同行せず、外の整理を続けることになっていた。
-@char show id=CH_008 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX02_001_0102 speaker=CH_008
 面白いものがあったら、後で俺にも見せてくれよ
 @text show id=TX02_001_0103 speaker=CH_007
@@ -1045,7 +1045,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月が背中の荷物を締め直す。
 @text show id=TX02_001_0110 speaker=NAOTO
 大丈夫？
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX02_001_0111 speaker=CH_001
 うん。直人は？
 @text show id=TX02_001_0112 speaker=NAOTO
@@ -1071,7 +1071,7 @@ A国に着いてから、移動と準備に数日を使った。
 正面から光を当てると見えにくい。横へ照明をずらすと、線が浮き上がった。
 @text show id=TX02_001_0121 speaker=narration
 波のような曲線と、並んだ四角い形。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX02_001_0122 speaker=CH_003
 少し止まれるか
 @text show id=TX02_001_0123 speaker=CH_004
@@ -1108,7 +1108,7 @@ A国に着いてから、移動と準備に数日を使った。
 天井を支える石の梁が頭上を渡り、中央には四角いくぼみがある。底には、薄く水が溜まっていた。
 @text show id=TX02_001_0138 speaker=narration
 奥の壁には通路が二つ見えた。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX02_001_0139 speaker=CH_001
 こんな場所が……
 @char hide id=CH_001 duration_ms=150
@@ -1130,7 +1130,7 @@ A国に着いてから、移動と準備に数日を使った。
 壁際には、石で縁取られた細長い開口部がある。近づくと、弱い空気の流れを感じた。
 @text show id=TX02_001_0148 speaker=narration
 達也先生が、広場で見た溝の位置と照らし合わせる。
-@char show id=CH_005 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX02_001_0149 speaker=CH_005
 上の水路と関係しているかもしれない
 @text show id=TX02_001_0150 speaker=CH_002
@@ -1177,7 +1177,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月も隣へ来た。
 @text show id=TX02_001_0168 speaker=narration
 二人で中を覗いたが、角の向こうは見えない。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX02_001_0169 speaker=CH_001
 これから、あの先を見るんだね
 @text show id=TX02_001_0170 speaker=NAOTO
@@ -1187,7 +1187,7 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX02_001_0172 speaker=NAOTO
 昨日よりは
 @char hide id=CH_001
-@char show id=CH_001 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX02_001_0173 speaker=CH_001
 どうして？
 @text show id=TX02_001_0174 speaker=NAOTO
@@ -1238,7 +1238,7 @@ A国に着いてから、移動と準備に数日を使った。
 右側の床は緩く下っている。
 @text show id=TX03_001_0014 speaker=narration
 壁の線刻は、階段のものより細かかった。波に見えた線が、二本に分かれ、別の場所で合流している。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX03_001_0015 speaker=CH_001
 同じ模様が続いてるんじゃないね
 @text show id=TX03_001_0016 speaker=NAOTO
@@ -1250,7 +1250,7 @@ A国に着いてから、移動と準備に数日を使った。
 それでも、僕には少しも退屈ではなかった。
 @text show id=TX03_001_0019 speaker=narration
 通路の途中には、腰の高さに小さな窪みが並んでいた。何かを置く場所か、構造の一部か。空のものもあれば、底に土の溜まったものもある。
-@char show id=CH_008 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX03_001_0020 speaker=CH_008
 ここ、灯りを置いたんじゃないか
 @text show id=TX03_001_0021 speaker=CH_003
@@ -1319,7 +1319,7 @@ A国に着いてから、移動と準備に数日を使った。
 この広さを一枚で残すことはできなかった。位置を変え、重なる部分を確かめて、少しずつ撮った。
 @text show id=TX03_001_0050 speaker=narration
 菜月は足場の縁を避けて立ち、番号を記録した。
-@char show id=CH_005 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX03_001_0051 speaker=CH_005
 歩行用の帯が残っている。中央へ出るのは、外周を確認してからにしよう
 @char hide id=CH_005 duration_ms=150
@@ -1349,7 +1349,7 @@ A国に着いてから、移動と準備に数日を使った。
 祭壇、と呼びたくなる形だった。
 @text show id=TX03_001_0064 speaker=narration
 けれど教授は、台座、と記録した。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX03_001_0065 speaker=CH_003
 呼び名が先に決まると、用途まで決まった気になるからね
 @text show id=TX03_001_0066 speaker=CH_007
@@ -1373,7 +1373,7 @@ A国に着いてから、移動と準備に数日を使った。
 目立った危険はなかったが、用途の分からない開口部へ顔を寄せないように、と念を押した。
 @text show id=TX03_001_0075 speaker=narration
 教授は、今度はすぐに退いた。
-@char show id=CH_001 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX03_001_0076 speaker=CH_001
 先生、ちゃんと聞くんだね
 @text show id=TX03_001_0077 speaker=NAOTO
@@ -1391,7 +1391,7 @@ A国に着いてから、移動と準備に数日を使った。
 全員の姿が見える場所だった。
 @text show id=TX03_001_0083 speaker=narration
 ニコが水を配り、自分の荷物から小さな包みを出す。
-@char show id=CH_008 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX03_001_0084 speaker=CH_008
 甘いの、いるか？
 @text show id=TX03_001_0085 speaker=CH_001
@@ -1411,7 +1411,7 @@ A国に着いてから、移動と準備に数日を使った。
 外の景色と違うね
 @text show id=TX03_001_0092 speaker=NAOTO
 うん
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX03_001_0093 speaker=CH_001
 写真より大きいどころじゃなかった
 @char hide id=CH_001 duration_ms=150
@@ -1446,7 +1446,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕が呼んでも菜月が振り向かなかったので、もう一度声を上げた。
 @text show id=TX03_001_0108 speaker=narration
 ダリオが手で止めた。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX03_001_0109 speaker=CH_004
 大声で押し切るな。見えるところへ行け
 @char hide id=CH_004 duration_ms=150
@@ -1511,7 +1511,7 @@ A国に着いてから、移動と準備に数日を使った。
 藤川さんが画面を拡大した。
 @text show id=TX03_001_0139 speaker=narration
 溝の底ではなく、両端の摩耗を見ている。
-@char show id=CH_006 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX03_001_0140 speaker=CH_006
 使った跡が片側に寄ってる。置いたままのものじゃなく、出し入れした可能性はある
 @text show id=TX03_001_0141 speaker=NAOTO
@@ -1529,7 +1529,7 @@ A国に着いてから、移動と準備に数日を使った。
 その欠け方から考える人がいる。
 @text show id=TX03_001_0147 speaker=narration
 教授は僕の記録を見て、鉛筆を貸してくれた。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX03_001_0148 speaker=CH_003
 今の疑問を書いておきなさい。答えが出てからでは、最初に何を不思議に思ったか忘れる
 @char hide id=CH_003 duration_ms=150
@@ -1563,7 +1563,7 @@ A国に着いてから、移動と準備に数日を使った。
 ううん。光の場所も入れておこうと思って
 @text show id=TX03_001_0163 speaker=NAOTO
 時間で変わるよ
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX03_001_0164 speaker=CH_001
 だから、今の場所
 @char hide id=CH_001 duration_ms=150
@@ -1593,7 +1593,7 @@ A国に着いてから、移動と準備に数日を使った。
 俺、写ってる？
 @text show id=TX03_001_0177 speaker=NAOTO
 端に少し
-@char show id=CH_008 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX03_001_0178 speaker=CH_008
 働いてるところか。いいな。ちゃんと残しといてくれ
 @char hide id=CH_008 duration_ms=150
@@ -1609,7 +1609,7 @@ A国に着いてから、移動と準備に数日を使った。
 それを、こちらへ
 @text show id=TX03_001_0184 speaker=CH_008
 落ちてたから、拾っただけだよ
-@char show id=CH_007 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX03_001_0185 speaker=CH_007
 拾ったら、持ち主へ声をかけてください
 @char hide id=CH_007 duration_ms=150
@@ -1702,7 +1702,7 @@ A国に着いてから、移動と準備に数日を使った。
 言いながら、自信がなくなった。
 @text show id=TX03_001_0229 speaker=narration
 教授は頷いた。
-@char show id=CH_003 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=smile duration_ms=200
 @text show id=TX03_001_0230 speaker=CH_003
 いい。まず違いを見つけるんだ。理由は、後で変わっても構わない
 @char hide id=CH_003 duration_ms=150
@@ -1735,7 +1735,7 @@ A国に着いてから、移動と準備に数日を使った。
 え？
 @text show id=TX03_001_0244 speaker=NAOTO
 大きさの比較になるから
-@char show id=CH_001 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX03_001_0245 speaker=CH_001
 便利な物差しだね、私
 @char hide id=CH_001 duration_ms=150
@@ -1772,7 +1772,7 @@ A国に着いてから、移動と準備に数日を使った。
 ひとつの柱を別の柱と取り違え、菜月に直してもらった。
 @text show id=TX03_001_0259 speaker=NAOTO
 よく覚えてるな
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX03_001_0260 speaker=CH_001
 この柱の前で、直人が水に足を入れかけたから
 @text show id=TX03_001_0261 speaker=NAOTO
@@ -1824,7 +1824,7 @@ A国に着いてから、移動と準備に数日を使った。
 翌日の予定を書き終えると、もう周りは暗かった。
 @text show id=TX03_001_0284 speaker=narration
 菜月は欠伸を隠しそこね、笑った。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX03_001_0285 speaker=CH_001
 今日は眠れるね
 @text show id=TX03_001_0286 speaker=NAOTO
@@ -1860,7 +1860,7 @@ A国に着いてから、移動と準備に数日を使った。
 最初は、歩いたせいだと思った。
 @text show id=TX04_001_0003 speaker=narration
 上着の前を少し開けると、背中に溜まっていた熱が逃げた。それでも頬には、空気の温かさが残った。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX04_001_0004 speaker=CH_002
 ここからは、区画ごとに確認します
 @char hide id=CH_002 duration_ms=150
@@ -1893,7 +1893,7 @@ A国に着いてから、移動と準備に数日を使った。
 ニコは通路の脇に荷物を下ろし、壁に寄せた。飲料水と予備機材を、取り出しやすい順に並べている。
 @text show id=TX04_001_0018 speaker=narration
 僕はその横を通り、何か足りないものがないか確認した。
-@char show id=CH_008 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_008 expression=normal duration_ms=200
 @text show id=TX04_001_0019 speaker=CH_008
 今のところ全部ある。お前の小さい箱も
 @text show id=TX04_001_0020 speaker=NAOTO
@@ -1918,7 +1918,7 @@ A国に着いてから、移動と準備に数日を使った。
 壁には浅い棚があり、床の一部には白い膜のようなものが広がっている。
 @text show id=TX04_001_0029 speaker=narration
 佐知子さんは足を止め、まず周囲を確かめた。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX04_001_0030 speaker=CH_002
 水が繰り返し通った痕跡です。乾いていますが、どこから供給されたか分かるまでは、中央に立たないでください
 @char hide id=CH_002 duration_ms=150
@@ -1979,7 +1979,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女の声が鋭くなった。
 @text show id=TX04_001_0057 speaker=narration
 ダリオの腕を引き、入口から下がらせる。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX04_001_0058 speaker=CH_002
 熱い空気です。近づかないで
 @char hide id=CH_002 duration_ms=150
@@ -2120,7 +2120,7 @@ A国に着いてから、移動と準備に数日を使った。
 その平静さが頼もしく、同時に、ひどく遠く感じた。
 @text show id=TX04_001_0123 speaker=narration
 教授が顔を上げた。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX04_001_0124 speaker=CH_003
 調査は中止する。全員、帰還する
 @char hide id=CH_003 duration_ms=150
@@ -2174,7 +2174,7 @@ A国に着いてから、移動と準備に数日を使った。
 けれど、僕はその言葉を思い浮かべた。
 @text show id=TX04_001_0149 speaker=narration
 思い浮かべたことを、すぐ恥じた。
-@char show id=CH_001 expression=uneasy position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX04_001_0150 speaker=CH_001
 これを持ったから、なんてこと……ないよね
 @char hide id=CH_001 duration_ms=150
@@ -2286,7 +2286,7 @@ A国に着いてから、移動と準備に数日を使った。
 自分たちの声が、朝より大きく響く。
 @text show id=TX05_001_0009 speaker=narration
 誰も、必要なこと以外は喋らなかった。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX05_001_0010 speaker=CH_002
 先の足場を確認します
 @char hide id=CH_002 duration_ms=150
@@ -2310,7 +2310,7 @@ A国に着いてから、移動と準備に数日を使った。
 直人も飲んで
 @text show id=TX05_001_0020 speaker=NAOTO
 あとで
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX05_001_0021 speaker=CH_001
 今
 @char hide id=CH_001 duration_ms=150
@@ -2330,7 +2330,7 @@ A国に着いてから、移動と準備に数日を使った。
 片桐君
 @text show id=TX05_001_0029 speaker=NAOTO
 はい
-@char show id=CH_003 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX05_001_0030 speaker=CH_003
 外へ出たら、君たちは休みなさい。説明は私がする
 @text show id=TX05_001_0031 speaker=NAOTO
@@ -2447,7 +2447,7 @@ A国に着いてから、移動と準備に数日を使った。
 達也先生はすぐには答えなかった。
 @text show id=TX05_001_0083 speaker=narration
 露出した石の上端を照らし、脇の壁を見た。
-@char show id=CH_005 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX05_001_0084 speaker=CH_005
 今、ここを崩すと、残った部分まで落ちるかもしれない
 @text show id=TX05_001_0085 speaker=NAOTO
@@ -2463,7 +2463,7 @@ A国に着いてから、移動と準備に数日を使った。
 だからこそ、諦めるのが難しかった。
 @text show id=TX05_001_0090 speaker=narration
 教授が、僕の肩に手を置いた。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX05_001_0091 speaker=CH_003
 今は動かさない
 @char hide id=CH_003 duration_ms=150
@@ -2487,7 +2487,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオも試した。
 @text show id=TX05_001_0101 speaker=narration
 結果は変わらなかった。
-@char show id=CH_007 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX05_001_0102 speaker=CH_007
 帰着予定を過ぎれば、確認に来ます
 @char hide id=CH_007 duration_ms=150
@@ -2547,7 +2547,7 @@ A国に着いてから、移動と準備に数日を使った。
 教授は全員の意見を聞いた。
 @text show id=TX05_001_0129 speaker=narration
 そして、決めた。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX05_001_0130 speaker=CH_003
 別の出口を探そう。ただし、帰るための調査だ。新しいものを見つけても、目的を変えない
 @char hide id=CH_003 duration_ms=150
@@ -2585,7 +2585,7 @@ A国に着いてから、移動と準備に数日を使った。
 それを見て、僕は初めて、自分たちが行方不明になる側なのだと理解した。
 @text show id=TX05_001_0147 speaker=narration
 出発する直前、菜月が立ち止まった。
-@char show id=CH_001 expression=uneasy position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX05_001_0148 speaker=CH_001
 一つ、言っていい？
 @text show id=TX05_001_0149 speaker=NAOTO
@@ -2679,7 +2679,7 @@ A国に着いてから、移動と準備に数日を使った。
 教授も、立ち止まった。
 @text show id=TX06_001_0010 speaker=narration
 僕の顔を見たのか、少しだけ声を落とした。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX06_001_0011 speaker=CH_003
 見ることをやめる必要はない
 @char hide id=CH_003 duration_ms=150
@@ -2699,7 +2699,7 @@ A国に着いてから、移動と準備に数日を使った。
 水は流れていないが、底は湿っている。時折、奥から低い音が伝わってきた。
 @text show id=TX06_001_0019 speaker=narration
 足元の振動は、ごく弱い。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX06_001_0020 speaker=CH_004
 この辺りの山で、こんな音は聞いたことがない
 @text show id=TX06_001_0021 speaker=CH_002
@@ -2726,7 +2726,7 @@ A国に着いてから、移動と準備に数日を使った。
 筒と呼ぶには角ばっていたが、断面を囲むように石を組み、その中に空洞を残していることは分かった。
 @text show id=TX06_001_0031 speaker=narration
 一部が欠け、内側に白い層が見えた。
-@char show id=CH_005 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX06_001_0032 speaker=CH_005
 壁ではないな
 @text show id=TX06_001_0033 speaker=CH_006
@@ -2819,7 +2819,7 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX06_001_0074 speaker=narration
 佐知子さんは温度の変化を見て、首を振った。
 @bgm stop fade_ms=1000
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX06_001_0075 speaker=CH_002
 通行はできません
 @text show id=TX06_001_0076 speaker=NAOTO
@@ -2842,7 +2842,7 @@ A国に着いてから、移動と準備に数日を使った。
 @bgm play file=B010.dat volume=0.3 fade_ms=1600 continue_if_same=true
 @text show id=TX06_001_0084 speaker=narration
 教授は部屋全体を見回した。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX06_001_0085 speaker=CH_003
 この流れを変えられれば、通れるのか
 @char hide id=CH_003 duration_ms=150
@@ -2872,7 +2872,7 @@ A国に着いてから、移動と準備に数日を使った。
 こっちが上で、これが下。そう見ると、位置が合う気がします
 @text show id=TX06_001_0098 speaker=CH_003
 記号かもしれんな
-@char show id=CH_007 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX06_001_0099 speaker=CH_007
 文字として読むには資料が足りません。でも、施設の図なら、実際の構造と比べられます
 @char hide id=CH_007 duration_ms=150
@@ -2966,7 +2966,7 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX06_001_0143 speaker=NAOTO
 でも、僕のせいで
 @bgm play file=B016.dat volume=0.3 fade_ms=1600 continue_if_same=true
-@char show id=CH_003 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX06_001_0144 speaker=CH_003
 君のせいで休むのではない。休む必要があると、君の話で分かったんだ
 @char hide id=CH_003 duration_ms=150
@@ -3062,7 +3062,7 @@ A国に着いてから、移動と準備に数日を使った。
 休憩を終える時、菜月が僕へ水を返した。
 @text show id=TX06_001_0190 speaker=narration
 彼女の顔に、少し色が戻っていた。
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX06_001_0191 speaker=CH_001
 言ってくれてよかった
 @text show id=TX06_001_0192 speaker=NAOTO
@@ -3116,7 +3116,7 @@ A国に着いてから、移動と準備に数日を使った。
 脇の石組みには、動いた跡のような曲線がある。
 @text show id=TX06_001_0214 speaker=CH_005
 開閉する構造だ
-@char show id=CH_006 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX06_001_0215 speaker=CH_006
 長いこと動かしてないな。縁に付着物が続いてる
 @char hide id=CH_006 duration_ms=150
@@ -3166,7 +3166,7 @@ A国に着いてから、移動と準備に数日を使った。
 佐知子さんが照明を上げる。
 @text show id=TX07_001_0008 speaker=narration
 線刻の中に、建物のような四角と、そこへ続く複数の線があった。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX07_001_0009 speaker=CH_002
 水路と建物を一緒に表しているように見えます
 @char hide id=CH_002 duration_ms=150
@@ -3174,7 +3174,7 @@ A国に着いてから、移動と準備に数日を使った。
 声はいつもどおりだった。
 @text show id=TX07_001_0011 speaker=narration
 教授はゆっくり近づいた。
-@char show id=CH_003 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=normal duration_ms=200
 @text show id=TX07_001_0012 speaker=CH_003
 地下の設備を描いたものかもしれんな
 @text show id=TX07_001_0013 speaker=CH_002
@@ -3194,7 +3194,7 @@ A国に着いてから、移動と準備に数日を使った。
 教授は入口側の台に手をつかず、壁の前へ立った。
 @text show id=TX07_001_0020 speaker=narration
 佐知子さんは台の脇を回り、隣の狭い開口部を覗いた。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX07_001_0021 speaker=CH_002
 こちらから、流路の側面を確認します
 @text show id=TX07_001_0022 speaker=CH_004
@@ -3233,7 +3233,7 @@ A国に着いてから、移動と準備に数日を使った。
 教授は僕を見た。
 @text show id=TX07_001_0038 speaker=narration
 その目に、少しだけいつもの光が戻っていた。
-@char show id=CH_003 expression=smile position=center crop=bust duration_ms=200
+@char show id=CH_003 expression=smile duration_ms=200
 @text show id=TX07_001_0039 speaker=CH_003
 帰ったら、君の写真が忙しくなるぞ
 @char hide id=CH_003 duration_ms=150
@@ -3278,7 +3278,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕は前へ出ようとした。
 @text show id=TX07_001_0058 speaker=narration
 ダリオが僕の胸を掴み、入口へ押し戻した。
-@char show id=CH_004 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX07_001_0059 speaker=CH_004
 入るな！
 @text show id=TX07_001_0060 speaker=NAOTO
@@ -3394,7 +3394,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕は返事をしなかった。
 @text show id=TX07_001_0113 speaker=narration
 彼女はもう一度呼び、僕の前に屈んだ。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears crop=face duration_ms=200
 @text show id=TX07_001_0114 speaker=CH_001
 直人。こっち見て
 @char hide id=CH_001 duration_ms=150
@@ -3540,7 +3540,7 @@ A国に着いてから、移動と準備に数日を使った。
 その言葉だけ聞こえた。
 @text show id=TX07_001_0184 speaker=narration
 菜月は父親を見た。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX07_001_0185 speaker=CH_001
 お父さんは、止めてたよ
 @text show id=TX07_001_0186 speaker=CH_005
@@ -3622,7 +3622,7 @@ A国に着いてから、移動と準備に数日を使った。
 今、何を考えてても、後で聞く
 @text show id=TX07_001_0224 speaker=narration
 僕は彼女を見た。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX07_001_0225 speaker=CH_001
 だから、歩く時は足元を見て
 @char hide id=CH_001 duration_ms=150
@@ -3745,7 +3745,7 @@ A国に着いてから、移動と準備に数日を使った。
 教授の背中が写っている。
 @text show id=TX08_001_0016 speaker=narration
 それを察したのか、藤川さんは言い直した。
-@char show id=CH_006 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX08_001_0017 speaker=CH_006
 俺が操作してもいいか
 @char hide id=CH_006 duration_ms=150
@@ -3894,7 +3894,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオが僕を見た。
 @text show id=TX08_001_0086 speaker=narration
 藤川さんは板を見たまま、頷かなかった。
-@char show id=CH_006 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX08_001_0087 speaker=CH_006
 新しい痕がある。人が動かせる構造でもある。ただ、誰が何のために動かしたかは、まだ分からん
 @char hide id=CH_006 duration_ms=150
@@ -3959,7 +3959,7 @@ A国に着いてから、移動と準備に数日を使った。
 それを承知で、ここで正直に手を挙げる人がいるのか。
 @text show id=TX08_001_0115 speaker=narration
 誰も答えなかった。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX08_001_0116 speaker=CH_002
 私は流路の側面を見ましたが、石板には触れていません
 @char hide id=CH_002 duration_ms=150
@@ -3995,7 +3995,7 @@ A国に着いてから、移動と準備に数日を使った。
 繋げると、別の形になった。
 @text show id=TX08_001_0132 speaker=narration
 ダリオが立ち上がった。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX08_001_0133 speaker=CH_004
 これからは、誰も一人にならない。理由があっても、声をかけるだけで終わりにしない。目の届く相手と動く
 @char hide id=CH_004 duration_ms=150
@@ -4011,7 +4011,7 @@ A国に着いてから、移動と準備に数日を使った。
 覚えていることを、今のうちに分けておこう
 @text show id=TX08_001_0139 speaker=narration
 僕は顔を上げた。
-@char show id=CH_005 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX08_001_0140 speaker=CH_005
 実際に見たことと、今考えたことを。混ざる前に
 @char hide id=CH_005 duration_ms=150
@@ -4062,7 +4062,7 @@ A国に着いてから、移動と準備に数日を使った。
 @bg show id=BG_017 image=side filter=dim effect=none view=full transition=dissolve duration_ms=500 blocking=true
 @text show id=TX08_001_0163 speaker=narration
 エレナさんが、僕たちを見た。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX08_001_0164 speaker=CH_007
 過去に入った別の調査者の痕という可能性は？
 @text show id=TX08_001_0165 speaker=CH_006
@@ -4186,7 +4186,7 @@ A国に着いてから、移動と準備に数日を使った。
 指がもたつき、端が折れた。
 @text show id=TX08_001_0223 speaker=narration
 僕が押さえると、彼女は小さく礼を言った。
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX08_001_0224 speaker=CH_001
 さっきまで、石のことを怖がってたのに
 @char hide id=CH_001 duration_ms=150
@@ -4234,7 +4234,7 @@ A国に着いてから、移動と準備に数日を使った。
 その可能性を口にしてから、彼の表情は変わっていた。
 @text show id=TX09_001_0004 speaker=narration
 いつもの軽口が消え、確認することを短く書き出している。
-@char show id=CH_006 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX09_001_0005 speaker=CH_006
 板が動いたのは間違いない。あとは、あの位置にした時にどこへ流れるかだ
 @text show id=TX09_001_0006 speaker=CH_005
@@ -4272,7 +4272,7 @@ A国に着いてから、移動と準備に数日を使った。
 直人
 @text show id=TX09_001_0022 speaker=narration
 出発前に、彼が僕を呼んだ。
-@char show id=CH_006 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX09_001_0023 speaker=CH_006
 決めつけるなよ。ただ、見なかったことにもしない
 @text show id=TX09_001_0024 speaker=NAOTO
@@ -4328,7 +4328,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月が、水の残量を確認していた。
 @text show id=TX09_001_0048 speaker=narration
 達也先生の手が一瞬止まり、額を押さえた。
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX09_001_0049 speaker=CH_001
 お父さん？
 @text show id=TX09_001_0050 speaker=CH_005
@@ -4564,7 +4564,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女は袋に手を置いた。
 @text show id=TX09_001_0160 speaker=narration
 渡さなかった。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX09_001_0161 speaker=CH_002
 今は、先の安全を確認する方が
 @text show id=TX09_001_0162 speaker=NAOTO
@@ -4608,7 +4608,7 @@ A国に着いてから、移動と準備に数日を使った。
 一緒に調査へ来た人を、僕たちは囲んでいた。
 @text show id=TX10_001_0006 speaker=narration
 やがて彼女は、袋を僕へ差し出した。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX10_001_0007 speaker=CH_002
 破らないでください
 @char hide id=CH_002 duration_ms=150
@@ -4634,7 +4634,7 @@ A国に着いてから、移動と準備に数日を使った。
 お父さんの資料ですか
 @text show id=TX10_001_0018 speaker=narration
 彼女は頷いた。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX10_001_0019 speaker=CH_002
 父は、この場所を調べていました
 @char hide id=CH_002 duration_ms=150
@@ -4695,7 +4695,7 @@ A国に着いてから、移動と準備に数日を使った。
 私も研究者です。足りない証拠を、足りていると言ってほしかったわけじゃありません
 @text show id=TX10_001_0047 speaker=narration
 彼女の視線が、僕たちを一人ずつ通った。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX10_001_0048 speaker=CH_002
 探す道まで閉じたことを、知っていてほしかった
 @char hide id=CH_002 duration_ms=150
@@ -4801,7 +4801,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女には、僕たちがしていないことまで恨む理由はない。
 @text show id=TX10_001_0098 speaker=narration
 それでも、邪魔になれば傷つけることを選んだ。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX10_001_0099 speaker=CH_002
 ……確認されれば、終わると思いました
 @char hide id=CH_002 duration_ms=150
@@ -4833,7 +4833,7 @@ A国に着いてから、移動と準備に数日を使った。
 どちらでも、藤川さんの脚を壊してよい理由にはならなかった。
 @text show id=TX10_001_0113 speaker=narration
 ニコについて聞いたのは、エレナさんだった。
-@char show id=CH_007 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX10_001_0114 speaker=CH_007
 最初の死も、あなたですか
 @text show id=TX10_001_0115 speaker=CH_002
@@ -4875,7 +4875,7 @@ A国に着いてから、移動と準備に数日を使った。
 冷静な専門家として、僕たちは彼女を頼った。
 @text show id=TX10_001_0132 speaker=CH_002
 超常的な原因など、ありません
-@char show id=CH_001 expression=angry position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=angry duration_ms=200
 @text show id=TX10_001_0133 speaker=CH_001
 それを聞いてるんじゃない
 @char hide id=CH_001 duration_ms=150
@@ -4895,7 +4895,7 @@ A国に着いてから、移動と準備に数日を使った。
 もう一度、聞いた。
 @text show id=TX10_001_0141 speaker=narration
 父親の話でも、事故の話でもなく、その行為について。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX10_001_0142 speaker=CH_002
 私が動かしました。先生があの場所にいると、分かっていて
 @char hide id=CH_002 duration_ms=150
@@ -4953,7 +4953,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオが、壁へ手を当てずに近づいた。
 @text show id=TX10_001_0169 speaker=narration
 空気を確かめ、顔を戻す。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX10_001_0170 speaker=CH_004
 暑くなってる。ここも長くは持たん
 @char hide id=CH_004 duration_ms=150
@@ -4978,7 +4978,7 @@ A国に着いてから、移動と準備に数日を使った。
 直せるんですか
 @text show id=TX10_001_0180 speaker=narration
 彼女は頷かなかった。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX10_001_0181 speaker=CH_002
 損傷した場所へ戻って直すのは無理です。でも、別の排熱路を開けられれば
 @text show id=TX10_001_0182 speaker=CH_005
@@ -5040,7 +5040,7 @@ A国に着いてから、移動と準備に数日を使った。
 膝に手をつき、途中で止まる。
 @text show id=TX11_001_0016 speaker=narration
 菜月が支えた。
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX11_001_0017 speaker=CH_001
 お父さん、座って
 @text show id=TX11_001_0018 speaker=CH_005
@@ -5062,7 +5062,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女はそれを、報告するように淡々と話した。
 @text show id=TX11_001_0026 speaker=narration
 少し前にダリオが言った、無理をする場所ではないという言葉を、覚えていたのだと思う。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX11_001_0027 speaker=CH_002
 温度だけではありません。湿度が上がると、身体の熱が逃げにくくなります。休ませる場所は、空気が動く側を選んでください
 @char hide id=CH_002 duration_ms=150
@@ -5090,7 +5090,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女をここへ残すことはできない。
 @text show id=TX11_001_0039 speaker=narration
 菜月が僕の袋を整えた。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX11_001_0040 speaker=CH_001
 必要なものだけ持って。記録は私が見てる
 @char hide id=CH_001 duration_ms=150
@@ -5119,7 +5119,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオは後ろにいた。
 @text show id=TX11_001_0052 speaker=narration
 彼女が立ち止まると、僕たちも止まる。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX11_001_0053 speaker=CH_002
 ここで、空気の流れが分かれています
 @char hide id=CH_002 duration_ms=150
@@ -5175,7 +5175,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオが僕を見た。
 @text show id=TX11_001_0078 speaker=narration
 僕は言葉を引っ込めなかった。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX11_001_0079 speaker=CH_002
 ……はい
 @char hide id=CH_002 duration_ms=150
@@ -5295,7 +5295,7 @@ A国に着いてから、移動と準備に数日を使った。
 誰も、成功を約束しなかった。
 @text show id=TX11_001_0135 speaker=narration
 話し合いが終わる頃、菜月が立った。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX11_001_0136 speaker=CH_001
 私も行く
 @char hide id=CH_001 duration_ms=150
@@ -5309,7 +5309,7 @@ A国に着いてから、移動と準備に数日を使った。
 地図は、私が一番分かる。直人が写真を見てる間、道を合わせられる
 @text show id=TX11_001_0141 speaker=narration
 声は震えていなかった。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX11_001_0142 speaker=CH_001
 お父さんのところへ戻るために、行く
 @char hide id=CH_001 duration_ms=150
@@ -5378,7 +5378,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕は頷いた。
 @text show id=TX12_001_0013 speaker=narration
 佐知子さんも、父親の推定に過ぎない線と、測定した点を分けた。
-@char show id=CH_002 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX12_001_0014 speaker=CH_002
 この線は、父の仮説です。実際に地下を見て描いたものではありません
 @text show id=TX12_001_0015 speaker=CH_007
@@ -5441,7 +5441,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオは装備を一つずつ確かめ、僕の荷物からいくつかを自分へ移した。
 @text show id=TX12_001_0043 speaker=NAOTO
 僕も持てます
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX12_001_0044 speaker=CH_004
 持てる重さと、戻れる重さは違う
 @char hide id=CH_004 duration_ms=150
@@ -5453,7 +5453,7 @@ A国に着いてから、移動と準備に数日を使った。
 筆記具を二本、別々の場所へ入れる。
 @text show id=TX12_001_0048 speaker=narration
 僕は教授の鉛筆を一本渡した。
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX12_001_0049 speaker=CH_001
 いいの？
 @text show id=TX12_001_0050 speaker=NAOTO
@@ -5498,7 +5498,7 @@ A国に着いてから、移動と準備に数日を使った。
 出発前、ダリオが佐知子さんを少し離れた場所へ呼んだ。
 @text show id=TX12_001_0069 speaker=narration
 僕も聞こえる距離にいた。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX12_001_0070 speaker=CH_004
 俺は、あんたを信用していない
 @char hide id=CH_004 duration_ms=150
@@ -5548,7 +5548,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月と二人で、最後に水を飲んだ。
 @text show id=TX12_001_0092 speaker=narration
 彼女は容器の蓋を閉め、僕を見た。
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX12_001_0093 speaker=CH_001
 さっき、お父さんに何か言いそうだったね
 @text show id=TX12_001_0094 speaker=NAOTO
@@ -5568,7 +5568,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女は目を伏せた。
 @text show id=TX12_001_0101 speaker=narration
 ほんの少し笑った。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX12_001_0102 speaker=CH_001
 もう、結構助けてるよ
 @text show id=TX12_001_0103 speaker=NAOTO
@@ -5591,7 +5591,7 @@ A国に着いてから、移動と準備に数日を使った。
 うん。途中で一人で格好つけないでね
 @text show id=TX12_001_0111 speaker=NAOTO
 気をつける
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX12_001_0112 speaker=CH_001
 そこは、しないって言ってよ
 @char hide id=CH_001 duration_ms=150
@@ -5654,7 +5654,7 @@ A国に着いてから、移動と準備に数日を使った。
 天井は低いが、床は歩きやすい。
 @text show id=TX13_001_0010 speaker=narration
 人を招く場所ではなく、人が仕事をするための場所に見えた。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX13_001_0011 speaker=CH_001
 ここ、上の回廊と違うね
 @text show id=TX13_001_0012 speaker=NAOTO
@@ -5739,7 +5739,7 @@ A国に着いてから、移動と準備に数日を使った。
 最後の段差で、僕は手を出した。
 @text show id=TX13_001_0050 speaker=narration
 菜月は掴み、こちらへ上がった。
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX13_001_0051 speaker=CH_001
 ……ありがとう
 @text show id=TX13_001_0052 speaker=NAOTO
@@ -5777,7 +5777,7 @@ A国に着いてから、移動と準備に数日を使った。
 道具を置いた可能性はある。まだ決められないけど、上よりずっと、人の手が届くところに物がある
 @text show id=TX13_001_0067 speaker=narration
 佐知子さんが壁の穴を見た。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX13_001_0068 speaker=CH_002
 設備の点検口にも見えます。熱い流れに直接触れず、外側から確認できる配置です
 @char hide id=CH_002 duration_ms=150
@@ -5826,7 +5826,7 @@ A国に着いてから、移動と準備に数日を使った。
 少し手前に横へ抜ける通路があった。
 @text show id=TX13_001_0090 speaker=narration
 暗く狭いので、最初は選ばなかった道だ。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX13_001_0091 speaker=CH_001
 戻って、あそこから回れるか確かめよう
 @char hide id=CH_001 duration_ms=150
@@ -5848,7 +5848,7 @@ A国に着いてから、移動と準備に数日を使った。
 壁に線刻があった。
 @text show id=TX13_001_0099 speaker=narration
 入口の図と同じように、複数の線が分かれている。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX13_001_0100 speaker=CH_001
 これ、向きが逆？
 @char hide id=CH_001 duration_ms=150
@@ -5945,7 +5945,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月が地図へ新しい線を加えた。
 @text show id=TX13_001_0146 speaker=narration
 佐知子さんは槽の配置を見下ろし、長く黙っていた。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX13_001_0147 speaker=CH_002
 温度を、分けていたのかもしれません
 @char hide id=CH_002 duration_ms=150
@@ -6003,7 +6003,7 @@ A国に着いてから、移動と準備に数日を使った。
 水位の目印かもしれない
 @text show id=TX14_001_0017 speaker=narration
 菜月が、上の線と水面を見比べた。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX14_001_0018 speaker=CH_001
 今の水は、この印より下だね
 @text show id=TX14_001_0019 speaker=CH_002
@@ -6071,7 +6071,7 @@ A国に着いてから、移動と準備に数日を使った。
 ゆっくり、こちらへ来る。
 @text show id=TX14_001_0049 speaker=narration
 最後の一歩を越えてから、ようやく僕は手を伸ばした。
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX14_001_0050 speaker=CH_001
 大丈夫
 @char hide id=CH_001 duration_ms=150
@@ -6102,7 +6102,7 @@ A国に着いてから、移動と準備に数日を使った。
 何に触れるにも、一度考えるようになっていた。
 @text show id=TX14_001_0063 speaker=narration
 菜月が、僕の袖を軽く引いた。
-@char show id=CH_001 expression=uneasy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX14_001_0064 speaker=CH_001
 さっき、動こうとしたでしょ
 @text show id=TX14_001_0065 speaker=NAOTO
@@ -6148,7 +6148,7 @@ A国に着いてから、移動と準備に数日を使った。
 言ってから、僕は彼女を見た。
 @text show id=TX14_001_0085 speaker=narration
 佐知子さんは槽の方を向いていた。
-@char show id=CH_002 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX14_001_0086 speaker=CH_002
 父は、最後まで地下へ入れませんでした
 @char hide id=CH_002 duration_ms=150
@@ -6333,7 +6333,7 @@ A国に着いてから、移動と準備に数日を使った。
 ここまで声は届かない。
 @text show id=TX15_001_0015 speaker=narration
 資料を前にした時、その意味を一緒に考えてくれる人がいないことが、こんなに大きいとは知らなかった。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX15_001_0016 speaker=CH_001
 撮って帰ろう
 @char hide id=CH_001 duration_ms=150
@@ -6374,7 +6374,7 @@ A国に着いてから、移動と準備に数日を使った。
 省略もある。
 @text show id=TX15_001_0034 speaker=narration
 それでも、広間の水路、複数の槽、下へ集まる太い線の位置関係が似ていた。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX15_001_0035 speaker=CH_002
 熱の供給と、排出を分けています
 @char hide id=CH_002 duration_ms=150
@@ -6498,7 +6498,7 @@ A国に着いてから、移動と準備に数日を使った。
 落ちた石板を持ち上げようとしたのではない。
 @text show id=TX15_001_0093 speaker=narration
 壁の下端にある、小さな図を見ていた。
-@char show id=CH_002 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX15_001_0094 speaker=CH_002
 これが、逃がし先です
 @char hide id=CH_002 duration_ms=150
@@ -6547,7 +6547,7 @@ A国に着いてから、移動と準備に数日を使った。
 父親も、自分の推定を事実に変えてはいなかった。
 @text show id=TX15_001_0116 speaker=narration
 佐知子さんは、その文字を長く見た。
-@char show id=CH_002 expression=tense position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=tense duration_ms=200
 @text show id=TX15_001_0117 speaker=CH_002
 父は、確かめたかっただけなんです
 @char hide id=CH_002 duration_ms=150
@@ -6732,7 +6732,7 @@ A国に着いてから、移動と準備に数日を使った。
 片手が、何も持っていないのに袋の形を探すように動いた。
 @text show id=TX16_001_0059 speaker=narration
 父親の資料は、僕が持っていた。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX16_001_0060 speaker=CH_002
 ……あった
 @char hide id=CH_002 duration_ms=150
@@ -6752,7 +6752,7 @@ A国に着いてから、移動と準備に数日を使った。
 声が途切れた。
 @text show id=TX16_001_0068 speaker=narration
 彼女は口元へ手を当てた。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX16_001_0069 speaker=CH_002
 間違っていなかった
 @char hide id=CH_002 duration_ms=150
@@ -6783,7 +6783,7 @@ A国に着いてから、移動と準備に数日を使った。
 状態の違う図が、並んでいた。
 @text show id=TX16_001_0082 speaker=NAOTO
 動かす順番かもしれない
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX16_001_0083 speaker=CH_002
 状態を示している可能性もあります。順番だとは、まだ決めないでください
 @char hide id=CH_002 duration_ms=150
@@ -6833,7 +6833,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女の声が硬かった。
 @text show id=TX16_001_0106 speaker=CH_002
 分かっています
-@char show id=CH_001 expression=angry position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=angry duration_ms=200
 @text show id=TX16_001_0107 speaker=CH_001
 分かってるだけじゃなくて、私にも確かめさせて
 @char hide id=CH_001 duration_ms=150
@@ -6880,7 +6880,7 @@ A国に着いてから、移動と準備に数日を使った。
 少なくとも、もう一度検討せざるを得なかった。
 @text show id=TX16_001_0128 speaker=narration
 佐知子さんの顔から、力が抜けた。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX16_001_0129 speaker=CH_002
 殺さなくても……
 @char hide id=CH_002 duration_ms=150
@@ -6951,7 +6951,7 @@ A国に着いてから、移動と準備に数日を使った。
 しかし、そこで力任せに動かすことは、教授を殺した時と同じように、結果を見ずに流れを変えることだった。
 @text show id=TX17_001_0015 speaker=narration
 菜月が図を見直した。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX17_001_0016 speaker=CH_001
 この板の隣にも、同じ形がある。予備？
 @text show id=TX17_001_0017 speaker=CH_002
@@ -6981,7 +6981,7 @@ A国に着いてから、移動と準備に数日を使った。
 南の谷か
 @text show id=TX17_001_0029 speaker=CH_002
 方向と位置からは
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX17_001_0030 speaker=CH_004
 そこは知ってる。人が通る場所じゃない
 @char hide id=CH_004 duration_ms=150
@@ -7112,7 +7112,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオは機構から手を離し、すぐ戻せる位置で待った。
 @text show id=TX17_001_0091 speaker=narration
 菜月は一度屈み、違う角度から水位の印を確かめた。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX17_001_0092 speaker=CH_001
 下がってる。今度ははっきり
 @char hide id=CH_001 duration_ms=150
@@ -7157,7 +7157,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕は最初、手前の線を保守通路へ繋がるものだと思った。
 @text show id=TX17_001_0112 speaker=narration
 菜月が、僕の指を止めた。
-@char show id=CH_001 expression=uneasy position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX17_001_0113 speaker=CH_001
 待って。さっきの図、反対側から見てる
 @char hide id=CH_001 duration_ms=150
@@ -7225,7 +7225,7 @@ A国に着いてから、移動と準備に数日を使った。
 けれど、それは言い直さなかった。
 @text show id=TX17_001_0145 speaker=narration
 彼女は少し目を見開き、それから頷いた。
-@char show id=CH_001 expression=shy position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=shy duration_ms=200
 @text show id=TX17_001_0146 speaker=CH_001
 うん。今は、ちゃんと見る
 @char hide id=CH_001 duration_ms=150
@@ -7287,7 +7287,7 @@ A国に着いてから、移動と準備に数日を使った。
 それでも、省いてよい確認ではなかった。
 @text show id=TX17_001_0175 speaker=narration
 開始の前、佐知子さんが僕を見た。
-@char show id=CH_002 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=normal duration_ms=200
 @text show id=TX17_001_0176 speaker=CH_002
 私の説明だけで、動かさないでください
 @char hide id=CH_002 duration_ms=150
@@ -7395,7 +7395,7 @@ A国に着いてから、移動と準備に数日を使った。
 顔も髪も汗で濡れていた。
 @text show id=TX17_001_0227 speaker=narration
 彼女は笑おうとして、うまく笑えなかった。
-@char show id=CH_001 expression=uneasy position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=uneasy duration_ms=200
 @text show id=TX17_001_0228 speaker=CH_001
 お父さんたちのところへ、帰ろう
 @text show id=TX17_001_0229 speaker=NAOTO
@@ -7455,7 +7455,7 @@ A国に着いてから、移動と準備に数日を使った。
 作業する人の形と、管路を示す線。
 @text show id=TX18_001_0015 speaker=narration
 行きには急いでいて、僕はそこまで見なかった。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX18_001_0016 speaker=CH_002
 父は、名前を残したかったわけではないんです
 @char hide id=CH_002 duration_ms=150
@@ -7508,7 +7508,7 @@ A国に着いてから、移動と準備に数日を使った。
 その言葉で、彼女が安心すると思ったわけではない。
 @text show id=TX18_001_0040 speaker=narration
 ただ、今ここに残る理由にはならないと伝えたかった。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX18_001_0041 speaker=CH_002
 ……ありがとうございます
 @char hide id=CH_002 duration_ms=150
@@ -7564,7 +7564,7 @@ A国に着いてから、移動と準備に数日を使った。
 今なら通れます。早く
 @text show id=TX18_001_0066 speaker=narration
 佐知子さんは首を振った。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX18_001_0067 speaker=CH_002
 私は、ここまでにします
 @char hide id=CH_002 duration_ms=150
@@ -7612,7 +7612,7 @@ A国に着いてから、移動と準備に数日を使った。
 泣いていたのかもしれない。
 @text show id=TX18_001_0089 speaker=narration
 蒸気と汗のせいで、よく見えなかった。
-@char show id=CH_002 expression=anguish position=center crop=bust duration_ms=200
+@char show id=CH_002 expression=anguish duration_ms=200
 @text show id=TX18_001_0090 speaker=CH_002
 できません
 @char hide id=CH_002 duration_ms=150
@@ -7728,7 +7728,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女の目に涙があった。
 @text show id=TX18_001_0144 speaker=NAOTO
 菜月……
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX18_001_0145 speaker=CH_001
 ここにいて
 @char hide id=CH_001 duration_ms=150
@@ -7778,7 +7778,7 @@ A国に着いてから、移動と準備に数日を使った。
 変えたくもなかった。
 @text show id=TX18_001_0167 speaker=narration
 菜月が、僕の荷物の紐を直した。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX18_001_0168 speaker=CH_001
 お父さんたちが、待ってる
 @char hide id=CH_001 duration_ms=150
@@ -7817,7 +7817,7 @@ A国に着いてから、移動と準備に数日を使った。
 中央で行ったことが、ここまで届いていた。
 @text show id=TX19_001_0004 speaker=narration
 菜月が記録を見比べた。
-@char show id=CH_001 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX19_001_0005 speaker=CH_001
 下がってる
 @char hide id=CH_001 duration_ms=150
@@ -7942,7 +7942,7 @@ A国に着いてから、移動と準備に数日を使った。
 いつもより弱い。
 @text show id=TX19_001_0064 speaker=narration
 けれど、確かに先生の声だった。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX19_001_0065 speaker=CH_001
 戻るから
 @text show id=TX19_001_0066 speaker=CH_005
@@ -7996,7 +7996,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月は父親へ駆け寄りかけ、足を止めた。
 @text show id=TX19_001_0089 speaker=narration
 床の段差を確かめてから、隣へ屈んだ。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX19_001_0090 speaker=CH_001
 ただいま
 @char hide id=CH_001 duration_ms=150
@@ -8093,7 +8093,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオが立ち止まった。
 @text show id=TX19_001_0135 speaker=narration
 顔を上げ、風を感じている。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX19_001_0136 speaker=CH_004
 外の空気だ
 @char hide id=CH_004 duration_ms=150
@@ -8235,7 +8235,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女も同じくらい飲んだ。
 @text show id=TX20_001_0032 speaker=NAOTO
 手、痛くない？
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX20_001_0033 speaker=CH_001
 少し。直人は？
 @text show id=TX20_001_0034 speaker=NAOTO
@@ -8243,7 +8243,7 @@ A国に着いてから、移動と準備に数日を使った。
 @char hide id=CH_001 duration_ms=150
 @text show id=TX20_001_0035 speaker=narration
 菜月が小さく笑った。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX20_001_0036 speaker=CH_001
 正直でいい
 @char hide id=CH_001 duration_ms=150
@@ -8400,7 +8400,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女も空を見ていた。
 @text show id=TX20_001_0110 speaker=narration
 しばらく、何も言わなかった。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX20_001_0111 speaker=CH_001
 外だね
 @text show id=TX20_001_0112 speaker=NAOTO
@@ -8473,7 +8473,7 @@ A国に着いてから、移動と準備に数日を使った。
 今度は、足場を渡るためではなかった。
 @text show id=TX20_001_0145 speaker=narration
 彼女がここにいることを、確かめたかった。
-@char show id=CH_001 expression=tears position=center crop=face duration_ms=200
+@char show id=CH_001 expression=tears duration_ms=200
 @text show id=TX20_001_0146 speaker=CH_001
 いるよ
 @char hide id=CH_001 duration_ms=150
@@ -8660,7 +8660,7 @@ A国に着いてから、移動と準備に数日を使った。
 最後に小さく、直人に写真をもらう、とあった。
 @text show id=TX21_001_0061 speaker=NAOTO
 どの写真？
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX21_001_0062 speaker=CH_001
 光のところに立ってた時の
 @char hide id=CH_001 duration_ms=150
@@ -8698,7 +8698,7 @@ A国に着いてから、移動と準備に数日を使った。
 辿り着いてもらうためだった。
 @text show id=TX21_001_0079 speaker=narration
 僕は線を引き直し、写真番号を添えた。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX21_001_0080 speaker=CH_007
 この記録があれば、闇雲に入らずに済みます
 @char hide id=CH_007 duration_ms=150
@@ -8730,7 +8730,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼は椅子へ座った。
 @text show id=TX21_001_0094 speaker=narration
 地下ではいつも立って周囲を見ていたので、その姿が少し珍しかった。
-@char show id=CH_004 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX21_001_0095 speaker=CH_004
 戻りたいか
 @char hide id=CH_004 duration_ms=150
@@ -8758,7 +8758,7 @@ A国に着いてから、移動と準備に数日を使った。
 少し笑った。
 @text show id=TX21_001_0107 speaker=narration
 すぐに、笑いが消えた。
-@char show id=CH_004 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX21_001_0108 speaker=CH_004
 返せと言う相手がいないのは、困るな
 @char hide id=CH_004 duration_ms=150
@@ -8819,7 +8819,7 @@ A国に着いてから、移動と準備に数日を使った。
 ダリオは窓の近くに立った。
 @text show id=TX21_001_0135 speaker=narration
 菜月は僕の隣にいた。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX21_001_0136 speaker=CH_007
 正式な報告を、まとめる必要があります
 @char hide id=CH_007 duration_ms=150
@@ -8912,7 +8912,7 @@ A国に着いてから、移動と準備に数日を使った。
 それでも、父親の研究を、娘の殺人の付属物にしたくないという点は、理解できます
 @text show id=TX21_001_0180 speaker=narration
 彼女は一度、言葉を切った。
-@char show id=CH_007 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_007 expression=normal duration_ms=200
 @text show id=TX21_001_0181 speaker=CH_007
 理解できることと、責任がなくなることは違います
 @char hide id=CH_007 duration_ms=150
@@ -8920,7 +8920,7 @@ A国に着いてから、移動と準備に数日を使った。
 部屋の中が、静かになった。
 @text show id=TX21_001_0183 speaker=narration
 ダリオが窓から離れた。
-@char show id=CH_004 expression=normal position=center crop=bust duration_ms=200
+@char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX21_001_0184 speaker=CH_004
 ニコのことは、ちゃんと残してくれ
 @char hide id=CH_004 duration_ms=150
@@ -8940,7 +8940,7 @@ A国に着いてから、移動と準備に数日を使った。
 佐知子さんが作った印象を、これ以上残したくなかった。
 @text show id=TX21_001_0192 speaker=narration
 菜月が、膝の上の指を開いた。
-@char show id=CH_001 expression=angry position=center crop=face duration_ms=200
+@char show id=CH_001 expression=angry duration_ms=200
 @text show id=TX21_001_0193 speaker=CH_001
 倉田さんが最後に残ったことも、誰かを助けるためだったって書かないで
 @char hide id=CH_001 duration_ms=150
@@ -9079,7 +9079,7 @@ A国に着いてから、移動と準備に数日を使った。
 直人もね
 @text show id=TX21_001_0259 speaker=narration
 彼女は僕を見た。
-@char show id=CH_001 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX21_001_0260 speaker=CH_001
 大丈夫な時だけ、会うことにしなくていいよ
 @char hide id=CH_001 duration_ms=150
@@ -9102,7 +9102,7 @@ A国に着いてから、移動と準備に数日を使った。
 帰ってからも、会いたい
 @text show id=TX21_001_0269 speaker=narration
 菜月は、少しだけ目を伏せた。
-@char show id=CH_001 expression=shy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=shy crop=face duration_ms=200
 @text show id=TX21_001_0270 speaker=CH_001
 うん。私も
 @char hide id=CH_001 duration_ms=150
@@ -9328,7 +9328,7 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX22_001_0102 speaker=narration
 入口から顔を出し、僕の机を見た。
 @bgm play file=B003.dat volume=0.3 fade_ms=1600 continue_if_same=true
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX22_001_0103 speaker=CH_001
 まだ終わってない？
 @text show id=TX22_001_0104 speaker=NAOTO
@@ -9354,7 +9354,7 @@ A国に着いてから、移動と準備に数日を使った。
 まだ物差しとして使ってる？
 @text show id=TX22_001_0114 speaker=NAOTO
 今は違う
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX22_001_0115 speaker=CH_001
 何として？
 @char hide id=CH_001 duration_ms=150
@@ -9370,7 +9370,7 @@ A国に着いてから、移動と準備に数日を使った。
 彼女の笑い方が、少し変わった。
 @text show id=TX22_001_0121 speaker=narration
 からかう顔ではなくなった。
-@char show id=CH_001 expression=shy position=center crop=face duration_ms=200
+@char show id=CH_001 expression=shy crop=face duration_ms=200
 @text show id=TX22_001_0122 speaker=CH_001
 うん。私も、それ好き
 @char hide id=CH_001 duration_ms=150
@@ -9388,7 +9388,7 @@ A国に着いてから、移動と準備に数日を使った。
 僕は鞄を持った。
 @text show id=TX22_001_0129 speaker=narration
 その時、達也先生が入口へ来た。
-@char show id=CH_005 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX22_001_0130 speaker=CH_005
 揃っていたか
 @char hide id=CH_005 duration_ms=150
@@ -9400,7 +9400,7 @@ A国に着いてから、移動と準備に数日を使った。
 先生は藤川さんへ挨拶し、最近の体調を尋ねた。
 @text show id=TX22_001_0134 speaker=narration
 少し話したあと、僕へ向き直った。
-@char show id=CH_005 expression=normal position=center crop=face duration_ms=200
+@char show id=CH_005 expression=normal duration_ms=200
 @text show id=TX22_001_0135 speaker=CH_005
 片桐君。今度うちに来なさい
 @char hide id=CH_005 duration_ms=150
@@ -9436,7 +9436,7 @@ A国に着いてから、移動と準備に数日を使った。
 それだけ言い、資料を取りに奥へ向かった。
 @text show id=TX22_001_0151 speaker=narration
 菜月が僕の袖を引いた。
-@char show id=CH_001 expression=smile position=center crop=face duration_ms=200
+@char show id=CH_001 expression=smile duration_ms=200
 @text show id=TX22_001_0152 speaker=CH_001
 そんな顔しなくても
 @text show id=TX22_001_0153 speaker=NAOTO
@@ -9479,7 +9479,7 @@ A国に着いてから、移動と準備に数日を使った。
 廊下へ出ると、菜月が待っていた。
 @text show id=TX22_001_0170 speaker=narration
 窓から、夕方の光が差している。
-@char show id=CH_001 expression=shy position=center crop=face duration_ms=300
+@char show id=CH_001 expression=shy duration_ms=300
 @text show id=TX22_001_0171 speaker=narration
 彼女は僕の手を取った。
 @text show id=TX22_001_0172 speaker=narration
