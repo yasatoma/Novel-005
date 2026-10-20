@@ -3,7 +3,7 @@
   "title": "大地の碑文",
   "engineVersion": "1.0",
   "entryScenario": "scenario/main.txt",
-  "titleImage": "title.png",
+  "titleImage": "title.webp",
   "titleLayout": "right",
   "saveKey": "novel005.v1",
   "presentation": {
