@@ -77,9 +77,11 @@ def normalize_character(work_root: Path, character_id: str, height_basis: float,
         fail(f"入力フォルダがありません: {src_dir}")
     dst_dir.mkdir(parents=True, exist_ok=True)
 
-    basic_path = src_dir / f"{character_id}_基本.png"
+    basic_path = src_dir / f"{character_id}_通常.png"
     if not basic_path.exists():
-        fail(f"基本立ち絵がありません: {basic_path}")
+        basic_path = src_dir / f"{character_id}_基本.png"
+    if not basic_path.exists():
+        fail(f"基準立ち絵がありません: {character_id}_通常.png または {character_id}_基本.png ({src_dir})")
 
     with Image.open(basic_path) as img:
         basic = img.convert("RGBA")

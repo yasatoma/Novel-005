@@ -73,7 +73,9 @@ function validBacklog(value) {
 
 export function assertValidSaveState(state) {
   if (!isPlainRecord(state)) throw new Error("Save state invalid");
-  const nullableStrings = ["currentChapterId","currentSceneId","currentTextId","currentBackground","currentBackgroundImage","currentBackgroundFilter","currentBackgroundEffect","currentBackgroundView","currentBgm","currentAmbient","currentChoiceId"];
+  if ("currentBackgroundEffectLayer" in state && !["background","foreground"].includes(state.currentBackgroundEffectLayer)) throw new Error("Save state invalid: currentBackgroundEffectLayer");
+  validateResumeFields(state);
+  const nullableStrings = ["currentChapterId","currentSceneId","currentTextId","currentBackground","currentBackgroundImage","currentBackgroundFilter","currentBackgroundEffect","currentBackgroundEffectLayer","currentBackgroundView","currentBgm","currentAmbient","currentChoiceId"];
   for (const key of nullableStrings) if (key in state && !optionalString(state[key])) throw new Error(`Save state invalid: ${key}`);
   for (const key of ["currentCommandIndex"]) {
     if (key in state && (!Number.isInteger(state[key]) || state[key] < 0)) throw new Error(`Save state invalid: ${key}`);
@@ -93,9 +95,11 @@ export function assertValidSaveState(state) {
 export function assertValidTransferPayload(data) {
   if (!isPlainRecord(data) || !isPlainRecord(data.state) || !Array.isArray(data.readIds)) throw new Error("Transfer payload invalid");
   const state = data.state;
-  const allowed = new Set(["currentChapterId","currentSceneId","currentCommandIndex","currentTextId","flags","unlockedMemoIds","trail","reachedEndingIds","visibleCharacters","currentBackground","currentBackgroundImage","currentBackgroundFilter","currentBackgroundEffect","currentBackgroundView","currentComparison","currentBgm","currentBgmVolume","rubySeenByChapter"]);
+  validateResumeFields(state);
+  if ("currentBackgroundEffectLayer" in state && !["background","foreground"].includes(state.currentBackgroundEffectLayer)) throw new Error("Transfer payload invalid: currentBackgroundEffectLayer");
+  const allowed = new Set(["currentResumePoint","scenarioRevision","currentChoiceId","currentChapterId","currentSceneId","currentCommandIndex","currentTextId","flags","unlockedMemoIds","trail","reachedEndingIds","visibleCharacters","currentBackground","currentBackgroundImage","currentBackgroundFilter","currentBackgroundEffect","currentBackgroundEffectLayer","currentBackgroundView","currentComparison","currentBgm","currentBgmVolume","rubySeenByChapter"]);
   if (Object.keys(state).some(key => !allowed.has(key))) throw new Error("Transfer payload invalid: unknown state key");
-  for (const key of ["currentChapterId","currentSceneId","currentTextId","currentBackground","currentBackgroundImage","currentBackgroundFilter","currentBackgroundEffect","currentBackgroundView","currentBgm"]) if (key in state && !optionalString(state[key])) throw new Error(`Transfer payload invalid: ${key}`);
+  for (const key of ["currentChapterId","currentSceneId","currentTextId","currentBackground","currentBackgroundImage","currentBackgroundFilter","currentBackgroundEffect","currentBackgroundEffectLayer","currentBackgroundView","currentBgm"]) if (key in state && !optionalString(state[key])) throw new Error(`Transfer payload invalid: ${key}`);
   if ("currentCommandIndex" in state && (!Number.isInteger(state.currentCommandIndex) || state.currentCommandIndex < 0)) throw new Error("Transfer payload invalid: currentCommandIndex");
   if ("flags" in state && !validFlags(state.flags)) throw new Error("Transfer payload invalid: flags");
   if ("visibleCharacters" in state && !validVisibleCharacters(state.visibleCharacters)) throw new Error("Transfer payload invalid: visibleCharacters");
@@ -107,4 +111,11 @@ export function assertValidTransferPayload(data) {
   }
   if (!data.readIds.every(v => typeof v === "string")) throw new Error("Transfer payload invalid: readIds");
   return data;
+}
+
+function validateResumeFields(state) {
+  if (state.scenarioRevision !== undefined && typeof state.scenarioRevision !== "string") throw new Error("Invalid scenarioRevision");
+  if (state.currentChoiceId !== undefined && !optionalString(state.currentChoiceId)) throw new Error("Invalid currentChoiceId");
+  const anchor=state.currentResumePoint;
+  if (anchor != null && (!isPlainRecord(anchor) || !["text","scene","choice","ending"].includes(anchor.type) || typeof anchor.id !== "string" || !anchor.id || Object.keys(anchor).some(k=>!["type","id"].includes(k)))) throw new Error("Invalid currentResumePoint");
 }

@@ -130,6 +130,7 @@ export class Renderer {
     this.background.style.backgroundImage = "";
     this.background.dataset.filter = "normal";
     this.background.dataset.effect = "none";
+    this.updateEffectLayer("none", "background");
     this.background.dataset.view = "full";
     for (const slot of this.characterSlots.values()) {
       slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
@@ -192,6 +193,7 @@ export class Renderer {
       image:state.currentBackgroundImage ?? "base",
       filter:state.currentBackgroundFilter ?? "normal",
       effect:state.currentBackgroundEffect ?? "none",
+      effect_layer:state.currentBackgroundEffectLayer ?? "background",
       view:state.currentBackgroundView ?? "full"
     } }, assets);
     for (const [position, character] of Object.entries(state.visibleCharacters ?? {})) {
@@ -229,15 +231,30 @@ export class Renderer {
     document.querySelector("#records").hidden=false;
   }
 
+  updateEffectLayer(effect, layer) {
+    this.background.dataset.effectLayer = layer;
+    if (layer === "foreground" && effect !== "none" && !this.foregroundEffect) {
+      this.foregroundEffect = document.createElement("div");
+      this.foregroundEffect.className = "presentation-effect-layer";
+      this.foregroundEffect.setAttribute("aria-hidden", "true");
+      this.game.append(this.foregroundEffect);
+    }
+    if (this.foregroundEffect) {
+      this.foregroundEffect.dataset.effect = effect;
+      this.foregroundEffect.hidden = layer !== "foreground" || effect === "none";
+    }
+  }
+
   showBackground(command, assets, done) {
     this.clearTransition();
-    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.background.dataset.view="full"; done?.(); return; }
+    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.updateEffectLayer("none", "background"); this.background.dataset.view="full"; done?.(); return; }
     const file = resolveBackgroundAsset(assets, command.args.id, command.args.image ?? "base");
     const apply = () => {
       const backgroundUrl = resolveContentUrl(this.workRoot, `images/bg/${file}`);
       this.background.style.backgroundImage = `url("${backgroundUrl}")`;
       this.background.dataset.filter = command.args.filter ?? "normal";
       this.background.dataset.effect = command.args.effect ?? "none";
+      this.updateEffectLayer(command.args.effect ?? "none", command.args.effect_layer ?? "background");
       this.background.dataset.view = command.args.view ?? "full";
     };
     const transition = command.args.transition ?? "cut";
