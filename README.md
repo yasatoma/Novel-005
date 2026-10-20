@@ -1,9 +1,9 @@
 # 大地の碑文（Novel-005）
 
-![大地の碑文 タイトル](content/images/title/title.png)
-
 > **遺跡探索 × サスペンス**  
 > 眠っていたのは、古代の謎か。それとも――人間の殺意か。
+
+<img src="content/images/title/title.webp" width="600">
 
 ## 🎮 プレイ
 
