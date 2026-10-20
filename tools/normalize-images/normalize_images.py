@@ -139,6 +139,25 @@ def resize_background_cover(image: Image.Image):
     return resized.crop((left, top, left + target_w, top + target_h))
 
 
+def normalize_title(work_root: Path, quality: int):
+    src_path = work_root / "Image-master" / "Title" / "title.png"
+    dst_path = work_root / "Image" / "Title" / "title.webp"
+    if not src_path.exists():
+        fail(f"タイトル画像がありません: {src_path}")
+
+    with Image.open(src_path) as img:
+        src = img.convert("RGB")
+    result = src if src.size == BACKGROUND_SIZE else resize_background_cover(src)
+    save_webp(result, dst_path, quality, keep_alpha=False)
+    log(
+        f"[WEBP] {src_path.name}: "
+        f"{src.width}x{src.height} -> "
+        f"{BACKGROUND_SIZE[0]}x{BACKGROUND_SIZE[1]} / quality={quality}"
+    )
+    log("[DONE] TITLE 正規化完了")
+    return 1
+
+
 def normalize_background(work_root: Path, background_id: str, quality: int):
     src_dir = work_root / "Image-master" / "Background"
     dst_dir = work_root / "Image" / "Background"
@@ -231,7 +250,7 @@ def main():
         "target_id",
         nargs="?",
         default="ALL",
-        help="ALL（既定）/ ALL_BG / ALL_CH / CH_006 / BG_029",
+        help="ALL（既定）/ ALL_BG / ALL_CH / TITLE / CH_006 / BG_029",
     )
     parser.add_argument(
         "--height-basis",
@@ -267,10 +286,10 @@ def main():
         fail(f"作業ルートがありません: {work_root}")
 
     target_id = args.target_id.upper()
-    valid_all = {"ALL", "ALL_BG", "ALL_CH"}
+    valid_all = {"ALL", "ALL_BG", "ALL_CH", "TITLE"}
     if target_id not in valid_all and not target_id.startswith(("CH_", "BG_")):
         fail(
-            "target_id は ALL / ALL_BG / ALL_CH / CH_XXX / BG_XXX の形式で指定してください。",
+            "target_id は ALL / ALL_BG / ALL_CH / TITLE / CH_XXX / BG_XXX の形式で指定してください。",
             EXIT_USAGE,
         )
 
@@ -310,6 +329,7 @@ def main():
         "quality": args.quality,
         "height_basis_file": str(basis_file),
         "backgrounds": {"targets": 0, "files": 0},
+        "title": {"targets": 0, "files": 0},
         "characters": {"targets": 0, "files": 0},
         "failed": [],
     }
@@ -325,7 +345,11 @@ def main():
 
     for current in targets:
         try:
-            if current.startswith("BG_"):
+            if current == "TITLE":
+                file_count = normalize_title(work_root, args.quality)
+                summary["title"]["targets"] += 1
+                summary["title"]["files"] += file_count
+            elif current.startswith("BG_"):
                 file_count = normalize_background(work_root, current, args.quality)
                 summary["backgrounds"]["targets"] += 1
                 summary["backgrounds"]["files"] += file_count
