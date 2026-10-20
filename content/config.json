@@ -4,7 +4,7 @@
   "engineVersion": "1.0",
   "entryScenario": "scenario/main.txt",
   "titleImage": "title.webp",
-  "titleLayout": "right",
+  "titleLayout": "left",
   "saveKey": "novel005.v1",
   "presentation": {
     "defaultCharacterPosition": "right"
