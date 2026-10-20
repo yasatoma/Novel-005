@@ -2,147 +2,154 @@
   "backgrounds": {
     "BG_001": {
       "variants": {
-        "base": "BG_001_base.webp"
+        "base": "BG_001.webp"
       }
     },
     "BG_002": {
       "variants": {
-        "base": "BG_002_base.webp"
+        "base": "BG_002.webp"
       }
     },
     "BG_003": {
       "variants": {
-        "base": "BG_003_base.webp"
+        "base": "BG_003.webp"
       }
     },
     "BG_004": {
       "variants": {
-        "base": "BG_004_base.webp"
+        "base": "BG_004.webp"
       }
     },
     "BG_005": {
       "variants": {
-        "base": "BG_005_base.webp"
+        "base": "BG_005.webp"
       }
     },
     "BG_006": {
       "variants": {
-        "base": "BG_006_base.webp"
+        "base": "BG_006.webp"
       }
     },
     "BG_007": {
       "variants": {
-        "base": "BG_007_base.webp",
-        "blocked": "BG_007_blocked.webp"
+        "base": "BG_007.webp",
+        "blocked": "BG_007_崩落.webp"
       }
     },
     "BG_008": {
       "variants": {
-        "base": "BG_008_base.webp"
+        "base": "BG_008.webp"
       }
     },
     "BG_010": {
       "variants": {
-        "base": "BG_010_base.webp"
+        "base": "BG_010.webp"
       }
     },
     "BG_015": {
       "variants": {
-        "base": "BG_015_base.webp"
+        "base": "BG_015.webp"
       }
     },
     "BG_016": {
       "variants": {
-        "base": "BG_016_base.webp"
+        "base": "BG_016.webp"
       }
     },
     "BG_017": {
       "variants": {
-        "base": "BG_017_base.webp",
-        "records": "BG_017_records.webp",
-        "side": "BG_017_side.webp"
+        "base": "BG_017.webp"
       }
     },
     "BG_018": {
       "variants": {
-        "base": "BG_018_base.webp"
+        "base": "BG_018.webp"
       }
     },
     "BG_019": {
       "variants": {
-        "base": "BG_019_base.webp"
+        "base": "BG_019.webp"
       }
     },
     "BG_022": {
       "variants": {
-        "after": "BG_022_after.webp",
-        "before": "BG_022_before.webp"
+        "base": "BG_022.webp"
       }
     },
     "BG_025": {
       "variants": {
-        "base": "BG_025_base.webp",
-        "rubble": "BG_025_rubble.webp"
+        "base": "BG_025.webp",
+        "blocked": "BG_025_崩落.webp"
       }
     },
     "BG_026": {
       "variants": {
-        "base": "BG_026_base.webp"
+        "base": "BG_026.webp"
       }
     },
     "BG_029": {
       "variants": {
-        "base": "BG_029_base.webp",
-        "high": "BG_029_high.webp",
-        "low": "BG_029_low.webp"
+        "base": "BG_029.webp",
+        "low": "BG_029_低水位.webp",
+        "high": "BG_029_高水位.webp"
       }
     },
     "BG_030": {
       "variants": {
-        "base": "BG_030_base.webp"
+        "base": "BG_030.webp"
       }
     },
     "BG_031": {
       "variants": {
-        "base": "BG_031_base.webp",
-        "partial": "BG_031_partial.webp",
-        "relieved": "BG_031_relieved.webp"
+        "base": "BG_031.webp",
+        "restored": "BG_031_復旧.webp",
+        "partial": "BG_031_途中.webp"
       }
     },
     "BG_033": {
       "variants": {
-        "base": "BG_033_base.webp",
-        "open": "BG_033_open.webp"
+        "base": "BG_033.webp",
+        "open": "BG_033_開口.webp"
       }
     },
     "BG_034": {
       "variants": {
-        "base": "BG_034_base.webp"
+        "base": "BG_034.webp"
       }
     },
     "BG_035": {
       "variants": {
-        "base": "BG_035_base.webp"
+        "base": "BG_035.webp"
       }
     },
     "BG_036": {
       "variants": {
-        "base": "BG_036_base.webp"
+        "base": "BG_036.webp"
       }
     },
     "BG_037": {
       "variants": {
-        "base": "BG_037_base.webp"
+        "base": "BG_037.webp"
       }
     },
     "BG_038": {
       "variants": {
-        "base": "BG_038_base.webp"
+        "base": "BG_038.webp"
       }
     },
     "BG_039": {
       "variants": {
-        "base": "BG_039_base.webp"
+        "base": "BG_039.webp"
+      }
+    },
+    "BG_040": {
+      "variants": {
+        "base": "BG_040.webp"
+      }
+    },
+    "BG_041": {
+      "variants": {
+        "base": "BG_041.webp"
       }
     }
   },
@@ -156,64 +163,77 @@
       "name": "菜月",
       "color": "#db8796",
       "expressions": {
-        "normal": "CH_001_基本.webp",
+        "uneasy": "CH_001_不安.webp",
+        "angry": "CH_001_怒り.webp",
+        "sad": "CH_001_悲しみ.webp",
+        "tears": "CH_001_涙.webp",
         "shy": "CH_001_照れ.webp",
         "smile": "CH_001_笑顔.webp",
-        "tears": "CH_001_涙.webp",
-        "angry": "CH_001_怒り.webp",
-        "uneasy": "CH_001_不安.webp"
+        "normal": "CH_001_通常.webp",
+        "surprised": "CH_001_驚き.webp"
       }
     },
     "CH_002": {
       "name": "佐知子",
       "color": "#bba4ac",
       "expressions": {
-        "normal": "CH_002_基本.webp",
-        "tense": "CH_002_緊張.webp",
-        "anguish": "CH_002_苦悩.webp"
+        "uneasy": "CH_002_不安.webp",
+        "anguish": "CH_002_苦悩.webp",
+        "normal": "CH_002_通常.webp",
+        "surprised": "CH_002_驚き.webp"
       }
     },
     "CH_003": {
       "name": "野々村",
       "color": "#c7ad76",
       "expressions": {
-        "normal": "CH_003_基本.webp",
-        "smile": "CH_003_笑顔.webp"
+        "uneasy": "CH_003_不安.webp",
+        "sad": "CH_003_悲しみ.webp",
+        "smile": "CH_003_笑顔.webp",
+        "normal": "CH_003_通常.webp"
       }
     },
     "CH_004": {
       "name": "ダリオ",
       "color": "#c39a73",
       "expressions": {
-        "normal": "CH_004_基本.webp"
+        "sad": "CH_004_悲しみ.webp",
+        "smile": "CH_004_笑顔.webp",
+        "normal": "CH_004_通常.webp"
       }
     },
     "CH_005": {
       "name": "達也",
       "color": "#a9b4c7",
       "expressions": {
-        "normal": "CH_005_基本.webp"
+        "uneasy": "CH_005_不安.webp",
+        "sad": "CH_005_悲しみ.webp",
+        "normal": "CH_005_通常.webp"
       }
     },
     "CH_006": {
       "name": "藤川",
       "color": "#b5a98d",
       "expressions": {
-        "normal": "CH_006_基本.webp"
+        "smile": "CH_006_笑顔.webp",
+        "normal": "CH_006_通常.webp"
       }
     },
     "CH_007": {
       "name": "エレナ",
       "color": "#b29c7d",
       "expressions": {
-        "normal": "CH_007_基本.webp"
+        "uneasy": "CH_007_不安.webp",
+        "smile": "CH_007_笑顔.webp",
+        "normal": "CH_007_通常.webp"
       }
     },
     "CH_008": {
       "name": "ニコ",
       "color": "#b89e78",
       "expressions": {
-        "normal": "CH_008_基本.webp"
+        "smile": "CH_008_笑顔.webp",
+        "normal": "CH_008_通常.webp"
       }
     }
   },
@@ -227,18 +247,12 @@
       "B006.dat",
       "B007.dat",
       "B008.dat",
-      "B009.dat",
-      "B010.dat",
-      "B011.dat",
-      "B012.dat",
-      "B013.dat",
-      "B014.dat",
-      "B015.dat",
-      "B016.dat"
+      "B009.dat"
     ],
     "ambient": [],
     "se": [
-      "S001.dat"
+      "S001.dat",
+      "S002.dat"
     ]
   }
 }

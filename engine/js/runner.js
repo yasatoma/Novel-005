@@ -1,8 +1,12 @@
+import { commandAnchor, scenarioRevision } from "./scenario-identity.js";
+
 export class Runner {
-  constructor(commands, state, hooks = {}) {
+  constructor(commands, state, hooks = {}, options = {}) {
     this.commands = commands;
     this.state = state;
     this.hooks = hooks;
+    this.defaultCharacterPosition = options.defaultCharacterPosition ?? "right";
+    this.revision = scenarioRevision(commands);
     this.index = 0;
     this.sceneIndexes = new Map();
     commands.forEach((command, index) => {
@@ -38,6 +42,9 @@ export class Runner {
     while (this.index < this.commands.length) {
       const command = this.commands[this.index];
       this.state.currentCommandIndex = this.index;
+      this.state.scenarioRevision = this.revision;
+      const anchor = commandAnchor(command);
+      if (anchor) this.state.currentResumePoint = anchor;
 
       switch (command.type) {
         case "chapter":
@@ -49,6 +56,7 @@ export class Runner {
               this.state.currentBackgroundImage = "base";
               this.state.currentBackgroundFilter = "normal";
               this.state.currentBackgroundEffect = "none";
+              this.state.currentBackgroundEffectLayer = "background";
               this.state.currentBackgroundView = "full";
               this.state.currentBackgroundEffects = [];
               this.state.currentComparison = null;
@@ -62,6 +70,8 @@ export class Runner {
         case "scene":
           if (command.action === "start") {
             this.state.currentSceneId = command.args.id;
+            this.state.currentTextId = null;
+            this.state.currentChoiceId = null;
             this.state.trail.push(command.args.id);
             this.hooks.sceneStart?.(command);
           }
@@ -82,12 +92,14 @@ export class Runner {
             this.state.currentBackgroundImage = command.args.image ?? "base";
             this.state.currentBackgroundFilter = command.args.filter ?? "normal";
             this.state.currentBackgroundEffect = command.args.effect ?? "none";
+            this.state.currentBackgroundEffectLayer = command.args.effect_layer ?? "background";
             this.state.currentBackgroundView = command.args.view ?? "full";
           } else {
             this.state.currentBackground = null;
             this.state.currentBackgroundImage = "base";
             this.state.currentBackgroundFilter = "normal";
             this.state.currentBackgroundEffect = "none";
+              this.state.currentBackgroundEffectLayer = "background";
             this.state.currentBackgroundView = "full";
           }
           if (command.args.blocking && this.hooks.bg) {
@@ -108,7 +120,13 @@ export class Runner {
           break;
 
         case "char":
-          if (command.action === "show") this.state.visibleCharacters[command.args.position] = { id: command.args.id, expression: command.args.expression, crop: command.args.crop ?? "bust" };
+          if (command.action === "show") {
+            const position = command.args.position ?? this.defaultCharacterPosition;
+            for (const [slot, value] of Object.entries(this.state.visibleCharacters)) {
+              if (value.id === command.args.id) delete this.state.visibleCharacters[slot];
+            }
+            this.state.visibleCharacters[position] = { id: command.args.id, expression: command.args.expression, crop: command.args.crop ?? "bust" };
+          }
           else if (command.action === "change") {
             for (const value of Object.values(this.state.visibleCharacters)) if (value.id === command.args.id) {
               value.expression = command.args.expression;
@@ -117,7 +135,7 @@ export class Runner {
           } else {
             for (const [position, value] of Object.entries(this.state.visibleCharacters)) if (value.id === command.args.id) delete this.state.visibleCharacters[position];
           }
-          this.hooks.character?.(command);
+          this.hooks.character?.(command.action === "show" ? {...command, args:{...command.args, position:command.args.position ?? this.defaultCharacterPosition}} : command);
           break;
 
         case "bgm":

@@ -95,3 +95,11 @@
 .slot-button[data-slot-kind="manual"]{grid-column:1/-1;border-color:#d1b88445;background:#10262db0;min-height:54px}
 .slot-button[data-slot-kind="manual"]:not([disabled]){border-color:#d1b88470;background:#132b32d9}
 @media(max-width:700px){.slot-list:has(.slot-button[data-slot-kind="system"]){grid-template-columns:1fr 1fr}.slot-button[data-slot-kind="system"]{grid-template-columns:1fr;padding:6px 8px}.slot-button[data-slot-kind="system"] .slot-location{font-size:11px}.title-copy{padding-right:12px}}
+
+/* Optional effect plane: after characters at z=1, below transitions and UI.
+   The default background plane retains the legacy stacking and filtering. */
+#background[data-effect-layer="foreground"]::before{display:none}
+.presentation-effect-layer{position:absolute;inset:0;z-index:1;pointer-events:none}
+.presentation-effect-layer[hidden]{display:none}
+.presentation-effect-layer[data-effect="mist_weak"]::before,.presentation-effect-layer[data-effect="steam_weak"]::before,.presentation-effect-layer[data-effect="steam_medium"]::before,.presentation-effect-layer[data-effect="dust_weak"]::before,.presentation-effect-layer[data-effect="dust_medium"]::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,#fff1,#fff4,#fff1);filter:blur(14px);opacity:.4}
+.presentation-effect-layer[data-effect="steam_medium"]::before,.presentation-effect-layer[data-effect="dust_medium"]::before{opacity:.7}

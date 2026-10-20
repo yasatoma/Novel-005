@@ -152,6 +152,7 @@ function validateBackgroundReference(command, assets, id, variant) {
 function validateValues(command) {
   const a=command.args;
   if(command.type==="bg"&&command.action==="show"){
+    if(a.effect_layer!==undefined&&!["background","foreground"].includes(a.effect_layer)) fail(command,`未定義bg.effect_layer: ${a.effect_layer}`);
     if(a.filter&&!["normal","evening","night","dim","bright","warm","cool"].includes(a.filter)) fail(command,`未定義bg.filter: ${a.filter}`);
     if(a.view&&!["full","wall_crop","detail_crop","entrance"].includes(a.view)) fail(command,`未定義bg.view: ${a.view}`);
     if(a.transition&&!["cut","fade","dissolve","blackfade"].includes(a.transition)) fail(command,`未定義bg.transition: ${a.transition}`);
