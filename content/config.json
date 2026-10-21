@@ -5,6 +5,7 @@
   "entryScenario": "scenario/main.txt",
   "titleImage": "title.webp",
   "titleLayout": "left",
+  "titleBgm": "B001.dat",
   "saveKey": "novel005.v1",
   "presentation": {
     "defaultCharacterPosition": "right"

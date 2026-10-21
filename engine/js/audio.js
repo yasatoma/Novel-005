@@ -97,7 +97,13 @@ export class AudioManager {
     const targetVolume = this.volume(kind) * Number(audio.dataset.volumeMultiplier);
     audio.volume = Number(options.fade_ms) > 0 ? 0 : targetVolume;
     this[kind] = audio;
-    await safePlay(audio);
+    try {
+      await safePlay(audio);
+    } catch (error) {
+      if (this[kind] === audio) this[kind] = null;
+      audio.pause();
+      throw error;
+    }
     if (Number(options.fade_ms) > 0) this.fade(audio, 0, targetVolume, Number(options.fade_ms));
   }
 
@@ -199,10 +205,7 @@ export class AudioManager {
 }
 
 async function safePlay(audio) {
-  try { await audio.play(); }
-  catch (error) {
-    if (error?.name !== "NotAllowedError") throw error;
-  }
+  await audio.play();
 }
 
 function clamp(value) {
