@@ -8,5 +8,6 @@
   "saveKey": "novel005.v1",
   "presentation": {
     "defaultCharacterPosition": "right"
-  }
+  },
+  "titleBgm": "B001.dat"
 }
