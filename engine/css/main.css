@@ -1048,30 +1048,53 @@ input[type=range] {
 /* Mobile layout */
 @media(max-width:700px) {
 
-  /* 1 character */
-  #characters[data-visible-count="1"] > img:not([hidden]) {
-    scale: 1
+  /* 1人表示 */
+  #characters[data-visible-count="1"] > [data-position="left"] {
+    left: 8%;
   }
 
-  /* 2 characters */
-  #characters[data-visible-count="2"] > img:not([hidden]) {
-    scale: 1
+  #characters[data-visible-count="1"] > [data-position="right"] {
+    right: 8%;
   }
 
-  /* 3 characters */
-  #characters[data-visible-count="3"] > img:not([hidden]) {
-    scale: 1
+  #characters[data-visible-count="1"] > img[data-crop="bust"]:not([hidden]) {
+    bottom: 15vh;
+    max-height: 90vh;
   }
+
+
+  /* 2人表示 */
+  #characters[data-visible-count="2"] > [data-position="left"] {
+    left: 3%;
+  }
+
+  #characters[data-visible-count="2"] > [data-position="right"] {
+    right: 3%;
+  }
+
+  #characters[data-visible-count="2"] > img[data-crop="bust"]:not([hidden]) {
+    bottom: 20vh;
+    max-height: 75vh;
+  }
+
+
+  /* 3人表示 */
+  #characters[data-visible-count="3"] > [data-position="left"] {
+    left: 1%;
+  }
+
+  #characters[data-visible-count="3"] > [data-position="right"] {
+    right: 1%;
+  }
+
+  #characters[data-visible-count="3"] > img[data-crop="bust"]:not([hidden]) {
+    bottom: 25vh;
+    max-height: 60vh;
+  }
+
 
   #characters > img:not([hidden]) {
     transform-origin: bottom center
-  }
-
-  #characters [data-position="left"] {
-    left: 3%  }
-
-  #characters [data-position="right"] {
-    right: 3%
   }
 
   #game-top {
@@ -1132,8 +1155,6 @@ input[type=range] {
   }
 
   #characters img[data-crop="bust"] {
-    bottom: 20vh;
-    max-height: 70vh;
     max-width: none;
     width: auto;
     height: auto
