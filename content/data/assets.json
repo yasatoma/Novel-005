@@ -1,7 +1,7 @@
 {
   "backgrounds": {
     "BG_001": {
-      "position": 0,
+      "position": 15,
       "variants": {
         "base": "BG_001.webp"
       }
@@ -27,7 +27,7 @@
       }
     },
     "BG_006": {
-      "position": 100,
+      "position": 65,
       "variants": {
         "base": "BG_006.webp"
       }
