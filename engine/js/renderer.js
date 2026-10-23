@@ -300,7 +300,11 @@ export class Renderer {
       // the transition. A single requestAnimationFrame can be coalesced by
       // the browser and skip the visible fade entirely.
       void layer.offsetWidth;
-      requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
+      requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (generation === this.transitionGeneration) layer.dataset.active = "true";
+      });
+    });
       this.transitionTimers.push(setTimeout(() => {
         if (generation !== this.transitionGeneration) return;
         this.transitionTimers = [];
@@ -364,7 +368,11 @@ export class Renderer {
     // Commit the initial opacity before toggling the active state so the
     // browser cannot collapse both states into one frame and skip the fade.
     void layer.offsetWidth;
-    requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (generation === this.transitionGeneration) layer.dataset.active = "true";
+      });
+    });
     this.transitionTimers.push(setTimeout(() => {
       if (generation !== this.transitionGeneration) return;
       this.transitionTimers = [];
