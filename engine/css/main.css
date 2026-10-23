@@ -1046,7 +1046,7 @@ input[type=range] {
 }
 
 /* Mobile layout */
-@media(max-width:700px) {
+@media(max-width:900px) {
 
   /* 1人表示 */
   #characters[data-visible-count="1"] > [data-position="left"] {
