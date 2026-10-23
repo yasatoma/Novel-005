@@ -618,71 +618,6 @@ input[type=range] {
   pointer-events: none
 }
 
-@media(max-width:700px) {
-  #characters [data-position="left"] {
-    left: 3%  }
-
-  #characters [data-position="right"] {
-    right: 3%
-  }
-
-  #game-top {
-    padding: 10px 12px
-  }
-
-  #chapter-title {
-    font-size: 12px
-  }
-
-  #reading-area {
-    left: 12px;
-    right: 12px;
-    bottom: 8px
-  }
-
-  #speaker-box {
-    margin-left: 12px;
-    min-width: 150px;
-    min-height: 38px;
-    padding: 7px 14px
-  }
-
-  #textbox {
-    min-height: 190px;
-    padding: 22px 20px 35px
-  }
-
-  #text {
-    font-size: calc(19px * var(--text-scale));
-    line-height: 1.95
-  }
-
-  #toolbar {
-    justify-content: space-between;
-    gap: 2px
-  }
-
-  #toolbar button {
-    font-size: 10px;
-    padding: 7px 6px
-  }
-
-  .title-actions {
-    width: 100%
-  }
-
-  #characters img {
-    max-width: 70vw
-  }
-
-  .overlay {
-    place-items: start center
-  }
-
-  .panel {
-    margin: auto 0
-  }
-}
 
 @media(prefers-reduced-motion:reduce) {
 
@@ -775,20 +710,6 @@ input[type=range] {
   height: var(--char-face-height, 195vh)
 }
 
-@media(max-width:700px) {
-  #characters img[data-crop="bust"] {
-    bottom: 20vh;
-    max-height: 70vh;
-    max-width: none;
-    width: auto;
-    height: auto
-  }
-
-  #characters img[data-crop="face"] {
-    top: var(--char-face-top-mobile, -8vh);
-    height: var(--char-face-height-mobile, 175vh)
-  }
-}
 
 #comparison {
   position: absolute;
@@ -1011,28 +932,6 @@ input[type=range] {
   opacity: .42
 }
 
-@media(max-width:700px) {
-  #title::after {
-    inset: 10px
-  }
-
-  .title-copy {
-    padding-left: 12px
-  }
-
-  .settings-grid {
-    grid-template-columns: 1fr;
-    gap: 10px
-  }
-
-  .settings-grid .setting-wide {
-    grid-column: auto
-  }
-
-  .settings-footer {
-    align-items: flex-end
-  }
-}
 
 /* Desktop character side staging: 10%; mobile override: 3%. */
 
@@ -1110,24 +1009,6 @@ input[type=range] {
   background: #132b32d9
 }
 
-@media(max-width:700px) {
-  .slot-list:has(.slot-button[data-slot-kind="system"]) {
-    grid-template-columns: 1fr 1fr
-  }
-
-  .slot-button[data-slot-kind="system"] {
-    grid-template-columns: 1fr;
-    padding: 6px 8px
-  }
-
-  .slot-button[data-slot-kind="system"] .slot-location {
-    font-size: 11px
-  }
-
-  .title-copy {
-    padding-right: 12px
-  }
-}
 
 /* Optional effect plane: after characters at z=1, below transitions and UI.
    The default background plane retains the legacy stacking and filtering. */
@@ -1162,4 +1043,122 @@ input[type=range] {
 .presentation-effect-layer[data-effect="steam_medium"]::before,
 .presentation-effect-layer[data-effect="dust_medium"]::before {
   opacity: .7
+}
+
+/* Mobile layout */
+@media(max-width:700px) {
+  #characters [data-position="left"] {
+    left: 3%  }
+
+  #characters [data-position="right"] {
+    right: 3%
+  }
+
+  #game-top {
+    padding: 10px 12px
+  }
+
+  #chapter-title {
+    font-size: 12px
+  }
+
+  #reading-area {
+    left: 12px;
+    right: 12px;
+    bottom: 8px
+  }
+
+  #speaker-box {
+    margin-left: 12px;
+    min-width: 150px;
+    min-height: 38px;
+    padding: 7px 14px
+  }
+
+  #textbox {
+    min-height: 190px;
+    padding: 22px 20px 35px
+  }
+
+  #text {
+    font-size: calc(19px * var(--text-scale));
+    line-height: 1.95
+  }
+
+  #toolbar {
+    justify-content: space-between;
+    gap: 2px
+  }
+
+  #toolbar button {
+    font-size: 10px;
+    padding: 7px 6px
+  }
+
+  .title-actions {
+    width: 100%
+  }
+
+  #characters img {
+    max-width: 70vw
+  }
+
+  .overlay {
+    place-items: start center
+  }
+
+  .panel {
+    margin: auto 0
+  }
+
+  #characters img[data-crop="bust"] {
+    bottom: 20vh;
+    max-height: 70vh;
+    max-width: none;
+    width: auto;
+    height: auto
+  }
+
+  #characters img[data-crop="face"] {
+    top: var(--char-face-top-mobile, -8vh);
+    height: var(--char-face-height-mobile, 175vh)
+  }
+
+  #title::after {
+    inset: 10px
+  }
+
+  .title-copy {
+    padding-left: 12px
+  }
+
+  .settings-grid {
+    grid-template-columns: 1fr;
+    gap: 10px
+  }
+
+  .settings-grid .setting-wide {
+    grid-column: auto
+  }
+
+  .settings-footer {
+    align-items: flex-end
+  }
+
+  .slot-list:has(.slot-button[data-slot-kind="system"]) {
+    grid-template-columns: 1fr 1fr
+  }
+
+  .slot-button[data-slot-kind="system"] {
+    grid-template-columns: 1fr;
+    padding: 6px 8px
+  }
+
+  .slot-button[data-slot-kind="system"] .slot-location {
+    font-size: 11px
+  }
+
+  .title-copy {
+    padding-right: 12px
+  }
 }
