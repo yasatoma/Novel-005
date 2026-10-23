@@ -136,6 +136,7 @@ export class Renderer {
       slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
       for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile","--char-position-offset-x"]) slot.style.removeProperty(name);
     }
+    this.updateVisibleCharacterCount();
   }
 
   showChapter(command) {
@@ -304,6 +305,11 @@ export class Renderer {
     this.comparison.hidden = false;
   }
 
+  updateVisibleCharacterCount() {
+    const count = [...this.characterSlots.values()].filter(slot => !slot.hidden).length;
+    document.querySelector("#characters").dataset.visibleCount = String(count);
+  }
+
   showCharacter(command, assets) {
     if (command.action === "hide") {
       for (const slot of this.characterSlots.values()) {
@@ -316,8 +322,12 @@ export class Renderer {
             setTimeout(() => {
               if (slot.dataset.hiding !== "true") return;
               slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
+              this.updateVisibleCharacterCount();
             }, duration);
-          } else { slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; }
+          } else {
+            slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character;
+            this.updateVisibleCharacterCount();
+          }
         }
       }
       return;
@@ -345,6 +355,7 @@ export class Renderer {
       slot.style.opacity = "";
       slot.hidden = false;
     }
+    this.updateVisibleCharacterCount();
   }
 
   prepareCharacterCrop(slot, source) {
