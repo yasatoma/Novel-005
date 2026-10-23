@@ -620,11 +620,10 @@ input[type=range] {
 
 @media(max-width:700px) {
   #characters [data-position="left"] {
-    left: 8%
-  }
+    left: 3%  }
 
   #characters [data-position="right"] {
-    right: 8%
+    right: 3%
   }
 
   #game-top {
@@ -778,8 +777,8 @@ input[type=range] {
 
 @media(max-width:700px) {
   #characters img[data-crop="bust"] {
-    bottom: -30vh;
-    max-height: 140vh;
+    bottom: 20vh;
+    max-height: 70vh;
     max-width: none;
     width: auto;
     height: auto
