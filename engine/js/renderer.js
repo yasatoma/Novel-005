@@ -134,6 +134,7 @@ export class Renderer {
     this.background.dataset.view = "full";
     for (const slot of this.characterSlots.values()) {
       slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
+      slot.style.zIndex = "";
       for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile","--char-position-offset-x"]) slot.style.removeProperty(name);
     }
     this.updateVisibleCharacterCount();
@@ -155,8 +156,16 @@ export class Renderer {
     return Object.fromEntries([...this.rubySeen].map(([chapterId,words])=>[chapterId,[...words]]));
   }
 
+  bringSpeakingCharacterToFront(characterId) {
+    if (!characterId) return;
+    const speakingSlot = [...this.characterSlots.values()].find(slot => !slot.hidden && slot.dataset.character === characterId);
+    if (!speakingSlot) return;
+    for (const slot of this.characterSlots.values()) slot.style.zIndex = slot === speakingSlot ? "2" : "";
+  }
+
   showText(command, next, options = {}) {
     if (this.textAdvanceTimer !== null) { clearTimeout(this.textAdvanceTimer); this.textAdvanceTimer = null; }
+    this.bringSpeakingCharacterToFront(command.args.speaker);
     const narration = command.args.speaker === "narration";
     const speaker = options.speaker ?? {};
     this.speaker.textContent = narration ? "" : (speaker.name ?? "話者不明");
