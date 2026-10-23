@@ -776,6 +776,15 @@ input[type=range] {
   opacity: 0
 }
 
+#transition-layer.transition-fade-in {
+  opacity: 0;
+  transition: opacity var(--transition-ms, 0ms) ease
+}
+
+#transition-layer.transition-fade-in[data-active="true"] {
+  opacity: 1
+}
+
 #transition-layer.transition-blackfade {
   opacity: 0;
   animation: background-blackfade var(--transition-ms, 1s) linear forwards
