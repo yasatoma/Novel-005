@@ -134,6 +134,7 @@ export class Renderer {
     this.text.textContent = "";
     this.readStatus.textContent = "";
     this.background.style.backgroundImage = "";
+    this.background.style.backgroundPosition = "center";
     this.background.dataset.filter = "normal";
     this.background.dataset.effect = "none";
     this.updateEffectLayer("none", "background");
@@ -266,7 +267,7 @@ export class Renderer {
 
   showBackground(command, assets, done) {
     this.clearTransition();
-    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.updateEffectLayer("none", "background"); this.background.dataset.view="full"; done?.(); return; }
+    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.style.backgroundPosition = "center"; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.updateEffectLayer("none", "background"); this.background.dataset.view="full"; done?.(); return; }
     const file = resolveBackgroundAsset(assets, command.args.id, command.args.image ?? "base");
     const apply = () => {
       const backgroundUrl = resolveContentUrl(this.workRoot, `images/bg/${file}`);
