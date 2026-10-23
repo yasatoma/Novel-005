@@ -339,6 +339,18 @@ export class Renderer {
       layer.style.backgroundColor = "#000";
       layer.className = "transition-blackfade";
       this.transitionTimers.push(setTimeout(() => { if (generation === this.transitionGeneration) apply(); }, duration / 2));
+    } else if (transition === "fade") {
+      // Fade means the incoming background itself fades in. This also works
+      // when there is no outgoing background (for example after @bg hide).
+      apply();
+      layer.style.backgroundColor = "";
+      layer.style.backgroundImage = this.background.style.backgroundImage;
+      layer.style.backgroundPosition = getComputedStyle(this.background).backgroundPosition;
+      layer.style.backgroundSize = getComputedStyle(this.background).backgroundSize;
+      layer.style.filter = getComputedStyle(this.background).filter;
+      layer.dataset.effect = this.background.dataset.effect ?? "none";
+      layer.className = "transition-fade-in";
+      this.background.style.backgroundImage = "";
     } else {
       layer.style.backgroundColor = "";
       layer.style.backgroundImage = this.background.style.backgroundImage;
@@ -349,13 +361,14 @@ export class Renderer {
       layer.className = "transition-crossfade";
       apply();
     }
-    // Commit opacity:1 before toggling the active state so the browser cannot
-    // collapse both states into one frame and skip the fade.
+    // Commit the initial opacity before toggling the active state so the
+    // browser cannot collapse both states into one frame and skip the fade.
     void layer.offsetWidth;
     requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
     this.transitionTimers.push(setTimeout(() => {
       if (generation !== this.transitionGeneration) return;
       this.transitionTimers = [];
+      if (transition === "fade" && command.action === "show") apply();
       layer.hidden = true;
       layer.className = "";
       layer.style.backgroundImage = "";
