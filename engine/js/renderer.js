@@ -51,6 +51,12 @@ export function resolveBackgroundAsset(assets, id, variant = "base") {
   return file;
 }
 
+export function resolveBackgroundPosition(assets, id) {
+  const registered = assets.backgrounds?.[id];
+  if (!registered || typeof registered === "string") return "center";
+  return registered.position ?? "center";
+}
+
 export class Renderer {
   constructor(workRoot = "../content/", options = {}) {
     this.workRoot = workRoot;
@@ -205,8 +211,7 @@ export class Renderer {
       filter:state.currentBackgroundFilter ?? "normal",
       effect:state.currentBackgroundEffect ?? "none",
       effect_layer:state.currentBackgroundEffectLayer ?? "background",
-      view:state.currentBackgroundView ?? "full",
-      bg_position:state.currentBackgroundPosition ?? "center"
+      view:state.currentBackgroundView ?? "full"
     } }, assets);
     for (const [position, character] of Object.entries(state.visibleCharacters ?? {})) {
       this.showCharacter({ action:"show", args:{ id:character.id, expression:character.expression, position, crop:character.crop ?? "bust" } }, assets);
@@ -267,7 +272,7 @@ export class Renderer {
     const apply = () => {
       const backgroundUrl = resolveContentUrl(this.workRoot, `images/bg/${file}`);
       this.background.style.backgroundImage = `url("${backgroundUrl}")`;
-      this.background.style.backgroundPosition = command.args.bg_position ?? "center";
+      this.background.style.backgroundPosition = resolveBackgroundPosition(assets, command.args.id);
       this.background.dataset.filter = command.args.filter ?? "normal";
       this.background.dataset.effect = command.args.effect ?? "none";
       this.updateEffectLayer(command.args.effect ?? "none", command.args.effect_layer ?? "background");
