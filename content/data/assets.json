@@ -1,6 +1,7 @@
 {
   "backgrounds": {
     "BG_001": {
+      "position": "left",
       "variants": {
         "base": "BG_001.webp"
       }
@@ -26,6 +27,7 @@
       }
     },
     "BG_006": {
+      "position": "right",
       "variants": {
         "base": "BG_006.webp"
       }
@@ -203,7 +205,7 @@
       }
     },
     "CH_005": {
-      "name": "達也",
+      "name": "小宮",
       "color": "#a9b4c7",
       "expressions": {
         "uneasy": "CH_005_不安.webp",
