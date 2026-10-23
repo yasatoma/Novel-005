@@ -1047,7 +1047,7 @@ input[type=range] {
 
 /* Mobile layout */
 @media(max-width:700px) {
-#characters [data-position="left"] {
+  #characters [data-position="left"] {
     left: 3%  }
 
   #characters [data-position="right"] {
@@ -1111,7 +1111,7 @@ input[type=range] {
     margin: auto 0
   }
 
-#characters img[data-crop="bust"] {
+  #characters img[data-crop="bust"] {
     bottom: 20vh;
     max-height: 70vh;
     max-width: none;
@@ -1124,7 +1124,7 @@ input[type=range] {
     height: var(--char-face-height-mobile, 175vh)
   }
 
-#title::after {
+  #title::after {
     inset: 10px
   }
 
@@ -1145,7 +1145,7 @@ input[type=range] {
     align-items: flex-end
   }
 
-.slot-list:has(.slot-button[data-slot-kind="system"]) {
+  .slot-list:has(.slot-button[data-slot-kind="system"]) {
     grid-template-columns: 1fr 1fr
   }
 
