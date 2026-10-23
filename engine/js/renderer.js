@@ -53,8 +53,8 @@ export function resolveBackgroundAsset(assets, id, variant = "base") {
 
 export function resolveBackgroundPosition(assets, id) {
   const registered = assets.backgrounds?.[id];
-  if (!registered || typeof registered === "string") return "center";
-  return registered.position ?? "center";
+  if (!registered || typeof registered === "string") return "50% center";
+  return `${registered.position ?? 50}% center`;
 }
 
 export class Renderer {
