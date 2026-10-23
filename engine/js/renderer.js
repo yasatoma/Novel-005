@@ -128,6 +128,7 @@ export class Renderer {
     this.text.textContent = "";
     this.readStatus.textContent = "";
     this.background.style.backgroundImage = "";
+    this.background.style.backgroundPosition = "center";
     this.background.dataset.filter = "normal";
     this.background.dataset.effect = "none";
     this.updateEffectLayer("none", "background");
@@ -195,7 +196,8 @@ export class Renderer {
       filter:state.currentBackgroundFilter ?? "normal",
       effect:state.currentBackgroundEffect ?? "none",
       effect_layer:state.currentBackgroundEffectLayer ?? "background",
-      view:state.currentBackgroundView ?? "full"
+      view:state.currentBackgroundView ?? "full",
+      bg_position:state.currentBackgroundPosition ?? "center"
     } }, assets);
     for (const [position, character] of Object.entries(state.visibleCharacters ?? {})) {
       this.showCharacter({ action:"show", args:{ id:character.id, expression:character.expression, position, crop:character.crop ?? "bust" } }, assets);
@@ -251,11 +253,12 @@ export class Renderer {
 
   showBackground(command, assets, done) {
     this.clearTransition();
-    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.updateEffectLayer("none", "background"); this.background.dataset.view="full"; done?.(); return; }
+    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.style.backgroundPosition = "center"; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.updateEffectLayer("none", "background"); this.background.dataset.view="full"; done?.(); return; }
     const file = resolveBackgroundAsset(assets, command.args.id, command.args.image ?? "base");
     const apply = () => {
       const backgroundUrl = resolveContentUrl(this.workRoot, `images/bg/${file}`);
       this.background.style.backgroundImage = `url("${backgroundUrl}")`;
+      this.background.style.backgroundPosition = command.args.bg_position ?? "center";
       this.background.dataset.filter = command.args.filter ?? "normal";
       this.background.dataset.effect = command.args.effect ?? "none";
       this.updateEffectLayer(command.args.effect ?? "none", command.args.effect_layer ?? "background");
