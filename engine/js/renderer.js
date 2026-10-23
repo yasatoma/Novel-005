@@ -213,7 +213,10 @@ export class Renderer {
       const body=document.createElement("span"); renderRuby(body,entry.text,rubyMap,new Set()); article.append(body);
       list.append(article);
     }
-    document.querySelector("#backlog").hidden=false;
+    const backlog=document.querySelector("#backlog");
+    backlog.hidden=false;
+    const scrollTarget=document.querySelector("#backlog-list");
+    requestAnimationFrame(()=>{ scrollTarget.scrollTop=scrollTarget.scrollHeight; });
   }
 
   showRecords(ids, memos) {
@@ -359,7 +362,7 @@ export class Renderer {
   }
 
   prepareCharacterCrop(slot, source) {
-    for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile","--char-position-offset-x"]) slot.style.removeProperty(name);
+    for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile"]) slot.style.removeProperty(name);
     const apply = bounds => {
       if (!bounds || slot.src !== source) return;
       const offset = calculateCharacterPositionOffset(bounds, slot.dataset.position);
