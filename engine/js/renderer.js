@@ -267,7 +267,55 @@ export class Renderer {
 
   showBackground(command, assets, done) {
     this.clearTransition();
-    if (command.action === "hide") { this.background.style.backgroundImage = ""; this.background.style.backgroundPosition = "center"; this.background.dataset.filter="normal"; this.background.dataset.effect="none"; this.updateEffectLayer("none", "background"); this.background.dataset.view="full"; done?.(); return; }
+    const clearBackground = () => {
+      this.background.style.backgroundImage = "";
+      this.background.style.backgroundPosition = "center";
+      this.background.dataset.filter = "normal";
+      this.background.dataset.effect = "none";
+      this.updateEffectLayer("none", "background");
+      this.background.dataset.view = "full";
+    };
+    if (command.action === "hide") {
+      const transition = command.args?.transition ?? "cut";
+      const duration = Number(command.args?.duration_ms ?? 0);
+      if (transition === "cut" || duration <= 0 || !this.transition || !this.background.style.backgroundImage) {
+        clearBackground();
+        done?.();
+        return;
+      }
+      const layer = this.transition;
+      const generation = this.transitionGeneration;
+      layer.hidden = false;
+      layer.dataset.transition = transition;
+      layer.style.setProperty("--transition-ms", `${duration}ms`);
+      layer.style.backgroundColor = "";
+      layer.style.backgroundImage = this.background.style.backgroundImage;
+      layer.style.backgroundPosition = getComputedStyle(this.background).backgroundPosition;
+      layer.style.backgroundSize = getComputedStyle(this.background).backgroundSize;
+      layer.style.filter = getComputedStyle(this.background).filter;
+      layer.dataset.effect = this.background.dataset.effect ?? "none";
+      layer.className = "transition-crossfade";
+      clearBackground();
+      // Force the initial opacity:1 state to be committed before starting
+      // the transition. A single requestAnimationFrame can be coalesced by
+      // the browser and skip the visible fade entirely.
+      void layer.offsetWidth;
+      requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
+      this.transitionTimers.push(setTimeout(() => {
+        if (generation !== this.transitionGeneration) return;
+        this.transitionTimers = [];
+        layer.hidden = true;
+        layer.className = "";
+        layer.style.backgroundImage = "";
+        layer.style.backgroundPosition = "";
+        layer.style.backgroundSize = "";
+        layer.style.filter = "";
+        delete layer.dataset.effect;
+        delete layer.dataset.active;
+        done?.();
+      }, duration));
+      return;
+    }
     const file = resolveBackgroundAsset(assets, command.args.id, command.args.image ?? "base");
     const apply = () => {
       const backgroundUrl = resolveContentUrl(this.workRoot, `images/bg/${file}`);
@@ -301,6 +349,9 @@ export class Renderer {
       layer.className = "transition-crossfade";
       apply();
     }
+    // Commit opacity:1 before toggling the active state so the browser cannot
+    // collapse both states into one frame and skip the fade.
+    void layer.offsetWidth;
     requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
     this.transitionTimers.push(setTimeout(() => {
       if (generation !== this.transitionGeneration) return;
