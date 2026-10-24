@@ -107,6 +107,7 @@ export class Renderer {
     this.transitionTimers = [];
     this.transitionGeneration++;
     if (this.transition) {
+      this.transition.hidden = true;
       this.transition.className = "";
       this.transition.style.backgroundImage = "";
       this.transition.style.backgroundColor = "";
@@ -284,6 +285,7 @@ export class Renderer {
       }
       const layer = this.transition;
       const generation = this.transitionGeneration;
+      layer.hidden = false;
       layer.dataset.transition = transition;
       layer.style.setProperty("--transition-ms", `${duration}ms`);
       layer.style.backgroundColor = "";
@@ -306,6 +308,7 @@ export class Renderer {
       this.transitionTimers.push(setTimeout(() => {
         if (generation !== this.transitionGeneration) return;
         this.transitionTimers = [];
+        layer.hidden = true;
         layer.className = "";
         layer.style.backgroundImage = "";
         layer.style.backgroundPosition = "";
@@ -369,9 +372,7 @@ export class Renderer {
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        if (generation === this.transitionGeneration) {
-          layer.dataset.active = "true";
-        }
+        if (generation === this.transitionGeneration) layer.dataset.active = "true";
       });
     });
     this.transitionTimers.push(setTimeout(() => {
