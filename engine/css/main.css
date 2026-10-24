@@ -778,11 +778,14 @@ input[type=range] {
 
 #transition-layer.transition-fade-in {
   opacity: 0;
-  transition: opacity var(--transition-ms, 0ms) ease
 }
 
-#transition-layer.transition-fade-in[data-active="true"] {
-  opacity: 1
+#transition-layer.transition-fade-in.transition-ready {
+  transition: opacity var(--transition-ms, 0ms) ease;
+}
+
+#transition-layer.transition-fade-in.transition-ready[data-active="true"] {
+  opacity: 1;
 }
 
 #transition-layer.transition-blackfade {

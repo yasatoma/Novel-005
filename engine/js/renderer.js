@@ -365,9 +365,13 @@ export class Renderer {
     // Commit the initial opacity before toggling the active state so the
     // browser cannot collapse both states into one frame and skip the fade.
     void layer.offsetWidth;
+    layer.classList.add("transition-ready");
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        if (generation === this.transitionGeneration) layer.dataset.active = "true";
+        if (generation === this.transitionGeneration) {
+          layer.dataset.active = "true";
+        }
       });
     });
     this.transitionTimers.push(setTimeout(() => {
