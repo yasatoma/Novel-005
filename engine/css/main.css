@@ -621,7 +621,7 @@ input[type=range] {
 
 @media(prefers-reduced-motion:reduce) {
 
-  *:not(#transition-layer),
+  *,
   *::after {
     animation-duration: .001ms !important;
     transition-duration: .001ms !important
