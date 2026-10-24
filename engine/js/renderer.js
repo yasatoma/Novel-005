@@ -408,7 +408,7 @@ export class Renderer {
   showCharacter(command, assets) {
     if (command.action === "hide") {
       for (const slot of this.characterSlots.values()) {
-        if (slot.dataset.character === command.args.id) {
+        if (command.args.id === "ALL" ? !slot.hidden : slot.dataset.character === command.args.id) {
           const duration = Number(command.args.duration_ms ?? 0);
           slot.style.setProperty("--char-fade-ms", `${duration}ms`);
           if (duration > 0) {

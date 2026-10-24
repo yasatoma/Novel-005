@@ -133,7 +133,8 @@ export class Runner {
               if (command.args.crop !== undefined) value.crop = command.args.crop;
             }
           } else {
-            for (const [position, value] of Object.entries(this.state.visibleCharacters)) if (value.id === command.args.id) delete this.state.visibleCharacters[position];
+            if (command.args.id === "ALL") this.state.visibleCharacters = {};
+            else for (const [position, value] of Object.entries(this.state.visibleCharacters)) if (value.id === command.args.id) delete this.state.visibleCharacters[position];
           }
           this.hooks.character?.(command.action === "show" ? {...command, args:{...command.args, position:command.args.position ?? this.defaultCharacterPosition}} : command);
           break;
