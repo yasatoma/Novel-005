@@ -1,5 +1,5 @@
 # Source: Novel-005_00_プロローグ.txt
-@chapter start id=CH00 title="プロローグ　雲の向こう" reset=true
+@chapter start id=CH00 title="プロローグ　雲の向こう"
 @scene start id=SC00_001
 @bg hide
 @bgm stop
@@ -260,7 +260,7 @@
 @scene end id=SC00_001
 @chapter end id=CH00
 # Source: Novel-005_01.txt
-@chapter start id=CH01 title="第一章　石のある山" reset=true
+@chapter start id=CH01 title="第一章　石のある山"
 @scene start id=SC01_001
 @bg hide
 @bgm stop
@@ -851,7 +851,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC01_001
 @chapter end id=CH01
 # Source: Novel-005_02.txt
-@chapter start id=CH02 title="第二章　風の入口" reset=true
+@chapter start id=CH02 title="第二章　風の入口"
 @scene start id=SC02_001
 @bg hide
 @bgm stop
@@ -1294,7 +1294,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC02_001
 @chapter end id=CH02
 # Source: Novel-005_03.txt
-@chapter start id=CH03 title="第三章　地下の空" reset=true
+@chapter start id=CH03 title="第三章　地下の空"
 @scene start id=SC03_001
 @bg hide
 @bgm stop
@@ -1996,7 +1996,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC03_001
 @chapter end id=CH03
 # Source: Novel-005_04.txt
-@chapter start id=CH04 title="第四章　戻らない返事" reset=true
+@chapter start id=CH04 title="第四章　戻らない返事"
 @scene start id=SC04_001
 @bg hide
 @bgm stop
@@ -2467,7 +2467,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC04_001
 @chapter end id=CH04
 # Source: Novel-005_05.txt
-@chapter start id=CH05 title="第五章　閉じた道" reset=true
+@chapter start id=CH05 title="第五章　閉じた道"
 @scene start id=SC05_001
 @bg hide
 @bgm stop
@@ -2900,7 +2900,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC05_001
 @chapter end id=CH05
 # Source: Novel-005_06.txt
-@chapter start id=CH06 title="第六章　上へ続く熱" reset=true
+@chapter start id=CH06 title="第六章　上へ続く熱"
 @scene start id=SC06_001
 @bg hide
 @bgm stop
@@ -3459,7 +3459,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC06_001
 @chapter end id=CH06
 # Source: Novel-005_07.txt
-@chapter start id=CH07 title="第七章　先生のいない場所" reset=true
+@chapter start id=CH07 title="第七章　先生のいない場所"
 @scene start id=SC07_001
 @bg hide
 @bgm stop
@@ -4063,7 +4063,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC07_001
 @chapter end id=CH07
 # Source: Novel-005_08.txt
-@chapter start id=CH08 title="第八章　削られた縁" reset=true
+@chapter start id=CH08 title="第八章　削られた縁"
 @scene start id=SC08_001
 @bg hide
 @bgm stop
@@ -4612,7 +4612,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC08_001
 @chapter end id=CH08
 # Source: Novel-005_09.txt
-@chapter start id=CH09 title="第九章　石の下の声" reset=true
+@chapter start id=CH09 title="第九章　石の下の声"
 @scene start id=SC09_001
 @bg hide
 @bgm stop
@@ -5008,7 +5008,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC09_001
 @chapter end id=CH09
 # Source: Novel-005_10.txt
-@chapter start id=CH10 title="第十章　黄ばんだ地図" reset=true
+@chapter start id=CH10 title="第十章　黄ばんだ地図"
 @scene start id=SC10_001
 @bg hide
 @bgm stop
@@ -5434,7 +5434,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC10_001
 @chapter end id=CH10
 # Source: Novel-005_11.txt
-@chapter start id=CH11 title="第十一章　待つ場所を選ぶ" reset=true
+@chapter start id=CH11 title="第十一章　待つ場所を選ぶ"
 @scene start id=SC11_001
 @bg hide
 @bgm stop
@@ -5809,7 +5809,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC11_001
 @chapter end id=CH11
 # Source: Novel-005_12.txt
-@chapter start id=CH12 title="第十二章　四人の荷物" reset=true
+@chapter start id=CH12 title="第十二章　四人の荷物"
 @scene start id=SC12_001
 @bg hide
 @bgm stop
@@ -6112,7 +6112,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC12_001
 @chapter end id=CH12
 # Source: Novel-005_13.txt
-@chapter start id=CH13 title="第十三章　働くための道" reset=true
+@chapter start id=CH13 title="第十三章　働くための道"
 @scene start id=SC13_001
 @bg hide
 @bgm stop
@@ -6466,7 +6466,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC13_001
 @chapter end id=CH13
 # Source: Novel-005_14.txt
-@chapter start id=CH14 title="第十四章　水の高さ" reset=true
+@chapter start id=CH14 title="第十四章　水の高さ"
 @scene start id=SC14_001
 @bg hide
 @bgm stop
@@ -6822,7 +6822,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC14_001
 @chapter end id=CH14
 # Source: Novel-005_15.txt
-@chapter start id=CH15 title="第十五章　名前のない働き手" reset=true
+@chapter start id=CH15 title="第十五章　名前のない働き手"
 @scene start id=SC15_001
 @bg hide
 @bgm stop
@@ -7144,7 +7144,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC15_001
 @chapter end id=CH15
 # Source: Novel-005_16.txt
-@chapter start id=CH16 title="第十六章　大地を分ける部屋" reset=true
+@chapter start id=CH16 title="第十六章　大地を分ける部屋"
 @scene start id=SC16_001
 @bg hide
 @bgm stop
@@ -7476,7 +7476,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC16_001
 @chapter end id=CH16
 # Source: Novel-005_17.txt
-@chapter start id=CH17 title="第十七章　逃がす先" reset=true
+@chapter start id=CH17 title="第十七章　逃がす先"
 @scene start id=SC17_001
 @bg hide
 @bgm stop
@@ -8026,7 +8026,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC17_001
 @chapter end id=CH17
 # Source: Novel-005_18.txt
-@chapter start id=CH18 title="第十八章　白い向こう側" reset=true
+@chapter start id=CH18 title="第十八章　白い向こう側"
 @scene start id=SC18_001
 @bg hide
 @bgm stop
@@ -8426,7 +8426,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC18_001
 @chapter end id=CH18
 # Source: Novel-005_19.txt
-@chapter start id=CH19 title="第十九章　声の届く距離" reset=true
+@chapter start id=CH19 title="第十九章　声の届く距離"
 @scene start id=SC19_001
 @bg hide
 @bgm stop
@@ -8812,7 +8812,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC19_001
 @chapter end id=CH19
 # Source: Novel-005_20.txt
-@chapter start id=CH20 title="第二十章　空の冷たさ" reset=true
+@chapter start id=CH20 title="第二十章　空の冷たさ"
 @scene start id=SC20_001
 @bg hide
 @bgm stop
@@ -9206,7 +9206,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC20_001
 @chapter end id=CH20
 # Source: Novel-005_21.txt
-@chapter start id=CH21 title="第二十一章　書かれなかったこと" reset=true
+@chapter start id=CH21 title="第二十一章　書かれなかったこと"
 @scene start id=SC21_001
 @bg hide
 @bgm stop
@@ -9800,7 +9800,7 @@ A国に着いてから、移動と準備に数日を使った。
 @scene end id=SC21_001
 @chapter end id=CH21
 # Source: Novel-005_22_エピローグ.txt
-@chapter start id=CH22 title="エピローグ　地上の約束" reset=true
+@chapter start id=CH22 title="エピローグ　地上の約束"
 @scene start id=SC22_001
 @bg hide
 @bgm stop
