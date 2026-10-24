@@ -107,6 +107,7 @@ export class Renderer {
     this.transitionTimers = [];
     this.transitionGeneration++;
     if (this.transition) {
+      this.transition.hidden = true;
       this.transition.className = "";
       this.transition.style.backgroundImage = "";
       this.transition.style.backgroundColor = "";
@@ -284,6 +285,7 @@ export class Renderer {
       }
       const layer = this.transition;
       const generation = this.transitionGeneration;
+      layer.hidden = false;
       layer.dataset.transition = transition;
       layer.style.setProperty("--transition-ms", `${duration}ms`);
       layer.style.backgroundColor = "";
@@ -298,14 +300,11 @@ export class Renderer {
       // the transition. A single requestAnimationFrame can be coalesced by
       // the browser and skip the visible fade entirely.
       void layer.offsetWidth;
-      requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        if (generation === this.transitionGeneration) layer.dataset.active = "true";
-      });
-    });
+      requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
       this.transitionTimers.push(setTimeout(() => {
         if (generation !== this.transitionGeneration) return;
         this.transitionTimers = [];
+        layer.hidden = true;
         layer.className = "";
         layer.style.backgroundImage = "";
         layer.style.backgroundPosition = "";
@@ -367,13 +366,7 @@ export class Renderer {
     void layer.offsetWidth;
     layer.classList.add("transition-ready");
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        if (generation === this.transitionGeneration) {
-          layer.dataset.active = "true";
-        }
-      });
-    });
+    requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
     this.transitionTimers.push(setTimeout(() => {
       if (generation !== this.transitionGeneration) return;
       this.transitionTimers = [];
