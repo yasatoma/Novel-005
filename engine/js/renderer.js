@@ -378,8 +378,10 @@ export class Renderer {
       if (generation !== this.transitionGeneration) return;
       this.transitionTimers = [];
       if (transition === "fade" && command.action === "show") apply();
+      layer.hidden = true;
       layer.className = "";
       layer.style.backgroundImage = "";
+      layer.style.backgroundColor = "";
       layer.style.backgroundPosition = "";
       layer.style.backgroundSize = "";
       layer.style.filter = "";
