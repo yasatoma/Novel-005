@@ -300,7 +300,11 @@ export class Renderer {
       // the transition. A single requestAnimationFrame can be coalesced by
       // the browser and skip the visible fade entirely.
       void layer.offsetWidth;
-      requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
+      requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (generation === this.transitionGeneration) layer.dataset.active = "true";
+      });
+    });
       this.transitionTimers.push(setTimeout(() => {
         if (generation !== this.transitionGeneration) return;
         this.transitionTimers = [];
@@ -366,7 +370,11 @@ export class Renderer {
     void layer.offsetWidth;
     layer.classList.add("transition-ready");
 
-    requestAnimationFrame(() => { if (generation === this.transitionGeneration) layer.dataset.active = "true"; });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (generation === this.transitionGeneration) layer.dataset.active = "true";
+      });
+    });
     this.transitionTimers.push(setTimeout(() => {
       if (generation !== this.transitionGeneration) return;
       this.transitionTimers = [];
