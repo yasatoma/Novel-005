@@ -255,17 +255,15 @@
 その時の僕は、ただ早く遺跡を見たかった。
 @text show id=TX00_001_0115 speaker=narration
 雲の向こうに待っている未知の場所を、この目で確かめたいと思っていた。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC00_001
 @chapter end id=CH00
 # Source: Novel-005_01.txt
 @chapter start id=CH01 title="第一章　石のある山"
 @scene start id=SC01_001
-@bg hide
 @bgm stop
 @bgm play file=B005.dat fade_ms=4000
-@bg show id=BG_002 image=base filter=normal effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_002 image=base filter=normal effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX01_001_0001 speaker=narration
 車の窓を開けると、乾いた土の匂いが入ってきた。
 @text show id=TX01_001_0002 speaker=narration
@@ -846,17 +844,15 @@ A国に着いてから、移動と準備に数日を使った。
 まだ見えていないものが、あの斜面にはある。
 @text show id=TX01_001_0251 speaker=narration
 僕は冷えてきた手を擦り合わせ、暗い石の列をもう一度見上げた。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC01_001
 @chapter end id=CH01
 # Source: Novel-005_02.txt
 @chapter start id=CH02 title="第二章　風の入口"
 @scene start id=SC02_001
-@bg hide
 @bgm stop
 @bgm play file=B005.dat fade_ms=4000
-@bg show id=BG_005 image=base filter=normal effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_005 image=base filter=normal effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @char show id=CH_001 expression=normal duration_ms=200
 @text show id=TX02_001_0001 speaker=narration
 翌朝、菜月は僕より先に広場へ来ていた。
@@ -1289,17 +1285,15 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX02_001_0178 speaker=narration
 入口からは、変わらず冷たい風が出てきていた。
 @char hide id=CH_001 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC02_001
 @chapter end id=CH02
 # Source: Novel-005_03.txt
 @chapter start id=CH03 title="第三章　地下の空"
 @scene start id=SC03_001
-@bg hide
 @bgm stop
 @bgm play file=B005.dat fade_ms=4000
-@bg show id=BG_007 image=base filter=cool effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_007 image=base filter=cool effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @char show id=CH_008 expression=normal position=left duration_ms=200
 @char show id=CH_004 expression=normal position=right duration_ms=200
 @text show id=TX03_001_0001 speaker=narration
@@ -1991,17 +1985,15 @@ A国に着いてから、移動と準備に数日を使った。
 明日も、また見られる。
 @text show id=TX03_001_0294 speaker=narration
 そう思っていた。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC03_001
 @chapter end id=CH03
 # Source: Novel-005_04.txt
 @chapter start id=CH04 title="第四章　戻らない返事"
 @scene start id=SC04_001
-@bg hide
 @bgm stop
 @bgm play file=B005.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX04_001_0001 speaker=narration
 回廊の先は、昨日より暖かかった。
 @text show id=TX04_001_0002 speaker=narration
@@ -2462,17 +2454,15 @@ A国に着いてから、移動と準備に数日を使った。
 ニコを、こんな暗い場所から出してやれる。
 @text show id=TX04_001_0190 speaker=narration
 その時はまだ、それだけはできると思っていた。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC04_001
 @chapter end id=CH04
 # Source: Novel-005_05.txt
 @chapter start id=CH05 title="第五章　閉じた道"
 @scene start id=SC05_001
-@bg hide
 @bgm stop
 @bgm play file=B009.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=cool effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=cool effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX05_001_0001 speaker=narration
 前室へ戻る手前に、幅の狭い上り坂があった。
 @text show id=TX05_001_0002 speaker=narration
@@ -2895,17 +2885,15 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX05_001_0178 speaker=narration
 けれど、残す理由が変わっていた。
 @char hide id=CH_001 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC05_001
 @chapter end id=CH05
 # Source: Novel-005_06.txt
 @chapter start id=CH06 title="第六章　上へ続く熱"
 @scene start id=SC06_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX06_001_0001 speaker=narration
 僕たちは、ニコが倒れた区画を避けて進んだ。
 @text show id=TX06_001_0002 speaker=narration
@@ -3454,17 +3442,15 @@ A国に着いてから、移動と準備に数日を使った。
 菜月は番号を記し、紙をめくった。
 @text show id=TX06_001_0225 speaker=narration
 残りの白紙が少なくなっていた。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC06_001
 @chapter end id=CH06
 # Source: Novel-005_07.txt
 @chapter start id=CH07 title="第七章　先生のいない場所"
 @scene start id=SC07_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_019 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_019 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX07_001_0001 speaker=narration
 石の板の先を避け、僕たちは外周を回る通路へ入った。
 @text show id=TX07_001_0002 speaker=narration
@@ -4058,17 +4044,15 @@ A国に着いてから、移動と準備に数日を使った。
 @char hide id=CH_005 duration_ms=300
 @char hide id=CH_001 duration_ms=300
 @char hide id=CH_004 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC07_001
 @chapter end id=CH07
 # Source: Novel-005_08.txt
 @chapter start id=CH08 title="第八章　削られた縁"
 @scene start id=SC08_001
-@bg hide
 @bgm stop
 @bgm play file=B009.dat fade_ms=4000
-@bg show id=BG_040 image=base filter=dim effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_040 image=base filter=dim effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX08_001_0001 speaker=narration
 休んでも、疲れは取れなかった。
 @text show id=TX08_001_0002 speaker=narration
@@ -4607,17 +4591,15 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX08_001_0238 speaker=narration
 その答えを、一番よく知っている人だった。
 @char hide id=CH_002 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC08_001
 @chapter end id=CH08
 # Source: Novel-005_09.txt
 @chapter start id=CH09 title="第九章　石の下の声"
 @scene start id=SC09_001
-@bg hide
 @bgm stop
 @bgm play file=B006.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=dim effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=dim effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @char show id=CH_006 expression=normal duration_ms=200
 @text show id=TX09_001_0001 speaker=narration
 藤川さんは、石板の写真を何度も見直していた。
@@ -5003,17 +4985,15 @@ A国に着いてから、移動と準備に数日を使った。
 その反応には、演技に見えない恐れがあった。
 @char hide id=CH_002 duration_ms=300
 @char hide id=CH_004 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC09_001
 @chapter end id=CH09
 # Source: Novel-005_10.txt
 @chapter start id=CH10 title="第十章　黄ばんだ地図"
 @scene start id=SC10_001
-@bg hide
 @bgm stop
 @bgm play file=B006.dat fade_ms=4000
-@bg show id=BG_017 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_017 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @char show id=CH_004 expression=normal position=left duration_ms=200
 @char show id=CH_002 expression=uneasy position=right duration_ms=200
 @text show id=TX10_001_0001 speaker=narration
@@ -5429,17 +5409,15 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX10_001_0190 speaker=narration
 僕は目を逸らさなかった。
 @char hide id=CH_002 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC10_001
 @chapter end id=CH10
 # Source: Novel-005_11.txt
 @chapter start id=CH11 title="第十一章　待つ場所を選ぶ"
 @scene start id=SC11_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_017 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_017 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX11_001_0001 speaker=narration
 犯人が分かっても、地下は明るくならなかった。
 @text show id=TX11_001_0002 speaker=narration
@@ -5804,17 +5782,15 @@ A国に着いてから、移動と準備に数日を使った。
 その重さを、ちゃんと見ておかなければならなかった。
 @char hide id=CH_005 duration_ms=300
 @char hide id=CH_001 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC11_001
 @chapter end id=CH11
 # Source: Novel-005_12.txt
 @chapter start id=CH12 title="第十二章　四人の荷物"
 @scene start id=SC12_001
-@bg hide
 @bgm stop
 @bgm play file=B009.dat fade_ms=4000
-@bg show id=BG_017 image=base filter=dim effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_017 image=base filter=dim effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX12_001_0001 speaker=narration
 出発までに、もう一度だけ全員で資料を見た。
 @bg show id=BG_041 image=base filter=dim effect=none effect_layer=background transition=fade duration_ms=1000 blocking=true
@@ -6107,17 +6083,15 @@ A国に着いてから、移動と準備に数日を使った。
 最初に地下へ入った時より、荷物は少なかった。
 @text show id=TX12_001_0127 speaker=narration
 それでも、背中はずっと重かった。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC12_001
 @chapter end id=CH12
 # Source: Novel-005_13.txt
 @chapter start id=CH13 title="第十三章　働くための道"
 @scene start id=SC13_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX13_001_0001 speaker=narration
 待機場所から離れると、すぐに空気が重くなった。
 @text show id=TX13_001_0002 speaker=narration
@@ -6461,17 +6435,15 @@ A国に着いてから、移動と準備に数日を使った。
 その二つを、もう切り離すことはできなかった。
 @char hide id=CH_004 duration_ms=300
 @char hide id=CH_002 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC13_001
 @chapter end id=CH13
 # Source: Novel-005_14.txt
 @chapter start id=CH14 title="第十四章　水の高さ"
 @scene start id=SC14_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_029 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_029 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX14_001_0001 speaker=narration
 槽のある空間へ下りる前に、僕たちは縁を回った。
@@ -6817,17 +6789,15 @@ A国に着いてから、移動と準備に数日を使った。
 確かめるために。
 @text show id=TX14_001_0154 speaker=narration
 そして、戻るために。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC14_001
 @chapter end id=CH14
 # Source: Novel-005_15.txt
 @chapter start id=CH15 title="第十五章　名前のない働き手"
 @scene start id=SC15_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX15_001_0001 speaker=narration
 下り道の終わりに、壁の色が変わる場所があった。
 @text show id=TX15_001_0002 speaker=narration
@@ -7139,17 +7109,15 @@ A国に着いてから、移動と準備に数日を使った。
 @char hide id=CH_001 duration_ms=300
 @char hide id=CH_002 duration_ms=300
 @char hide id=CH_004 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC15_001
 @chapter end id=CH15
 # Source: Novel-005_16.txt
 @chapter start id=CH16 title="第十六章　大地を分ける部屋"
 @scene start id=SC16_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX16_001_0001 speaker=narration
 最後の通路は、まっすぐだった。
 @text show id=TX16_001_0002 speaker=narration
@@ -7471,17 +7439,15 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX16_001_0143 speaker=narration
 その発見を使わなければ、帰れない人がいた。
 @char hide id=CH_002 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC16_001
 @chapter end id=CH16
 # Source: Novel-005_17.txt
 @chapter start id=CH17 title="第十七章　逃がす先"
 @scene start id=SC17_001
-@bg hide
 @bgm stop
 @bgm play file=B003.dat fade_ms=4000
-@bg show id=BG_031 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_031 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @char show id=CH_004 expression=normal duration_ms=200
 @text show id=TX17_001_0001 speaker=narration
 最初に動かそうとした石の機構は、動かなかった。
@@ -8021,16 +7987,14 @@ A国に着いてから、移動と準備に数日を使った。
 彼女は一度、頷いた。
 @text show id=TX17_001_0237 speaker=narration
 僕たちは四人で、入口へ向かった。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC17_001
 @chapter end id=CH17
 # Source: Novel-005_18.txt
 @chapter start id=CH18 title="第十八章　白い向こう側"
 @scene start id=SC18_001
-@bg hide
 @bgm stop
-@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_025 image=base filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @bgm stop fade_ms=700
 @text show id=TX18_001_0001 speaker=narration
 戻る通路の空気は、行きと同じではなかった。
@@ -8421,17 +8385,15 @@ A国に着いてから、移動と準備に数日を使った。
 照明の数を、もう一度数えた。
 @text show id=TX18_001_0177 speaker=narration
 今度は、数え間違いではなかった。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC18_001
 @chapter end id=CH18
 # Source: Novel-005_19.txt
 @chapter start id=CH19 title="第十九章　声の届く距離"
 @scene start id=SC19_001
-@bg hide
 @bgm stop
 @bgm play file=B009.dat fade_ms=4000
-@bg show id=BG_029 image=low filter=warm effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_029 image=low filter=warm effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX19_001_0001 speaker=narration
 水槽の区画へ戻ると、水位は下がっていた。
 @text show id=TX19_001_0002 speaker=narration
@@ -8807,17 +8769,15 @@ A国に着いてから、移動と準備に数日を使った。
 空になった床には、身体を横たえていた跡が残っていた。
 @text show id=TX19_001_0168 speaker=narration
 そこへ戻らずに済むようにと、初めて祈るような気持ちになった。
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC19_001
 @chapter end id=CH19
 # Source: Novel-005_20.txt
 @chapter start id=CH20 title="第二十章　空の冷たさ"
 @scene start id=SC20_001
-@bg hide
 @bgm stop
 @bgm play file=B009.dat fade_ms=4000
-@bg show id=BG_016 image=base filter=cool effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_016 image=base filter=cool effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @text show id=TX20_001_0001 speaker=narration
 上ることが、これほど難しいとは思わなかった。
 @text show id=TX20_001_0002 speaker=narration
@@ -9201,16 +9161,14 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX20_001_0171 speaker=narration
 けれど、持ち帰ったものすべてを、下ろせるわけではなかった。
 @char hide id=CH_004 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC20_001
 @chapter end id=CH20
 # Source: Novel-005_21.txt
 @chapter start id=CH21 title="第二十一章　書かれなかったこと"
 @scene start id=SC21_001
-@bg hide
 @bgm stop
-@bg show id=BG_035 image=base filter=normal effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_035 image=base filter=normal effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @bgm stop fade_ms=700
 @effect play id=fade duration_ms=700 blocking=true
 @text show id=TX21_001_0001 speaker=narration
@@ -9795,16 +9753,14 @@ A国に着いてから、移動と準備に数日を使った。
 @text show id=TX21_001_0274 speaker=narration
 それでも、手を離す理由はなかった。
 @char hide id=CH_001 duration_ms=300
-@effect play id=blackfade duration_ms=600 blocking=true
 @bgm stop fade_ms=900
 @scene end id=SC21_001
 @chapter end id=CH21
 # Source: Novel-005_22_エピローグ.txt
 @chapter start id=CH22 title="エピローグ　地上の約束"
 @scene start id=SC22_001
-@bg hide
 @bgm stop
-@bg show id=BG_037 image=base filter=normal effect=none effect_layer=background transition=fade duration_ms=4000 blocking=true
+@bg show id=BG_037 image=base filter=normal effect=none effect_layer=background transition=blackfade duration_ms=4000 blocking=true
 @bgm stop fade_ms=700
 @text show id=TX22_001_0001 speaker=narration
 数か月が過ぎた。
