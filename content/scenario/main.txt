@@ -1517,7 +1517,7 @@ A国に着いてから、移動と準備に数日を使った。
 菜月は一つ受け取り、僕に包みを回した。
 @char hide id=CH_008 duration_ms=200
 @char hide id=CH_006 duration_ms=200
-@char show id=CH_001 expression=normal crop=bust duration_ms=200
+@char change id=CH_001 expression=normal crop=bust duration_ms=200
 @text show id=TX03_001_0091 speaker=CH_001
 外の景色と違うね
 @text show id=TX03_001_0092 speaker=NAOTO
