@@ -463,8 +463,8 @@ export class Renderer {
       const presentation = calculateFaceCropPresentation(bounds);
       slot.style.setProperty("--char-face-height", `${presentation.desktop.imageHeightVh}vh`);
       slot.style.setProperty("--char-face-top", `${presentation.desktop.imageTopVh}vh`);
-      slot.style.setProperty("--char-face-height-mobile", `${presentation.mobile.imageHeightVh}vh`);
-      slot.style.setProperty("--char-face-top-mobile", `${presentation.mobile.imageTopVh}vh`);
+      slot.style.setProperty("--char-face-height-mobile", `${presentation.mobile.imageHeightVh}dvh`);
+      slot.style.setProperty("--char-face-top-mobile", `${presentation.mobile.imageTopVh}dvh`);
     };
     const cached = this.characterAlphaBounds.get(source);
     if (cached) { apply(cached); return; }
