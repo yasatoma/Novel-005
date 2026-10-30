@@ -1070,8 +1070,8 @@ input[type=range] {
   }
 
   #characters[data-visible-count="1"] > img[data-crop="bust"]:not([hidden]) {
-    bottom: 15vh;
-    max-height: 90vh;
+    bottom: 15dvh;
+    max-height: 90dvh;
   }
 
 
@@ -1085,8 +1085,8 @@ input[type=range] {
   }
 
   #characters[data-visible-count="2"] > img[data-crop="bust"]:not([hidden]) {
-    bottom: 20vh;
-    max-height: 75vh;
+    bottom: 20dvh;
+    max-height: 75dvh;
   }
 
 
@@ -1100,8 +1100,8 @@ input[type=range] {
   }
 
   #characters[data-visible-count="3"] > img[data-crop="bust"]:not([hidden]) {
-    bottom: 25vh;
-    max-height: 60vh;
+    bottom: 25dvh;
+    max-height: 60dvh;
   }
 
 
@@ -1173,8 +1173,8 @@ input[type=range] {
   }
 
   #characters img[data-crop="face"] {
-    top: var(--char-face-top-mobile, -8vh);
-    height: var(--char-face-height-mobile, 175vh)
+    top: var(--char-face-top-mobile, -8dvh);
+    height: var(--char-face-height-mobile, 175dvh)
   }
 
   #title::after {
