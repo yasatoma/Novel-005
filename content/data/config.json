@@ -1,7 +1,7 @@
 {
   "workId": "novel005",
   "title": "大地の碑文",
-  "engineVersion": "1.0",
+  "engineVersion": "1.1",
   "entryScenario": "scenario/main.txt",
   "titleImage": "title.webp",
   "titleLayout": "left",

@@ -75,14 +75,14 @@ export function prepareResumeState(commands, data, saved, defaultCharacterPositi
       }
       const end = n === path.length - 1 ? Math.min(index, item.end) : item.end;
       for (let i = item.start; i < end; i++) {
-        if (["bg","char","compare","bgm","ambient"].includes(commands[i].type)) presentation.push(commands[i]);
+        if (["bg","char","compare","bgm","ambient","location","overlay"].includes(commands[i].type)) presentation.push(commands[i]);
       }
     }
     const rebuilt = createGameState();
     new Runner(presentation, rebuilt, {}, {defaultCharacterPosition}).start();
     for (const key of ["visibleCharacters","currentBackground","currentBackgroundImage",
       "currentBackgroundFilter","currentBackgroundEffect","currentBackgroundEffectLayer",
-      "currentBackgroundView","currentComparison","currentBgm","currentBgmVolume","currentAmbient"]) {
+      "currentComparison","currentBgm","currentBgmVolume","currentAmbient","currentAmbientVolume","currentLocationText","currentOverlay"]) {
       state[key] = rebuilt[key];
     }
     if (activeChapter) state.currentChapterId = activeChapter;
@@ -91,6 +91,7 @@ export function prepareResumeState(commands, data, saved, defaultCharacterPositi
     state.visibleCharacters[defaultCharacterPosition] ??= state.visibleCharacters.undefined;
     delete state.visibleCharacters.undefined;
   }
+  delete state.currentBackgroundView; // legacy v1.1 save field; view feature is retired
   state.scenarioRevision = revision;
   state.currentCommandIndex = index;
   state.currentResumePoint = commandAnchor(commands[index]);

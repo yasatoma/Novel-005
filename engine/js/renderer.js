@@ -81,17 +81,51 @@ export class Renderer {
     this.advanceMark = document.querySelector("#advance-mark");
     this.choices = document.querySelector("#choices");
     this.notice = document.querySelector("#notice");
+    this.readingArea = document.querySelector("#reading-area");
+    this.locationDisplay = document.querySelector("#location-display");
+    this.imageOverlay = document.querySelector("#image-overlay");
+    this.imageOverlayImg = document.querySelector("#image-overlay-img");
+    this.overlayScrim = document.querySelector("#overlay-scrim");
+    this.chapterPresentation = document.querySelector("#chapter-presentation");
+    this.chapterPresentationNumber = document.querySelector("#chapter-presentation-number");
+    this.chapterPresentationTitle = document.querySelector("#chapter-presentation-title");
+    this.toastLayer = document.querySelector("#toast-layer");
+    this.presentationTimers = [];
+    this.presentationGeneration = 0;
+    this.overlayTimer = null;
     this.ending = document.querySelector("#ending");
     this.characterSlots = new Map(
       [...document.querySelectorAll("#characters img")].map(element => [element.dataset.position, element])
     );
   }
 
-  showTitle(config) {
+  showTitle(config, titleData = null) {
     this.clearAdvance();
-    document.querySelector("#work-title").textContent = config.title;
+    const workTitle=document.querySelector("#work-title");
+    const renderTitleHtml=(target,value)=>{
+      const parsed=new DOMParser().parseFromString(value,"text/html");
+      const allowed=new Set(["H1","BR","SPAN"]);
+      const clean=node=>{
+        for(const child of [...node.childNodes]){
+          if(child.nodeType===1){
+            if(!allowed.has(child.tagName)){child.replaceWith(document.createTextNode(child.textContent??""));continue;}
+            for(const attr of [...child.attributes])child.removeAttribute(attr.name);
+            clean(child);
+          }else if(child.nodeType!==3)child.remove();
+        }
+      };
+      clean(parsed.body);target.replaceChildren(...parsed.body.childNodes);
+    };
+    if(titleData?.title)renderTitleHtml(workTitle,titleData.title);
+    else workTitle.textContent = config.title;
+    for(const [id,key] of [["title-en","title_en"],["title-catch","catch"],["title-lead","lead"],["title-quote","quote"]]){
+      const el=document.querySelector("#"+id);if(!el)continue;const value=titleData?.[key]??"";
+      if(key==="title_en"&&value)renderTitleHtml(el,value);else el.textContent=value.replaceAll("\\n","\n");
+      el.hidden=!value;
+    }
     this.title.dataset.layout = config.titleLayout ?? "left";
     const image = config.titleImage ? resolveContentUrl(this.workRoot, `images/title/${config.titleImage}`) : "";
+    this.title.dataset.hasImage = image ? "true" : "false";
     this.title.style.setProperty("--title-image", image ? `url("${image}")` : "none");
     this.title.hidden = false;
     this.game.hidden = true;
@@ -138,13 +172,186 @@ export class Renderer {
     this.background.dataset.filter = "normal";
     this.background.dataset.effect = "none";
     this.updateEffectLayer("none", "background");
-    this.background.dataset.view = "full";
+    if (typeof document !== "undefined") for (const outgoing of document.querySelectorAll("#characters .char-crossfade-outgoing")) outgoing.remove();
     for (const slot of this.characterSlots.values()) {
       slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
       slot.style.zIndex = "";
       for (const name of ["--char-face-height","--char-face-top","--char-face-height-mobile","--char-face-top-mobile","--char-position-offset-x"]) slot.style.removeProperty(name);
     }
     this.updateVisibleCharacterCount();
+    this.showTextbox(true);
+    this.showLocation({action:"hide",args:{}});
+    this.showOverlay({action:"hide",args:{}}, true);
+    this.clearPresentationTimers();
+    if (this.toastLayer) this.toastLayer.replaceChildren();
+  }
+
+  clearPresentationTimers() {
+    for (const timer of this.presentationTimers ?? []) clearTimeout(timer);
+    this.presentationTimers = [];
+    this.presentationGeneration = (this.presentationGeneration ?? 0) + 1;
+    if (this.chapterPresentation) {
+      this.chapterPresentation.hidden = true;
+      delete this.chapterPresentation.dataset.visible;
+    }
+  }
+
+  showTextbox(visible) {
+    if (this.readingArea) this.readingArea.hidden = !visible;
+  }
+
+
+  showLocation(command) {
+    if (!this.locationDisplay) return;
+    if (command.action === "hide") {
+      this.locationDisplay.hidden = true;
+      this.locationDisplay.textContent = "";
+      return;
+    }
+    this.locationDisplay.textContent = command.args.text ?? "";
+    this.locationDisplay.hidden = false;
+  }
+
+  showOverlay(command, immediate = false) {
+    if (!this.imageOverlay || !this.overlayScrim || !this.imageOverlayImg) return;
+    if (this.overlayTimer) { clearTimeout(this.overlayTimer); this.overlayTimer = null; }
+    if (command.action === "hide") {
+      const duration = immediate ? 0 : Number(command.args.duration_ms ?? 250);
+      this.imageOverlay.style.setProperty("--overlay-ms", `${Math.max(0,duration)}ms`);
+      this.overlayScrim.style.setProperty("--overlay-ms", `${Math.max(0,duration)}ms`);
+      if (duration <= 0 || this.imageOverlay.hidden) {
+        this.imageOverlay.hidden = true;
+        this.overlayScrim.hidden = true;
+        this.imageOverlayImg.removeAttribute("src");
+      } else {
+        this.imageOverlay.dataset.visible = "false";
+        this.overlayScrim.dataset.visible = "false";
+        this.overlayTimer = setTimeout(() => {
+          this.imageOverlay.hidden = true;
+          this.overlayScrim.hidden = true;
+          this.imageOverlayImg.removeAttribute("src");
+          delete this.imageOverlay.dataset.visible;
+          delete this.overlayScrim.dataset.visible;
+          this.overlayTimer = null;
+        }, Math.max(0,duration));
+      }
+      return;
+    }
+    const duration = immediate ? 0 : Number(command.args.duration_ms ?? 250);
+    this.imageOverlay.style.setProperty("--overlay-ms", `${Math.max(0,duration)}ms`);
+      this.overlayScrim.style.setProperty("--overlay-ms", `${Math.max(0,duration)}ms`);
+    this.imageOverlay.dataset.position = command.args.position ?? "center";
+    this.imageOverlay.dataset.size = command.args.size ?? "medium";
+    this.imageOverlayImg.src = resolveContentUrl(this.workRoot, `images/item/${command.args.id}.webp`);
+    this.overlayScrim.hidden = false;
+    this.imageOverlay.hidden = false;
+    if (duration <= 0) {
+      this.imageOverlay.dataset.visible = "true";
+      this.overlayScrim.dataset.visible = "true";
+    } else {
+      this.imageOverlay.dataset.visible = "false";
+      this.overlayScrim.dataset.visible = "false";
+      requestAnimationFrame(() => {
+        if (!this.imageOverlay.hidden) this.imageOverlay.dataset.visible = "true";
+        if (!this.overlayScrim.hidden) this.overlayScrim.dataset.visible = "true";
+      });
+    }
+  }
+
+  showChapterPresentation(command, reducedMotion = false) {
+    if (!this.chapterPresentation) return;
+    this.clearPresentationTimers();
+    const generation = this.presentationGeneration;
+    const fade = reducedMotion ? 0 : Number(command.args.duration_ms ?? 450);
+    const hold = Number(command.args.hold_ms ?? 1400);
+    this.chapterPresentationNumber.textContent = command.args.chapter ?? "";
+    this.chapterPresentationTitle.textContent = command.args.title ?? "";
+    this.chapterPresentation.style.setProperty("--chapter-fade-ms", `${Math.max(0,fade)}ms`);
+    this.chapterPresentation.hidden = false;
+    // Commit the initial opacity before toggling visibility so the browser
+    // cannot collapse both states into one frame and skip the fade-in.
+    void this.chapterPresentation.offsetWidth;
+    requestAnimationFrame(()=>{ if(generation===this.presentationGeneration) this.chapterPresentation.dataset.visible="true"; });
+    this.presentationTimers.push(setTimeout(()=>{
+      if(generation!==this.presentationGeneration)return;
+      delete this.chapterPresentation.dataset.visible;
+      this.presentationTimers.push(setTimeout(()=>{
+        if(generation!==this.presentationGeneration)return;
+        this.chapterPresentation.hidden=true;
+      },fade));
+    },fade+Math.max(0,hold)));
+  }
+
+  showToast(text, duration = 1800) {
+    if (!this.toastLayer) return;
+    const item=document.createElement("div");
+    item.className="engine-toast";
+    item.textContent=String(text);
+    this.toastLayer.append(item);
+    setTimeout(()=>item.remove(),duration);
+  }
+
+  showCharacterBook(snapshot = {}) {
+    const root=document.querySelector("#character-book");
+    const nav=document.querySelector("#character-book-nav");
+    const portrait=document.querySelector("#character-book-portrait");
+    const ruby=document.querySelector("#character-book-ruby");
+    const name=document.querySelector("#character-book-name");
+    const text=document.querySelector("#character-book-text");
+    const count=document.querySelector("#character-book-count");
+    const prev=document.querySelector("#character-book-prev");
+    const next=document.querySelector("#character-book-next");
+    if(!root||!nav||!portrait||!ruby||!name||!text||!count||!prev||!next)return;
+    const entries=Object.entries(snapshot);
+    nav.replaceChildren();
+    if(!entries.length){portrait.removeAttribute("src");portrait.alt="";ruby.textContent="";name.textContent="";text.textContent="人物情報はまだありません。";count.textContent="";prev.hidden=true;next.hidden=true;return;}
+    let index=0,touchX=null;
+    const select=nextIndex=>{
+      index=(nextIndex+entries.length)%entries.length;
+      const [,entry]=entries[index];
+      const source=resolveContentUrl(this.workRoot,`images/char/${entry.image}`);
+      portrait.src=source;
+      portrait.alt=entry.name??"";
+      portrait.style.removeProperty("height");
+      portrait.style.removeProperty("width");
+      portrait.style.removeProperty("max-width");
+      portrait.style.removeProperty("transform");
+      const applyPortraitBounds=bounds=>{
+        if(!bounds||portrait.src!==source)return;
+        const height=Math.max(.01,Math.min(1,Number(bounds.height)||1));
+        const bottom=Math.max(0,1-(Number(bounds.top)||0)-height);
+        portrait.style.height=`${100/height}%`;
+        portrait.style.width="auto";
+        portrait.style.maxWidth="none";
+        portrait.style.transform=`translateY(${bottom*100}%)`;
+      };
+      const cached=this.characterAlphaBounds.get(source);
+      if(cached)applyPortraitBounds(cached);
+      else {
+        const measure=()=>{
+          if(portrait.src!==source)return;
+          try{
+            const bounds=measureAlphaBounds(portrait);
+            if(!bounds)return;
+            this.characterAlphaBounds.set(source,bounds);
+            applyPortraitBounds(bounds);
+          }catch{}
+        };
+        if(portrait.complete&&portrait.naturalWidth)queueMicrotask(measure);
+        else portrait.addEventListener("load",measure,{once:true});
+      }
+      ruby.textContent=entry.ruby??"";
+      name.textContent=entry.name??"";
+      text.textContent=entry.text??"";
+      count.textContent=`${index+1} / ${entries.length}`;
+      [...nav.children].forEach((button,i)=>{button.classList.toggle("active",i===index);button.setAttribute("aria-current",i===index?"true":"false");});
+    };
+    for(const [,entry] of entries){const button=document.createElement("button");button.type="button";button.textContent=entry.name??"";button.onclick=()=>select([...nav.children].indexOf(button));nav.append(button);}
+    prev.hidden=next.hidden=entries.length<2;prev.onclick=()=>select(index-1);next.onclick=()=>select(index+1);
+    root.onkeydown=e=>{if(e.key==="ArrowLeft"){e.preventDefault();select(index-1);}else if(e.key==="ArrowRight"){e.preventDefault();select(index+1);}};
+    root.ontouchstart=e=>{touchX=e.changedTouches?.[0]?.clientX??null;};
+    root.ontouchend=e=>{if(touchX===null)return;const x=e.changedTouches?.[0]?.clientX??touchX,delta=x-touchX;touchX=null;if(Math.abs(delta)>=48)select(index+(delta<0?1:-1));};
+    select(0);
   }
 
   showChapter(command) {
@@ -171,8 +378,9 @@ export class Renderer {
   }
 
   showText(command, next, options = {}) {
+    this.showTextbox(true);
     if (this.textAdvanceTimer !== null) { clearTimeout(this.textAdvanceTimer); this.textAdvanceTimer = null; }
-    this.bringSpeakingCharacterToFront(command.args.speaker);
+    if (command.args.speaker !== "MOB") this.bringSpeakingCharacterToFront(command.args.speaker);
     const narration = command.args.speaker === "narration";
     const speaker = options.speaker ?? {};
     this.speaker.textContent = narration ? "" : (speaker.name ?? "話者不明");
@@ -211,13 +419,14 @@ export class Renderer {
       filter:state.currentBackgroundFilter ?? "normal",
       effect:state.currentBackgroundEffect ?? "none",
       effect_layer:state.currentBackgroundEffectLayer ?? "background",
-      view:state.currentBackgroundView ?? "full"
     } }, assets);
     for (const [position, character] of Object.entries(state.visibleCharacters ?? {})) {
       this.showCharacter({ action:"show", args:{ id:character.id, expression:character.expression, position, crop:character.crop ?? "bust" } }, assets);
     }
     if (state.currentComparison) this.showComparison({ action:"show", args:state.currentComparison }, assets);
     else this.comparison.hidden = true;
+    if (state.currentLocationText) this.showLocation({action:"show",args:{text:state.currentLocationText}}); else this.showLocation({action:"hide",args:{}});
+    if (state.currentOverlay) this.showOverlay({action:"show",args:state.currentOverlay}, true); else this.showOverlay({action:"hide",args:{}}, true);
   }
 
   showBacklog(entries, rubyMap = {}, characters = {}) {
@@ -273,11 +482,10 @@ export class Renderer {
       this.background.dataset.filter = "normal";
       this.background.dataset.effect = "none";
       this.updateEffectLayer("none", "background");
-      this.background.dataset.view = "full";
     };
     if (command.action === "hide") {
-      const transition = command.args?.transition ?? "cut";
       const duration = Number(command.args?.duration_ms ?? 0);
+      const transition = command.args?.transition ?? (duration > 0 ? "fade" : "cut");
       if (transition === "cut" || duration <= 0 || !this.transition || !this.background.style.backgroundImage) {
         clearBackground();
         done?.();
@@ -328,7 +536,6 @@ export class Renderer {
       this.background.dataset.filter = command.args.filter ?? "normal";
       this.background.dataset.effect = command.args.effect ?? "none";
       this.updateEffectLayer(command.args.effect ?? "none", command.args.effect_layer ?? "background");
-      this.background.dataset.view = command.args.view ?? "full";
     };
     const transition = command.args.transition ?? "cut";
     const duration = Number(command.args.duration_ms ?? 0);
@@ -368,8 +575,7 @@ export class Renderer {
     // Commit the initial opacity before toggling the active state so the
     // browser cannot collapse both states into one frame and skip the fade.
     void layer.offsetWidth;
-    layer.classList.add("transition-ready");
-
+    if (transition === "fade") layer.classList.add("transition-ready");
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         if (generation === this.transitionGeneration) layer.dataset.active = "true";
@@ -402,7 +608,8 @@ export class Renderer {
 
   updateVisibleCharacterCount() {
     const count = [...this.characterSlots.values()].filter(slot => !slot.hidden).length;
-    document.querySelector("#characters").dataset.visibleCount = String(count);
+    const characters = this.characterSlots.values().next().value?.parentElement;
+    if (characters) characters.dataset.visibleCount = String(count);
   }
 
   showCharacter(command, assets) {
@@ -410,19 +617,29 @@ export class Renderer {
       for (const slot of this.characterSlots.values()) {
         if (command.args.id === "ALL" ? !slot.hidden : slot.dataset.character === command.args.id) {
           const duration = Number(command.args.duration_ms ?? 0);
-          slot.style.setProperty("--char-fade-ms", `${duration}ms`);
           if (duration > 0) {
-            slot.dataset.hiding = "true";
-            slot.style.opacity = "0";
-            setTimeout(() => {
-              if (slot.dataset.hiding !== "true") return;
-              slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character; delete slot.dataset.hiding; slot.style.opacity = "";
-              this.updateVisibleCharacterCount();
-            }, duration);
-          } else {
-            slot.hidden = true; slot.removeAttribute("src"); delete slot.dataset.character;
-            this.updateVisibleCharacterCount();
+            const outgoing = slot.cloneNode(false);
+            outgoing.removeAttribute("id");
+            outgoing.classList.add("char-crossfade-outgoing");
+            outgoing.classList.remove("char-fade-in");
+            outgoing.removeAttribute("aria-label");
+            outgoing.alt = "";
+            outgoing.style.pointerEvents = "none";
+            outgoing.style.setProperty("--char-fade-ms", `${duration}ms`);
+            outgoing.style.opacity = getComputedStyle(slot).opacity || "1";
+            slot.parentElement?.append(outgoing);
+            void outgoing.offsetWidth;
+            requestAnimationFrame(() => { outgoing.style.opacity = "0"; });
+            setTimeout(() => outgoing.remove(), duration);
           }
+          slot.classList.remove("char-fade-in");
+          slot.dataset.fadeToken = String((Number(slot.dataset.fadeToken ?? 0) + 1));
+          slot.hidden = true;
+          slot.removeAttribute("src");
+          delete slot.dataset.character;
+          delete slot.dataset.hiding;
+          slot.style.opacity = "";
+          this.updateVisibleCharacterCount();
         }
       }
       return;
@@ -436,19 +653,44 @@ export class Renderer {
     delete slot.dataset.hiding;
     const duration = Number(command.args.duration_ms ?? 0);
     const source = resolveContentUrl(this.workRoot, `images/char/${file}`);
+    const replacing = command.action === "show" && !slot.hidden && !!slot.getAttribute("src") && slot.dataset.character !== command.args.id;
+    const changing = command.action === "change" && !slot.hidden && !!slot.getAttribute("src");
+    let outgoing = null;
+    if ((replacing || changing) && duration > 0) {
+      outgoing = slot.cloneNode(false);
+      outgoing.removeAttribute("id");
+      outgoing.classList.add("char-crossfade-outgoing");
+      outgoing.classList.remove("char-fade-in");
+      outgoing.style.opacity = getComputedStyle(slot).opacity || "1";
+      outgoing.removeAttribute("aria-label");
+      outgoing.alt = "";
+      outgoing.style.pointerEvents = "none";
+      outgoing.style.setProperty("--char-fade-ms", `${duration}ms`);
+      slot.parentElement?.append(outgoing);
+      requestAnimationFrame(() => { outgoing.style.opacity = "0"; });
+      setTimeout(() => outgoing.remove(), duration);
+    }
     slot.src = source;
     slot.alt = character.name || "登場人物";
     slot.dataset.character = command.args.id;
     if (command.args.crop !== undefined || command.action === "show") slot.dataset.crop = command.args.crop ?? "bust";
     this.prepareCharacterCrop(slot, source);
     slot.style.setProperty("--char-fade-ms", `${duration}ms`);
+    slot.classList.remove("char-fade-in");
+    const fadeToken = String((Number(slot.dataset.fadeToken ?? 0) + 1));
+    slot.dataset.fadeToken = fadeToken;
+    slot.style.opacity = "";
+    slot.hidden = false;
     if (duration > 0) {
-      slot.style.opacity = "0";
-      slot.hidden = false;
-      requestAnimationFrame(() => { if (slot.dataset.character === command.args.id) slot.style.opacity = "1"; });
-    } else {
-      slot.style.opacity = "";
-      slot.hidden = false;
+      // Use an explicit keyframe animation instead of a transition from display:none.
+      // A CSS transition may be skipped when the slot becomes visible and opacity
+      // changes in the same presentation cycle.
+      void slot.offsetWidth;
+      slot.classList.add("char-fade-in");
+      setTimeout(() => {
+        if (slot.dataset.fadeToken !== fadeToken) return;
+        slot.classList.remove("char-fade-in");
+      }, duration);
     }
     this.updateVisibleCharacterCount();
   }
@@ -506,11 +748,25 @@ export class Renderer {
 
   showChoice(_command, options, select) {
     this.clearAdvance();
+    const readingArea=document.querySelector("#reading-area");
+    if(readingArea&&this.game){
+      const gameRect=this.game.getBoundingClientRect();
+      const readingRect=readingArea.getBoundingClientRect();
+      this.choices.style.bottom=`${Math.max(0,gameRect.bottom-readingRect.top+80)}px`;
+    }
     this.choices.replaceChildren();
+    let selected = false;
     for (const option of options) {
       const button = document.createElement("button");
       button.type = "button"; button.textContent = option.args.text;
-      button.onclick = () => { this.choices.hidden = true; this.choices.replaceChildren(); select(option); };
+      button.onclick = () => {
+        if (selected) return;
+        selected = true;
+        for (const choice of this.choices.querySelectorAll("button")) choice.disabled = true;
+        this.choices.hidden = true;
+        this.choices.replaceChildren();
+        select(option);
+      };
       this.choices.append(button);
     }
     this.choices.hidden = false;

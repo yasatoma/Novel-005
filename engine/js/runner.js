@@ -6,6 +6,8 @@ export class Runner {
     this.state = state;
     this.hooks = hooks;
     this.defaultCharacterPosition = options.defaultCharacterPosition ?? "right";
+    this.characterBookIds = new Set(options.characterBookIds ?? []);
+    if (!Array.isArray(this.state.unlockedCharacterIds)) this.state.unlockedCharacterIds = [];
     this.revision = scenarioRevision(commands);
     this.index = 0;
     this.sceneIndexes = new Map();
@@ -41,6 +43,14 @@ export class Runner {
   run() {
     while (this.index < this.commands.length) {
       const command = this.commands[this.index];
+      const before = this.hooks.beforeCommand?.(command, this.index);
+      if (before && typeof before.then === "function") {
+        const waitingIndex = this.index;
+        Promise.resolve(before).then(() => {
+          if (this.index === waitingIndex) this.run();
+        });
+        return;
+      }
       this.state.currentCommandIndex = this.index;
       this.state.scenarioRevision = this.revision;
       const anchor = commandAnchor(command);
@@ -50,19 +60,6 @@ export class Runner {
         case "chapter":
           if (command.action === "start") {
             this.state.currentChapterId = command.args.id;
-            if (command.args.reset) {
-              this.state.visibleCharacters = {};
-              this.state.currentBackground = null;
-              this.state.currentBackgroundImage = "base";
-              this.state.currentBackgroundFilter = "normal";
-              this.state.currentBackgroundEffect = "none";
-              this.state.currentBackgroundEffectLayer = "background";
-              this.state.currentBackgroundView = "full";
-              this.state.currentBackgroundEffects = [];
-              this.state.currentComparison = null;
-              this.state.currentAmbient = null;
-              this.hooks.resetPresentation?.(command);
-            }
             this.hooks.chapterStart?.(command);
           }
           break;
@@ -81,26 +78,32 @@ export class Runner {
           this.state.flags[command.args.id] = command.args.value;
           break;
 
-        case "text":
+        case "text": {
           this.state.currentTextId = command.args.id;
+          const speakerId = command.args.speaker;
+          if (this.characterBookIds.has(speakerId) && !this.state.unlockedCharacterIds.includes(speakerId)) {
+            this.state.unlockedCharacterIds.push(speakerId);
+            this.hooks.characterBookUnlock?.(speakerId, command);
+          }
           this.hooks.text?.(command, () => this.resume(), this);
           return;
+        }
 
         case "bg":
+          // Legacy compatibility: `blocking` is intentionally kept at runtime only.
+          // New works use the public `@wait start` command instead.
           if (command.action === "show") {
             this.state.currentBackground = command.args.id;
             this.state.currentBackgroundImage = command.args.image ?? "base";
             this.state.currentBackgroundFilter = command.args.filter ?? "normal";
             this.state.currentBackgroundEffect = command.args.effect ?? "none";
             this.state.currentBackgroundEffectLayer = command.args.effect_layer ?? "background";
-            this.state.currentBackgroundView = command.args.view ?? "full";
           } else {
             this.state.currentBackground = null;
             this.state.currentBackgroundImage = "base";
             this.state.currentBackgroundFilter = "normal";
             this.state.currentBackgroundEffect = "none";
               this.state.currentBackgroundEffectLayer = "background";
-            this.state.currentBackgroundView = "full";
           }
           if (command.args.blocking && this.hooks.bg) {
             this.hooks.bg(command, () => this.resume());
@@ -128,10 +131,14 @@ export class Runner {
             this.state.visibleCharacters[position] = { id: command.args.id, expression: command.args.expression, crop: command.args.crop ?? "bust" };
           }
           else if (command.action === "change") {
-            for (const value of Object.values(this.state.visibleCharacters)) if (value.id === command.args.id) {
-              value.expression = command.args.expression;
-              if (command.args.crop !== undefined) value.crop = command.args.crop;
+            const visible = Object.values(this.state.visibleCharacters).find(value => value.id === command.args.id);
+            if (!visible) {
+              const source = command.source ? ` (${command.source.file}:${command.source.line})` : "";
+              console.warn(`@char change skipped: character is not visible: ${command.args.id}${source}`);
+              break;
             }
+            visible.expression = command.args.expression;
+            if (command.args.crop !== undefined) visible.crop = command.args.crop;
           } else {
             if (command.args.id === "ALL") this.state.visibleCharacters = {};
             else for (const [position, value] of Object.entries(this.state.visibleCharacters)) if (value.id === command.args.id) delete this.state.visibleCharacters[position];
@@ -142,12 +149,62 @@ export class Runner {
         case "bgm":
         case "ambient":
         case "se":
-          if (command.type === "bgm") { this.state.currentBgm = command.action === "play" ? command.args.file : null; this.state.currentBgmVolume = command.action === "play" ? Number(command.args.volume ?? 1) : 1; }
-          if (command.type === "ambient") this.state.currentAmbient = command.action === "play" ? command.args.file : null;
+          if (command.type === "bgm") {
+            if (command.action === "play") {
+              const same = this.state.currentBgm === command.args.file;
+              const continues = command.args.continue_if_same !== false && command.args.continue_if_same !== "false";
+              const volume = command.args.volume !== undefined
+                ? Number(command.args.volume)
+                : (same && continues ? this.state.currentBgmVolume : 1);
+              this.state.currentBgm = command.args.file;
+              this.state.currentBgmVolume = volume;
+            } else {
+              this.state.currentBgm = null;
+              this.state.currentBgmVolume = 1;
+            }
+          }
+          if (command.type === "ambient") {
+            if (command.action === "play") {
+              const same = this.state.currentAmbient === command.args.file;
+              const continues = command.args.continue_if_same !== false && command.args.continue_if_same !== "false";
+              const volume = command.args.volume !== undefined
+                ? Number(command.args.volume)
+                : (same && continues ? this.state.currentAmbientVolume : 1);
+              this.state.currentAmbient = command.args.file;
+              this.state.currentAmbientVolume = volume;
+            } else {
+              this.state.currentAmbient = null;
+              this.state.currentAmbientVolume = 1;
+            }
+          }
           this.hooks.audio?.(command);
           break;
 
+        case "location":
+          this.state.currentLocationText = command.action === "show" ? command.args.text : null;
+          this.hooks.location?.(command);
+          break;
+
+        case "chapter_title":
+          this.hooks.chapterTitle?.(command);
+          break;
+
+        case "textbox":
+          this.hooks.textbox?.(command);
+          break;
+
+        case "overlay":
+          this.state.currentOverlay = command.action === "show" ? {
+            id: command.args.id,
+            position: command.args.position ?? "center",
+            size: command.args.size ?? "medium"
+          } : null;
+          this.hooks.overlay?.(command);
+          break;
+
         case "effect":
+          // Legacy compatibility: effect `blocking` is runtime-only and not public.
+          // New works use the public `@wait start` command instead.
           if (command.args.blocking && command.action === "play" && this.hooks.effect) {
             this.hooks.effect(command, () => this.resume());
             return;
@@ -161,6 +218,8 @@ export class Runner {
           return;
 
         case "memo":
+          // Legacy compatibility only: keep old `@memo unlock` scenarios functional.
+          // Story memo is not a public v1.1 I/F and must not be used by new works.
           if (!this.state.unlockedMemoIds.includes(command.args.id)) {
             this.state.unlockedMemoIds.push(command.args.id);
           }

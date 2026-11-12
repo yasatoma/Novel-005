@@ -24,9 +24,8 @@ export function decodeCnea(buffer) {
 }
 
 export class AudioManager {
-  constructor(workRoot, assets, getSettings = () => ({})) {
+  constructor(workRoot, getSettings = () => ({})) {
     this.workRoot = workRoot;
-    this.assets = assets.audio ?? {};
     this.getSettings = getSettings;
     this.bgm = null;
     this.ambient = null;
@@ -44,8 +43,8 @@ export class AudioManager {
           : this.stopLoop("bgm", command.args);
       case "ambient":
         return command.action === "play"
-          ? this.playLoop("ambient", command.args.file)
-          : this.stopLoop("ambient");
+          ? this.playLoop("ambient", command.args.file, command.args)
+          : this.stopLoop("ambient", command.args);
       case "se":
         return this.playSe(command.args.file);
       default:
@@ -54,8 +53,6 @@ export class AudioManager {
   }
 
   resolve(kind, file) {
-    const allowed = this.assets[kind] ?? [];
-    if (!allowed.includes(file)) throw new Error(`audio asset not registered: ${kind}/${file}`);
     return resolveContentUrl(this.workRoot, `audio/${kind}/${file}`);
   }
 
@@ -97,13 +94,7 @@ export class AudioManager {
     const targetVolume = this.volume(kind) * Number(audio.dataset.volumeMultiplier);
     audio.volume = Number(options.fade_ms) > 0 ? 0 : targetVolume;
     this[kind] = audio;
-    try {
-      await safePlay(audio);
-    } catch (error) {
-      if (this[kind] === audio) this[kind] = null;
-      audio.pause();
-      throw error;
-    }
+    await safePlay(audio);
     if (Number(options.fade_ms) > 0) this.fade(audio, 0, targetVolume, Number(options.fade_ms));
   }
 
@@ -151,7 +142,7 @@ export class AudioManager {
     const started=performance.now();
     const tick=now=>{
       if(this.fadeTokens.get(audio)!==token)return;
-      const p=Math.min(1,(now-started)/ms);
+      const p=Math.max(0,Math.min(1,(now-started)/ms));
       audio.volume=from+(to-from)*p;
       if(p<1)requestAnimationFrame(tick);
       else { this.fadeTokens.delete(audio); done?.(); }
@@ -181,7 +172,7 @@ export class AudioManager {
     this.stopSe();
     const tasks=[];
     if(state.currentBgm) tasks.push(this.playLoop("bgm",state.currentBgm,{volume:state.currentBgmVolume ?? 1}));
-    if(state.currentAmbient) tasks.push(this.playLoop("ambient",state.currentAmbient));
+    if(state.currentAmbient) tasks.push(this.playLoop("ambient",state.currentAmbient,{volume:state.currentAmbientVolume ?? 1}));
     await Promise.all(tasks);
   }
 
@@ -205,7 +196,10 @@ export class AudioManager {
 }
 
 async function safePlay(audio) {
-  await audio.play();
+  try { await audio.play(); }
+  catch (error) {
+    if (error?.name !== "NotAllowedError") throw error;
+  }
 }
 
 function clamp(value) {
