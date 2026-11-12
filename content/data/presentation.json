@@ -1,0 +1,52 @@
+{
+  "bg": {
+    "show": {
+      "transition": "dissolve",
+      "duration_ms": 2000
+    },
+    "hide": {
+      "duration_ms": 1000
+    }
+  },
+  "bgm": {
+    "play": {
+      "fade_ms": 2000
+    },
+    "stop": {
+      "fade_ms": 1000
+    }
+  },
+  "ambient": {
+    "play": {
+      "fade_ms": 2000
+    },
+    "stop": {
+      "fade_ms": 1000
+    }
+  },
+  "char": {
+    "show": {
+      "duration_ms": 1000
+    },
+    "change": {
+      "duration_ms": 1000
+    },
+    "hide": {
+      "duration_ms": 1000
+    }
+  },
+  "chapter_title": {
+    "show": {
+      "duration_ms": 1000,
+      "hold_ms": 3000
+    }
+  },
+  "overlay": {
+    "show": {
+      "duration_ms": 1000
+    },
+    "hide": {
+      "duration_ms": 1000
+    }
+  }
+}
